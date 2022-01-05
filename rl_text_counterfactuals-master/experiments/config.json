@@ -1,0 +1,43 @@
+{
+    "ac_kwargs":	{
+        "activation":	"relu",
+        "hidden_sizes":	[
+            64,
+            64
+        ]
+    },
+    "actor_critic":	"mlp_actor_critic",
+    "alpha":	0.2,
+    "batch_size":	100,
+    "env_fn":	"<function <lambda> at 0x7efcccbc6b90>",
+    "epochs":	250,
+    "exp_name":	"sac_ex1",
+    "gamma":	0.99,
+    "logger":	{
+        "<spinup.utils.logx.EpochLogger object at 0x7efc22fcaa10>":	{
+            "epoch_dict":	{},
+            "exp_name":	"sac_ex1",
+            "first_row":	true,
+            "log_current_row":	{},
+            "log_headers":	[],
+            "output_dir":	"experiments/",
+            "output_file":	{
+                "<_io.TextIOWrapper name='experiments/progress.txt' mode='w' encoding='UTF-8'>":	{
+                    "mode":	"w"
+                }
+            }
+        }
+    },
+    "logger_kwargs":	{
+        "exp_name":	"sac_ex1",
+        "output_dir":	"experiments/"
+    },
+    "lr":	0.001,
+    "max_ep_len":	1000,
+    "polyak":	0.995,
+    "replay_size":	1000000,
+    "save_freq":	1,
+    "seed":	0,
+    "start_steps":	10000,
+    "steps_per_epoch":	5000
+}

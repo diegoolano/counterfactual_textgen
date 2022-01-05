@@ -1,0 +1,140 @@
+NOW DOING AMAZON and IMAGE CAPTION: 
+
+0) put data into data/amazon/,   change file names.sh  and mkdir bert_classifier_training/
+
+1) BERT_Classification_Training_data_preparation.ipynb  Preprocess data
+2) Train Bert Classifier
+
+screen -S train_caption_classifier
+source tdrg/bin/activate
+CUDA_VISIBLE_DEVICES=2 python run_classifier.py --data_dir=./data/imagecaption/bert_classifier_training/ --bert_model=bert-base-uncased --task_name=yelp --output_dir=./data/imagecaption/bert_classifier_3epochs/ --max_seq_length=70 --do_train --do_eval --do_lower_case --train_batch_size=32 --num_train_epochs=3
+
+
+    — NOW RUNNING FOR 10 since 3 epochs only gave 81 % accuracy
+    — 100 would take too long
+
+    for Caption we use the model:  data/imagecaption/bert_classifier_10epochs/pytorch_model.bin
+
+
+screen -S train_amazon_classifier
+source tdrg/bin/activate
+CUDA_VISIBLE_DEVICES=1 python run_classifier.py --data_dir=./data/amazon/bert_classifier_training/ --bert_model=bert-base-uncased --task_name=yelp --output_dir=./data/amazon/bert_classifier_3epochs/ --max_seq_length=70 --do_train --do_eval --do_lower_case --train_batch_size=32 --num_train_epochs=3
+
+    WAITING ON AMAZON
+    05/16/2020 23:16:13 - INFO - __main__ -     eval_accuracy = 0.8815
+    05/16/2020 23:16:13 - INFO - __main__ -     eval_loss = 0.3399863910526037
+    05/16/2020 23:16:13 - INFO - __main__ -     global_step = 52032
+    05/16/2020 23:16:13 - INFO - __main__ -     loss = 0.1706328815260792
+
+    For AMAZON we use the model:  ./data/amazon/bert_classifier_3epochs/ 
+
+TODO:  eventually figure out: device: cuda n_gpu: 1, distributed training: False, 16-bits training: False
+
+3. Head Selection.ipynb
+    for caption we use (8, 4 )  done
+            
+    for amazon  we use (9, 5 )
+
+4. for B-GST, run BERT_DATA_PREPARATION.ipynb
+    for caption
+    now in data/imagecaption/processed_files_with_bert_with_best_head/
+
+    for amazon
+        done: files preprocessed into  data/amazon/processed_files_with_bert_with_best_head/
+
+5.  Train OpenAI GPT classifier
+    for caption 
+
+    screen -S train_bgst_caption_classifier
+    source tdrg/bin/activate
+    export DG_TRAIN_DATA=data/imagecaption/processed_files_with_bert_with_best_head/sentiment_train.txt
+    export DG_EVAL_DATA=data/imagecaption/processed_files_with_bert_with_best_head/sentiment_test.txt
+    export DG_MODEL_OUT=data/imagecaption/bgst_classifier/
+
+    CUDA_VISIBLE_DEVICES=3 python openai_gpt_delete_and_generate.py --model_name openai-gpt --do_train --do_eval  --train_dataset $DG_TRAIN_DATA --eval_dataset $DG_EVAL_DATA --train_batch_size 32 --eval_batch_size 32 --max_seq_length 85 --output_dir $DG_MODEL_OUT 
+
+    data/imagecaption/bgst_classifier/pytorch_model_zero_grad_1.bin
+
+    
+    for Amazon 
+
+    screen -S train_bgst_amazon_classifier
+    source tdrg/bin/activate
+    export DG_TRAIN_DATA=data/amazon/processed_files_with_bert_with_best_head/sentiment_train.txt
+    export DG_EVAL_DATA=data/amazon/processed_files_with_bert_with_best_head/sentiment_test.txt
+    export DG_MODEL_OUT=data/amazon/bgst_classifier/
+
+    CUDA_VISIBLE_DEVICES=3 python openai_gpt_delete_and_generate.py --model_name openai-gpt --do_train --do_eval  --train_dataset $DG_TRAIN_DATA --eval_dataset $DG_EVAL_DATA --train_batch_size 32 --eval_batch_size 32 --max_seq_length 85 --output_dir $DG_MODEL_OUT 
+
+    05/18/2020 21:43:33 - INFO - __main__ -   ***** Eval results *****
+    05/18/2020 21:43:33 - INFO - __main__ -     eval_loss = 0.8754080468788743
+    05/18/2020 21:43:33 - INFO - __main__ -     train_loss = 0.0
+
+    data/amazon/bgst_classifier/pytorch_model_zero_grad_1.bin
+
+6. Run OpenAI GPT diego on amazon and image caption for B-GST
+    
+    for caption
+        done ( sent to Sriram )
+    
+    for Amazon:
+        WAITING… cat results put up and let SRIRAM now 
+        
+
+    scp sets to diegoolano.com
+
+7. for G-GST, run Delete_Retrieve_Generate_Data_Preparation.ipynb     ( depends on data produced by step 4 )
+    for caption
+        done            
+        
+    for amazon
+        done :  now have data in data/amazon/processed_files_with_bert_with_best_head/delete_retrieve_edit_model
+
+8.  then run tfidf_retrieve.ipynb
+    for caption
+        done                    
+
+    for amazon
+        done
+
+
+9. Train OpenAI GPT classifier for G-GST
+
+    for caption
+    screen -S train_ggst_caption_classifier
+    source tdrg/bin/activate
+    export DG_TRAIN_DATA=data/imagecaption/processed_files_with_bert_with_best_head/delete_retrieve_edit_model/sentiment_train.txt
+    export DG_EVAL_DATA=data/imagecaption/processed_files_with_bert_with_best_head/delete_retrieve_edit_model/sentiment_test.txt
+    export DG_MODEL_OUT=data/imagecaption/ggst_classifier/    
+
+    #same call params
+    CUDA_VISIBLE_DEVICES=3  python openai_gpt_delete_retrive_and_generate.py  --model_name openai-gpt --do_train --do_eval  --train_dataset $DG_TRAIN_DATA --eval_dataset $DG_EVAL_DATA --train_batch_size 32 --eval_batch_size 32 --max_seq_length 85 --output_dir $DG_MODEL_OUT
+
+    model now in data/imagecaption/ggst_classifier/
+
+    for amazon <—NOW
+    screen -S train_ggst_amazon_classifier
+    source tdrg/bin/activate
+    export DG_TRAIN_DATA=data/amazon/processed_files_with_bert_with_best_head/delete_retrieve_edit_model/sentiment_train.txt
+    export DG_EVAL_DATA=data/amazon/processed_files_with_bert_with_best_head/delete_retrieve_edit_model/sentiment_test.txt
+    export DG_MODEL_OUT=data/amazon/ggst_classifier/    
+
+    #same call params
+    CUDA_VISIBLE_DEVICES=3  python openai_gpt_delete_retrive_and_generate.py  --model_name openai-gpt --do_train --do_eval  --train_dataset $DG_TRAIN_DATA --eval_dataset $DG_EVAL_DATA --train_batch_size 32 --eval_batch_size 32 --max_seq_length 85 --output_dir $DG_MODEL_OUT
+
+    05/18/2020 22:52:28 - INFO - __main__ -   ***** Eval results *****
+    05/18/2020 22:52:28 - INFO - __main__ -     eval_loss = 0.36048815306276083
+    05/18/2020 22:52:28 - INFO - __main__ -     train_loss = 0.0
+
+    /data/amazon/ggst_classifier/pytorch_model_zero_grad_1.bin
+
+10.  Run OpenAI GPT diego on amazon and image caption for G-GST
+
+    caption: done
+    amazon
+        done
+
+    scp sets to diegoolano.com
+
+XXX put both results up and hit up Sriram to let him know they are there.
+

@@ -1,0 +1,171 @@
+(tdrg) Joydeeps-Air:TRDG diegoolano$ 
+/usr/local/bin/python3 run_classifier.py 
+    --data_dir=./data/yelp/bert_classifier_training/ 
+    --bert_model=bert-base-uncased 
+    --task_name=yelp 
+    --output_dir=./data/yelp/bert_classifier/ 
+    --max_seq_length=70 
+    --do_train 
+    --do_lower_case 
+    --train_batch_size=32 
+    --num_train_epochs=1
+
+#should have done --do_eval
+
+Better speed can be achieved with apex installed from https://www.github.com/nvidia/apex.
+04/10/2020 17:10:02 - INFO - __main__ -   device: cpu n_gpu: 0, distributed training: False, 16-bits training: False
+04/10/2020 17:10:03 - INFO - pytorch_pretrained_bert.tokenization -   loading vocabulary file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased-vocab.txt from cache at /Users/diegoolano/.pytorch_pretrained_bert/26bc1ad6c0ac742e9b52263248f6d0f00068293b33709fae12320c0e35ccfbbb.542ce4285a40d23a559526243235df47c5f75c197f04f37d1a0c124c32c9a084
+04/10/2020 17:10:03 - INFO - __main__ -   Looking at ./data/yelp/bert_classifier_training/
+04/10/2020 17:10:06 - INFO - pytorch_pretrained_bert.file_utils -   https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased.tar.gz not found in cache, downloading to /var/folders/wj/pp6dzz1j1kl0h4ygq3qvq7vw0000gn/T/tmp7lspwcbe
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 407873900/407873900 [01:34<00:00, 4304638.10B/s]
+04/10/2020 17:11:41 - INFO - pytorch_pretrained_bert.file_utils -   copying /var/folders/wj/pp6dzz1j1kl0h4ygq3qvq7vw0000gn/T/tmp7lspwcbe to cache at /Users/diegoolano/.pytorch_pretrained_bert/distributed_-1/9c41111e2de84547a463fd39217199738d1e3deb72d4fec4399e6e241983c6f0.ae3cef932725ca7a30cdcb93fc6e09150a55e2a130ec7af63975a16c153ae2ba
+04/10/2020 17:11:46 - INFO - pytorch_pretrained_bert.file_utils -   creating metadata file for /Users/diegoolano/.pytorch_pretrained_bert/distributed_-1/9c41111e2de84547a463fd39217199738d1e3deb72d4fec4399e6e241983c6f0.ae3cef932725ca7a30cdcb93fc6e09150a55e2a130ec7af63975a16c153ae2ba
+04/10/2020 17:11:46 - INFO - pytorch_pretrained_bert.file_utils -   removing temp file /var/folders/wj/pp6dzz1j1kl0h4ygq3qvq7vw0000gn/T/tmp7lspwcbe
+04/10/2020 17:11:46 - INFO - pytorch_pretrained_bert.modeling -   loading archive file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased.tar.gz from cache at /Users/diegoolano/.pytorch_pretrained_bert/distributed_-1/9c41111e2de84547a463fd39217199738d1e3deb72d4fec4399e6e241983c6f0.ae3cef932725ca7a30cdcb93fc6e09150a55e2a130ec7af63975a16c153ae2ba
+04/10/2020 17:11:46 - INFO - pytorch_pretrained_bert.modeling -   extracting archive file /Users/diegoolano/.pytorch_pretrained_bert/distributed_-1/9c41111e2de84547a463fd39217199738d1e3deb72d4fec4399e6e241983c6f0.ae3cef932725ca7a30cdcb93fc6e09150a55e2a130ec7af63975a16c153ae2ba to temp dir /var/folders/wj/pp6dzz1j1kl0h4ygq3qvq7vw0000gn/T/tmp6j29ndrx
+04/10/2020 17:11:53 - INFO - pytorch_pretrained_bert.modeling -   Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "max_position_embeddings": 512,
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "type_vocab_size": 2,
+  "vocab_size": 30522
+}
+
+04/10/2020 17:12:01 - INFO - pytorch_pretrained_bert.modeling -   Weights of BertForSequenceClassification not initialized from pretrained model: ['classifier.weight', 'classifier.bias']
+04/10/2020 17:12:01 - INFO - pytorch_pretrained_bert.modeling -   Weights from pretrained model not used in BertForSequenceClassification: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias']
+04/10/2020 17:12:01 - INFO - __main__ -   *** Example ***
+04/10/2020 17:12:01 - INFO - __main__ -   guid: train-0
+04/10/2020 17:12:01 - INFO - __main__ -   tokens: [CLS] i was sadly mistaken . [SEP]
+04/10/2020 17:12:01 - INFO - __main__ -   input_ids: 101 1045 2001 13718 13534 1012 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+04/10/2020 17:12:01 - INFO - __main__ -   input_mask: 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+04/10/2020 17:12:01 - INFO - __main__ -   segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+04/10/2020 17:12:01 - INFO - __main__ -   label: 0 (id = 0)
+04/10/2020 17:12:01 - INFO - __main__ -   *** Example ***
+04/10/2020 17:12:01 - INFO - __main__ -   guid: train-1
+04/10/2020 17:12:01 - INFO - __main__ -   tokens: [CLS] so on to the ho ##agi ##es , the italian is general run of the mill . [SEP]
+04/10/2020 17:12:01 - INFO - __main__ -   input_ids: 101 2061 2006 2000 1996 7570 22974 2229 1010 1996 3059 2003 2236 2448 1997 1996 4971 1012 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+04/10/2020 17:12:01 - INFO - __main__ -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+04/10/2020 17:12:01 - INFO - __main__ -   segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+04/10/2020 17:12:01 - INFO - __main__ -   label: 0 (id = 0)
+04/10/2020 17:12:01 - INFO - __main__ -   *** Example ***
+04/10/2020 17:12:01 - INFO - __main__ -   guid: train-2
+04/10/2020 17:12:01 - INFO - __main__ -   tokens: [CLS] minimal meat and a ton of shredded let ##tu ##ce . [SEP]
+04/10/2020 17:12:01 - INFO - __main__ -   input_ids: 101 10124 6240 1998 1037 10228 1997 29022 2292 8525 3401 1012 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+04/10/2020 17:12:01 - INFO - __main__ -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+04/10/2020 17:12:01 - INFO - __main__ -   segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+04/10/2020 17:12:01 - INFO - __main__ -   label: 0 (id = 0)
+04/10/2020 17:12:01 - INFO - __main__ -   *** Example ***
+04/10/2020 17:12:01 - INFO - __main__ -   guid: train-3
+04/10/2020 17:12:01 - INFO - __main__ -   tokens: [CLS] nothing really special & not worthy of the $ _ nu ##m _ price tag . [SEP]
+04/10/2020 17:12:01 - INFO - __main__ -   input_ids: 101 2498 2428 2569 1004 2025 11007 1997 1996 1002 1035 16371 2213 1035 3976 6415 1012 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+04/10/2020 17:12:01 - INFO - __main__ -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+04/10/2020 17:12:01 - INFO - __main__ -   segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+04/10/2020 17:12:01 - INFO - __main__ -   label: 0 (id = 0)
+04/10/2020 17:12:01 - INFO - __main__ -   *** Example ***
+04/10/2020 17:12:01 - INFO - __main__ -   guid: train-4
+04/10/2020 17:12:01 - INFO - __main__ -   tokens: [CLS] second , the steak ho ##agi ##e , it is at ##ro ##cious . [SEP]
+04/10/2020 17:12:01 - INFO - __main__ -   input_ids: 101 2117 1010 1996 21475 7570 22974 2063 1010 2009 2003 2012 3217 18436 1012 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+04/10/2020 17:12:01 - INFO - __main__ -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+04/10/2020 17:12:01 - INFO - __main__ -   segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+04/10/2020 17:12:01 - INFO - __main__ -   label: 0 (id = 0)
+04/10/2020 17:14:28 - INFO - __main__ -   ***** Running training *****
+04/10/2020 17:14:28 - INFO - __main__ -     Num examples = 443259
+04/10/2020 17:14:28 - INFO - __main__ -     Batch size = 32
+04/10/2020 17:14:28 - INFO - __main__ -     Num steps = 13851
+Epoch:   0%|                                                                                                                                                                   | 0/1 [00:00<?, ?it/s]
+Training loss: 1.22e-01 lr: 6.28e-06:   1%|█▍  
+
+
+WAY TO SLOW ON CPU SO DO IT ON MICRODEEP
+
+04/11/2020 14:03:23 - INFO - __main__ -   input_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+04/11/2020 14:03:23 - INFO - __main__ -   segment_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+04/11/2020 14:03:23 - INFO - __main__ -   label: 0 (id = 0)
+04/11/2020 14:04:19 - INFO - __main__ -   ***** Running training *****
+04/11/2020 14:04:19 - INFO - __main__ -     Num examples = 443259
+04/11/2020 14:04:19 - INFO - __main__ -     Batch size = 32
+04/11/2020 14:04:19 - INFO - __main__ -     Num steps = 13851
+Training loss: 7.73e-02 lr: 0.00e+00: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 13852/13852 [16:55:01<00:00,  4.40s/it]
+Epoch: 100%|████████████████████████████████████
+
+
+
+spr20_cf_gen/TDRG/data/yelp/bert_classifier$ ls -la   
+     313 Apr 12 06:59 bert_config.json
+    418M Apr 12 06:59 pytorch_model.bin
+
+# now evaluate BERT model that was trained
+# first had to make eval_bert.py script ( based on run_classifier.py ) 
+
+CUDA_VISIBLE_DEVICES=1 python eval_bert.py --data_dir=./data/yelp/bert_classifier_training/ --bert_model=bert-base-uncased --task_name=yelp --output_dir=./data/yelp/bert_classifier/ --max_seq_length=70 --do_eval --do_lower_case --train_batch_size=32 --num_train_epochs=1
+
+Evaluating: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 500/500 [03:28<00:00,  2.40it/s]
+04/12/2020 17:25:56 - INFO - __main__ -   ***** Eval results *****
+04/12/2020 17:25:56 - INFO - __main__ -     eval_accuracy = 0.5
+04/12/2020 17:25:56 - INFO - __main__ -     eval_loss = 0.8162582101821899
+04/12/2020 17:25:56 - INFO - __main__ -     global_step = 0
+04/12/2020 17:25:56 - INFO - __main__ -     loss = None
+
+
+
+SO I NEED TO RUN THE THING FOR MORE THAN AN EPOCH ... 
+
+
+CUDA_VISIBLE_DEVICES=1 python run_classifier.py --data_dir=./data/yelp/bert_classifier_training/ --bert_model=bert-base-uncased --task_name=yelp --output_dir=./data/yelp/bert_classifier_1000epochs/ --max_seq_length=70 --do_train --do_eval --do_lower_case --train_batch_size=32 --num_train_epochs=1000
+
+
+
+#After 20 hours its midway through EPOCH 2 !!  its using CPU... <-- fuck, its probably because Torch / NVIDIA mismatch... 
+
+
+# SEE ~/notes_for_updating_CUDA_and_NVIDIA
+
+#PRIOR VERSION
+# Current NVIDIA driver
+nvidia-smi
+# NVIDIA-SMI 384.145                Driver Version: 384.145 
+
+# Current cuda version ( https://arnon.dk/check-cuda-installed/ ) 
+nvcc --version    #Cuda compilation tools, release 9.0, V9.0.176
+
+# according to https://pytorch.org/get-started/previous-versions/   AND https://pytorch.org/get-started/locally/
+# For PyTorch 1.4.0  you need CUDA version 9.2 or 10.1   where as currently we have 9.0   !
+
+
+# AFTER UPDATING
+NVIDIA-SMI 440.64.00    Driver Version: 440.64.00    CUDA Version: 10.2
+Cuda compilation tools, release 10.2, V10.2.89
+
+
+CUDA_VISIBLE_DEVICES=1 python run_classifier.py --data_dir=./data/yelp/bert_classifier_training/ --bert_model=bert-base-uncased --task_name=yelp --output_dir=./data/yelp/bert_classifier_100epochs/ --max_seq_length=70 --do_train --do_eval --do_lower_case --train_batch_size=32 --num_train_epochs=100
+
+#FROM PAPER, We ran this with a single K80 Tesla GPU with 12 GB GPU Memory (AWS p2.xlarge instance)
+
+
+# Try with 3 evals cause 100 epochs would take days
+
+CUDA_VISIBLE_DEVICES=2 python run_classifier.py --data_dir=./data/yelp/bert_classifier_training/ --bert_model=bert-base-uncased --task_name=yelp --output_dir=./data/yelp/bert_classifier_3epochs/ --max_seq_length=70 --do_train --do_eval --do_lower_case --train_batch_size=32 --num_train_epochs=3
+
+
+
+#do eval on 3 epochs   ( data_dir is to get testing data .. and model to use is found in output_dir )
+python eval_bert.py --data_dir=./data/yelp/bert_classifier_training/ --bert_model=bert-base-uncased --task_name=yelp --output_dir=./data/yelp/bert_classifier_3epochs/ --max_seq_length=70 --do_eval --do_lower_case --train_batch_size=32
+
+#on 3 epochs we got bad results ( ?? maybe it was a function of using the eval_bert script)
+    eval_accuracy = 0.5
+    eval_loss = 0.816258221745491
+    global_step = 0
+    loss = None
+
+#on two epochs (apr14)
+    eval_accuracy = 0.982, eval_loss = 0.049413899958133695
+    global_step = 27704, loss = 0.03469694435766971
+
+
+# Regardless Now use 2-epoch VERSION ( IMPORTANT )

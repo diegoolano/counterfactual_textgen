@@ -1,0 +1,1699 @@
+With Baseline: 0  V type <class 'reinforce.Baseline'>
+Long, boring, blasphemous. Never have I been so glad to see ending credits roll.
+['long', 'boring', 'blasphemous', 'never', 'glad', 'see', 'ending', 'credits', 'roll']
+After reset: ['long', 'Long, boring, blasphemous. Never have I been so glad to see ending credits roll.', 'ADJ', array([ 0.34884524, -0.73088783,  2.0266583 , ...,  0.        ,
+        0.        ,  0.        ])]
+Episode 0 Step 0 Action SUBWORD Reward [28.59136299] -- (prior -> new) --- ['long', 'ADJ']  -->  ['dull', 'ADJ']
+Episode 0 Step 1 Action NO CHANGE Reward 0 -- (prior -> new) --- ['boring', 'ADJ']  -->  ['boring', 'ADJ']
+Episode 0 Step 2 Action SUBWORD Reward [15.94588314] -- (prior -> new) --- ['blasphemous', 'ADJ']  -->  ['stupid', 'ADJ']
+Episode 0 Step 3 Action SUBWORD Reward [3.70777181] -- (prior -> new) --- ['never', 'ADV']  -->  ['why', 'ADV']
+Episode 0 Step 4 Action SUBWORD Reward [5.0885691] -- (prior -> new) --- ['glad', 'ADJ']  -->  ['excited', 'ADJ']
+Episode 0 Step 5 Action SUBWORD Reward [5.06805844] -- (prior -> new) --- ['see', 'VERB']  -->  ['watch', 'VERB']
+INFO:absl:Using /tmp/tfhub_modules to cache modules.
+WARNING:tensorflow:From /home/diego/rl_proj_cf/rl_cf_proj37/lib/python3.7/site-packages/bert/tokenization.py:125: The name tf.gfile.GFile is deprecated. Please use tf.io.gfile.GFile instead.
+
+WARNING:tensorflow:From /home/diego/rl_proj_cf/rl_cf_proj37/lib/python3.7/site-packages/bert/tokenization.py:125: The name tf.gfile.GFile is deprecated. Please use tf.io.gfile.GFile instead.
+
+WARNING:tensorflow:From /home/diego/rl_proj_cf/rl_cf_proj37/lib/python3.7/site-packages/tensorflow_core/contrib/predictor/saved_model_predictor.py:153: load (from tensorflow.python.saved_model.loader_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This function will only be available through the v1 compatibility library as tf.compat.v1.saved_model.loader.load or tf.compat.v1.saved_model.load. There will be a new function for importing SavedModels in Tensorflow 2.0.
+WARNING:tensorflow:From /home/diego/rl_proj_cf/rl_cf_proj37/lib/python3.7/site-packages/tensorflow_core/contrib/predictor/saved_model_predictor.py:153: load (from tensorflow.python.saved_model.loader_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This function will only be available through the v1 compatibility library as tf.compat.v1.saved_model.loader.load or tf.compat.v1.saved_model.load. There will be a new function for importing SavedModels in Tensorflow 2.0.
+WARNING:tensorflow:From /home/diego/rl_proj_cf/rl_cf_proj37/lib/python3.7/site-packages/bert/run_classifier.py:774: The name tf.logging.info is deprecated. Please use tf.compat.v1.logging.info instead.
+
+WARNING:tensorflow:From /home/diego/rl_proj_cf/rl_cf_proj37/lib/python3.7/site-packages/bert/run_classifier.py:774: The name tf.logging.info is deprecated. Please use tf.compat.v1.logging.info instead.
+
+RUNNING PREDICTION ON dull, boring, stupid. why have i been so excited to watch the credits roll. DIST: [0.16341288] ['Negative'] [array([-0.00684133, -4.9881887 ], dtype=float32)] [[0.993182 0.006818]]
+Episode 0 Step 6 Action SUBWORD Reward [4.11946883] -- (prior -> new) --- ['ending', 'VERB']  -->  ['the', {'text': 'the', 'start_pos': 0, 'end_pos': 3, 'type': 'DET', 'confidence': 0.9999111890792847}]
+Episode 0 Step 7 Action NO CHANGE Reward 0 -- (prior -> new) --- ['credits', 'NOUN']  -->  ['credits', 'NOUN']
+RUNNING PREDICTION ON dull, boring, stupid. why have i been so excited to watch the credits dance. DIST: [0.20822718] ['Negative'] [array([-3.9141960e-03, -5.5450883e+00], dtype=float32)] [[0.99609345 0.0039066 ]]
+Episode 0 Step 8 Action SUBWORD Reward [2.80244694] -- (prior -> new) --- ['roll', 'NOUN']  -->  ['dance', 'NOUN']
+Episode 0 Step 9 Action NO CHANGE Reward 0 -- (prior -> new) --- ['dull', 'ADJ']  -->  ['dull', 'ADJ']
+Episode 0 Step 10 Action NO CHANGE Reward 0 -- (prior -> new) --- ['boring', 'ADJ']  -->  ['boring', 'ADJ']
+Episode 0 Step 11 Action NO CHANGE Reward 0 -- (prior -> new) --- ['stupid', 'ADJ']  -->  ['stupid', 'ADJ']
+RUNNING PREDICTION ON dull, boring, stupid. why have i been so afraid to watch the credits dance. DIST: [0.23365661] ['Negative'] [array([-3.8023333e-03, -5.5740557e+00], dtype=float32)] [[0.9962049  0.00379506]]
+Episode 0 Step 12 Action SUBWORD Reward [2.27978482] -- (prior -> new) --- ['excited', 'ADJ']  -->  ['afraid', 'ADJ']
+RUNNING PREDICTION ON dull, boring, stupid. why have i been so afraid to make the credits dance. DIST: [0.23889003] ['Negative'] [array([-2.7650478e-03, -5.8920798e+00], dtype=float32)] [[0.99723876 0.00276123]]
+Episode 0 Step 13 Action SUBWORD Reward [2.18602655] -- (prior -> new) --- ['watch', 'VERB']  -->  ['make', 'VERB']
+Episode 0 Step 14 Action NO CHANGE Reward 0 -- (prior -> new) --- ['credits', 'NOUN']  -->  ['credits', 'NOUN']
+RUNNING PREDICTION ON dull, boring, stupid. why have i been so afraid to make the credits count. DIST: [0.2325326] ['Negative'] [array([-2.8200878e-03, -5.8723917e+00], dtype=float32)] [[0.99718386 0.00281613]]
+Episode 0 Step 15 Action SUBWORD Reward [2.3004722] -- (prior -> new) --- ['dance', 'NOUN']  -->  ['count', 'NOUN']
+RUNNING PREDICTION ON weird, boring, stupid. why have i been so afraid to make the credits count. DIST: [0.25588908] ['Negative'] [array([-3.8587411e-03, -5.5593386e+00], dtype=float32)] [[0.9961487  0.00385132]]
+Episode 0 Step 16 Action SUBWORD Reward [1.90794319] -- (prior -> new) --- ['dull', 'ADJ']  -->  ['weird', 'ADJ']
+RUNNING PREDICTION ON weird, crazy, stupid. why have i been so afraid to make the credits count. DIST: [0.31600509] ['Negative'] [array([-0.00913157, -4.7005787 ], dtype=float32)] [[0.99091    0.00909002]]
+Episode 0 Step 17 Action SUBWORD Reward [1.16450598] -- (prior -> new) --- ['boring', 'ADJ']  -->  ['crazy', 'ADJ']
+RUNNING PREDICTION ON weird, crazy, strange. why have i been so afraid to make the credits count. DIST: [0.3399185] ['Negative'] [array([-0.02211656, -3.8224673 ], dtype=float32)] [[0.9781262  0.02187376]]
+Episode 0 Step 18 Action SUBWORD Reward [0.94188169] -- (prior -> new) --- ['stupid', 'ADJ']  -->  ['strange', 'ADJ']
+RUNNING PREDICTION ON weird, crazy, strange. why have i been so eager to make the credits count. DIST: [0.41869843] ['Negative'] [array([-0.01560735, -4.1678057 ], dtype=float32)] [[0.9845138 0.0154862]]
+Episode 0 Step 19 Action SUBWORD Reward [0.38835385] -- (prior -> new) --- ['afraid', 'ADJ']  -->  ['eager', 'ADJ']
+RUNNING PREDICTION ON weird, crazy, strange. why have i been so eager to let the credits count. DIST: [0.38587649] ['Negative'] [array([-0.01659342, -4.1070337 ], dtype=float32)] [[0.9835435  0.01645652]]
+Episode 0 Step 20 Action SUBWORD Reward [0.59150278] -- (prior -> new) --- ['make', 'VERB']  -->  ['let', 'VERB']
+Episode 0 Step 21 Action NO CHANGE Reward 0 -- (prior -> new) --- ['credits', 'NOUN']  -->  ['credits', 'NOUN']
+Episode 0 Step 22 Action NO CHANGE Reward 0 -- (prior -> new) --- ['count', 'NOUN']  -->  ['count', 'NOUN']
+Episode 0 Step 23 Action NO CHANGE Reward 0 -- (prior -> new) --- ['weird', 'ADJ']  -->  ['weird', 'ADJ']
+Episode 0 Step 24 Action NO CHANGE Reward 0 -- (prior -> new) --- ['crazy', 'ADJ']  -->  ['crazy', 'ADJ']
+RUNNING PREDICTION ON weird, crazy, insane. why have i been so eager to let the credits count. DIST: [0.37372031] ['Negative'] [array([-0.00714793, -4.944499  ], dtype=float32)] [[0.99287754 0.00712248]]
+Episode 0 Step 25 Action SUBWORD Reward [0.67579788] -- (prior -> new) --- ['strange', 'ADJ']  -->  ['insane', 'ADJ']
+RUNNING PREDICTION ON weird, crazy, insane. why have i been so willing to let the credits count. DIST: [0.41789792] ['Negative'] [array([-0.01008439, -4.60181   ], dtype=float32)] [[0.9899663  0.01003366]]
+Episode 0 Step 26 Action SUBWORD Reward [0.39292885] -- (prior -> new) --- ['eager', 'ADJ']  -->  ['willing', 'ADJ']
+RUNNING PREDICTION ON weird, crazy, insane. why have i been so willing to have the credits count. DIST: [0.45164663] ['Negative'] [array([-0.00962994, -4.647686  ], dtype=float32)] [[0.9904163  0.00958375]]
+Episode 0 Step 27 Action SUBWORD Reward [0.21412038] -- (prior -> new) --- ['let', 'VERB']  -->  ['have', 'VERB']
+Episode 0 Step 28 Action NO CHANGE Reward 0 -- (prior -> new) --- ['credits', 'NOUN']  -->  ['credits', 'NOUN']
+Episode 0 Step 29 Action NO CHANGE Reward 0 -- (prior -> new) --- ['count', 'NOUN']  -->  ['count', 'NOUN']
+Episode 0 Step 30 Action NO CHANGE Reward 0 -- (prior -> new) --- ['weird', 'ADJ']  -->  ['weird', 'ADJ']
+RUNNING PREDICTION ON weird, bizarre, insane. why have i been so willing to have the credits count. DIST: [0.43907407] ['Negative'] [array([-0.01081769, -4.531978  ], dtype=float32)] [[0.9892406  0.01075937]]
+Episode 0 Step 31 Action SUBWORD Reward [0.27752003] -- (prior -> new) --- ['crazy', 'ADJ']  -->  ['bizarre', 'ADJ']
+RUNNING PREDICTION ON weird, bizarre, odd. why have i been so willing to have the credits count. DIST: [0.45834194] ['Negative'] [array([-0.01603024, -4.1412816 ], dtype=float32)] [[0.98409754 0.01590246]]
+Episode 0 Step 32 Action SUBWORD Reward [0.18177722] -- (prior -> new) --- ['insane', 'ADJ']  -->  ['odd', 'ADJ']
+RUNNING PREDICTION ON weird, bizarre, odd. why have i been so relieved to have the credits count. DIST: [0.37942821] ['Positive'] [array([-2.897995  , -0.05671174], dtype=float32)] [[0.05513365 0.9448664 ]]
+DONE FOUND CF!! with dist [0.37942821]
+Episode 0 Step 33 Action SUBWORD Reward [96.2057179] -- (prior -> new) --- ['willing', 'ADJ']  -->  ['relieved', 'ADJ']
+DONE AT Step 33 @ Episode 1/5 (0.0)
+Episode collection for ep0=(84.40892291069031)
+************************
+Now look at episode:
+Starting at Input sentence: Long, boring, blasphemous. Never have I been so glad to see ending credits roll.
+0 In State long ( ADJ ) took Action SUBWORD got Reward [28.59136299]
+------ (prior -> new) --- ['long', 'ADJ']  -->  ['dull', 'ADJ']
+--was-- Long, boring, blasphemous. Never have I been so glad to see ending credits roll.
+--now-- dull, boring, blasphemous. never have i been so glad to see ending credits roll.
+
+1 In State boring ( ADJ ) took Action NO CHANGE got Reward 0
+
+2 In State blasphemous ( ADJ ) took Action SUBWORD got Reward [15.94588314]
+------ (prior -> new) --- ['blasphemous', 'ADJ']  -->  ['stupid', 'ADJ']
+--was-- dull, boring, blasphemous. never have i been so glad to see ending credits roll.
+--now-- dull, boring, stupid. never have i been so glad to see ending credits roll.
+
+3 In State never ( ADV ) took Action SUBWORD got Reward [3.70777181]
+------ (prior -> new) --- ['never', 'ADV']  -->  ['why', 'ADV']
+--was-- dull, boring, stupid. never have i been so glad to see ending credits roll.
+--now-- dull, boring, stupid. why have i been so glad to see ending credits roll.
+
+4 In State glad ( ADJ ) took Action SUBWORD got Reward [5.0885691]
+------ (prior -> new) --- ['glad', 'ADJ']  -->  ['excited', 'ADJ']
+--was-- dull, boring, stupid. why have i been so glad to see ending credits roll.
+--now-- dull, boring, stupid. why have i been so excited to see ending credits roll.
+
+5 In State see ( VERB ) took Action SUBWORD got Reward [5.06805844]
+------ (prior -> new) --- ['see', 'VERB']  -->  ['watch', 'VERB']
+--was-- dull, boring, stupid. why have i been so excited to see ending credits roll.
+--now-- dull, boring, stupid. why have i been so excited to watch ending credits roll.
+
+6 In State ending ( VERB ) took Action SUBWORD got Reward [4.11946883]
+------ (prior -> new) --- ['ending', 'VERB']  -->  ['the', {'text': 'the', 'start_pos': 0, 'end_pos': 3, 'type': 'DET', 'confidence': 0.9999111890792847}]
+--was-- dull, boring, stupid. why have i been so excited to watch ending credits roll.
+--now-- dull, boring, stupid. why have i been so excited to watch the credits roll.
+
+7 In State credits ( NOUN ) took Action NO CHANGE got Reward 0
+
+8 In State roll ( NOUN ) took Action SUBWORD got Reward [2.80244694]
+------ (prior -> new) --- ['roll', 'NOUN']  -->  ['dance', 'NOUN']
+--was-- dull, boring, stupid. why have i been so excited to watch the credits roll.
+--now-- dull, boring, stupid. why have i been so excited to watch the credits dance.
+
+9 In State dull ( ADJ ) took Action NO CHANGE got Reward 0
+
+10 In State boring ( ADJ ) took Action NO CHANGE got Reward 0
+
+11 In State stupid ( ADJ ) took Action NO CHANGE got Reward 0
+
+12 In State excited ( ADJ ) took Action SUBWORD got Reward [2.27978482]
+------ (prior -> new) --- ['excited', 'ADJ']  -->  ['afraid', 'ADJ']
+--was-- dull, boring, stupid. why have i been so excited to watch the credits dance.
+--now-- dull, boring, stupid. why have i been so afraid to watch the credits dance.
+
+13 In State watch ( VERB ) took Action SUBWORD got Reward [2.18602655]
+------ (prior -> new) --- ['watch', 'VERB']  -->  ['make', 'VERB']
+--was-- dull, boring, stupid. why have i been so afraid to watch the credits dance.
+--now-- dull, boring, stupid. why have i been so afraid to make the credits dance.
+
+14 In State credits ( NOUN ) took Action NO CHANGE got Reward 0
+
+15 In State dance ( NOUN ) took Action SUBWORD got Reward [2.3004722]
+------ (prior -> new) --- ['dance', 'NOUN']  -->  ['count', 'NOUN']
+--was-- dull, boring, stupid. why have i been so afraid to make the credits dance.
+--now-- dull, boring, stupid. why have i been so afraid to make the credits count.
+
+16 In State dull ( ADJ ) took Action SUBWORD got Reward [1.90794319]
+------ (prior -> new) --- ['dull', 'ADJ']  -->  ['weird', 'ADJ']
+--was-- dull, boring, stupid. why have i been so afraid to make the credits count.
+--now-- weird, boring, stupid. why have i been so afraid to make the credits count.
+
+17 In State boring ( ADJ ) took Action SUBWORD got Reward [1.16450598]
+------ (prior -> new) --- ['boring', 'ADJ']  -->  ['crazy', 'ADJ']
+--was-- weird, boring, stupid. why have i been so afraid to make the credits count.
+--now-- weird, crazy, stupid. why have i been so afraid to make the credits count.
+
+18 In State stupid ( ADJ ) took Action SUBWORD got Reward [0.94188169]
+------ (prior -> new) --- ['stupid', 'ADJ']  -->  ['strange', 'ADJ']
+--was-- weird, crazy, stupid. why have i been so afraid to make the credits count.
+--now-- weird, crazy, strange. why have i been so afraid to make the credits count.
+
+19 In State afraid ( ADJ ) took Action SUBWORD got Reward [0.38835385]
+------ (prior -> new) --- ['afraid', 'ADJ']  -->  ['eager', 'ADJ']
+--was-- weird, crazy, strange. why have i been so afraid to make the credits count.
+--now-- weird, crazy, strange. why have i been so eager to make the credits count.
+
+20 In State make ( VERB ) took Action SUBWORD got Reward [0.59150278]
+------ (prior -> new) --- ['make', 'VERB']  -->  ['let', 'VERB']
+--was-- weird, crazy, strange. why have i been so eager to make the credits count.
+--now-- weird, crazy, strange. why have i been so eager to let the credits count.
+
+21 In State credits ( NOUN ) took Action NO CHANGE got Reward 0
+
+22 In State count ( NOUN ) took Action NO CHANGE got Reward 0
+
+23 In State weird ( ADJ ) took Action NO CHANGE got Reward 0
+
+24 In State crazy ( ADJ ) took Action NO CHANGE got Reward 0
+
+25 In State strange ( ADJ ) took Action SUBWORD got Reward [0.67579788]
+------ (prior -> new) --- ['strange', 'ADJ']  -->  ['insane', 'ADJ']
+--was-- weird, crazy, strange. why have i been so eager to let the credits count.
+--now-- weird, crazy, insane. why have i been so eager to let the credits count.
+
+26 In State eager ( ADJ ) took Action SUBWORD got Reward [0.39292885]
+------ (prior -> new) --- ['eager', 'ADJ']  -->  ['willing', 'ADJ']
+--was-- weird, crazy, insane. why have i been so eager to let the credits count.
+--now-- weird, crazy, insane. why have i been so willing to let the credits count.
+
+27 In State let ( VERB ) took Action SUBWORD got Reward [0.21412038]
+------ (prior -> new) --- ['let', 'VERB']  -->  ['have', 'VERB']
+--was-- weird, crazy, insane. why have i been so willing to let the credits count.
+--now-- weird, crazy, insane. why have i been so willing to have the credits count.
+
+28 In State credits ( NOUN ) took Action NO CHANGE got Reward 0
+
+29 In State count ( NOUN ) took Action NO CHANGE got Reward 0
+
+30 In State weird ( ADJ ) took Action NO CHANGE got Reward 0
+
+31 In State crazy ( ADJ ) took Action SUBWORD got Reward [0.27752003]
+------ (prior -> new) --- ['crazy', 'ADJ']  -->  ['bizarre', 'ADJ']
+--was-- weird, crazy, insane. why have i been so willing to have the credits count.
+--now-- weird, bizarre, insane. why have i been so willing to have the credits count.
+
+32 In State insane ( ADJ ) took Action SUBWORD got Reward [0.18177722]
+------ (prior -> new) --- ['insane', 'ADJ']  -->  ['odd', 'ADJ']
+--was-- weird, bizarre, insane. why have i been so willing to have the credits count.
+--now-- weird, bizarre, odd. why have i been so willing to have the credits count.
+
+33 In State willing ( ADJ ) took Action SUBWORD got Reward [96.2057179]
+------ (prior -> new) --- ['willing', 'ADJ']  -->  ['relieved', 'ADJ']
+--was-- weird, bizarre, odd. why have i been so willing to have the credits count.
+--now-- weird, bizarre, odd. why have i been so relieved to have the credits count.
+
+##############
+Original Sentence: Long, boring, blasphemous. Never have I been so glad to see ending credits roll.
+Current Sentence: weird, bizarre, odd. why have i been so relieved to have the credits count.
+Current Word and Index credits 15
+Current Distance from Original: [0.37942821]
+Current Iteration through sentence:  4
+Total num edits: 21
+Unique words edited: 8
+##############
+in without baseline with STATE long Long, boring, blasphemous. Never have I been so gl ADJ ACTION: 0 G [175.03189459]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [175.03189459] gives loss [93.12466]
+in without baseline with STATE boring dull, boring, blasphemous. never have i been so gl ADJ ACTION: 1 G [146.4405316]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [146.4405316] gives loss [150.33873]
+in without baseline with STATE blasphemous dull, boring, blasphemous. never have i been so gl ADJ ACTION: 0 G [146.4405316]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [146.4405316] gives loss [76.315895]
+in without baseline with STATE never dull, boring, stupid. never have i been so glad to ADV ACTION: 0 G [130.49464846]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [130.49464846] gives loss [54.693485]
+in without baseline with STATE glad dull, boring, stupid. why have i been so glad to s ADJ ACTION: 0 G [126.78687665]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [126.78687665] gives loss [62.681583]
+in without baseline with STATE see dull, boring, stupid. why have i been so excited t VERB ACTION: 0 G [121.69830755]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [121.69830755] gives loss [44.04175]
+in without baseline with STATE ending dull, boring, stupid. why have i been so excited t VERB ACTION: 0 G [116.63024911]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [116.63024911] gives loss [33.997913]
+in without baseline with STATE credits dull, boring, stupid. why have i been so excited t NOUN ACTION: 1 G [112.51078028]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [112.51078028] gives loss [119.13191]
+in without baseline with STATE roll dull, boring, stupid. why have i been so excited t NOUN ACTION: 0 G [112.51078028]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [112.51078028] gives loss [27.597689]
+in without baseline with STATE dull dull, boring, stupid. why have i been so excited t ADJ ACTION: 1 G [109.70833334]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [109.70833334] gives loss [148.15758]
+in without baseline with STATE boring dull, boring, stupid. why have i been so excited t ADJ ACTION: 1 G [109.70833334]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [109.70833334] gives loss [143.38351]
+in without baseline with STATE stupid dull, boring, stupid. why have i been so excited t ADJ ACTION: 1 G [109.70833334]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [109.70833334] gives loss [146.60593]
+in without baseline with STATE excited dull, boring, stupid. why have i been so excited t ADJ ACTION: 0 G [109.70833334]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [109.70833334] gives loss [45.041504]
+in without baseline with STATE watch dull, boring, stupid. why have i been so afraid to VERB ACTION: 0 G [107.42854852]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [107.42854852] gives loss [41.519497]
+in without baseline with STATE credits dull, boring, stupid. why have i been so afraid to NOUN ACTION: 1 G [105.24252196]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [105.24252196] gives loss [81.60873]
+in without baseline with STATE dance dull, boring, stupid. why have i been so afraid to NOUN ACTION: 0 G [105.24252196]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [105.24252196] gives loss [40.19416]
+in without baseline with STATE dull dull, boring, stupid. why have i been so afraid to ADJ ACTION: 0 G [102.94204976]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [102.94204976] gives loss [71.77732]
+in without baseline with STATE boring weird, boring, stupid. why have i been so afraid t ADJ ACTION: 0 G [101.03410657]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [101.03410657] gives loss [74.81848]
+in without baseline with STATE stupid weird, crazy, stupid. why have i been so afraid to ADJ ACTION: 0 G [99.86960059]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [99.86960059] gives loss [58.66154]
+in without baseline with STATE afraid weird, crazy, strange. why have i been so afraid t ADJ ACTION: 0 G [98.9277189]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [98.9277189] gives loss [41.874763]
+in without baseline with STATE make weird, crazy, strange. why have i been so eager to VERB ACTION: 0 G [98.53936505]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [98.53936505] gives loss [38.8526]
+in without baseline with STATE credits weird, crazy, strange. why have i been so eager to NOUN ACTION: 1 G [97.94786227]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [97.94786227] gives loss [65.45439]
+in without baseline with STATE count weird, crazy, strange. why have i been so eager to NOUN ACTION: 1 G [97.94786227]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [97.94786227] gives loss [134.31218]
+in without baseline with STATE weird weird, crazy, strange. why have i been so eager to ADJ ACTION: 1 G [97.94786227]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [97.94786227] gives loss [102.50085]
+in without baseline with STATE crazy weird, crazy, strange. why have i been so eager to ADJ ACTION: 1 G [97.94786227]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [97.94786227] gives loss [102.396835]
+in without baseline with STATE strange weird, crazy, strange. why have i been so eager to ADJ ACTION: 0 G [97.94786227]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [97.94786227] gives loss [41.304672]
+in without baseline with STATE eager weird, crazy, insane. why have i been so eager to  ADJ ACTION: 0 G [97.27206439]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [97.27206439] gives loss [42.150913]
+in without baseline with STATE let weird, crazy, insane. why have i been so willing t VERB ACTION: 0 G [96.87913554]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [96.87913554] gives loss [43.36509]
+in without baseline with STATE credits weird, crazy, insane. why have i been so willing t NOUN ACTION: 1 G [96.66501516]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [96.66501516] gives loss [55.965794]
+in without baseline with STATE count weird, crazy, insane. why have i been so willing t NOUN ACTION: 1 G [96.66501516]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [96.66501516] gives loss [85.24045]
+in without baseline with STATE weird weird, crazy, insane. why have i been so willing t ADJ ACTION: 1 G [96.66501516]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [96.66501516] gives loss [86.53906]
+in without baseline with STATE crazy weird, crazy, insane. why have i been so willing t ADJ ACTION: 0 G [96.66501516]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [96.66501516] gives loss [49.042027]
+in without baseline with STATE insane weird, bizarre, insane. why have i been so willing ADJ ACTION: 0 G [96.38749512]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [96.38749512] gives loss [53.034153]
+in without baseline with STATE willing weird, bizarre, odd. why have i been so willing to ADJ ACTION: 0 G [96.2057179]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [96.2057179] gives loss [40.57561]
+--- Episode time for ep0=(84.48149561882019)
+If you haven't seen this, it's terrible. It is pure trash. I saw this about 17 years ago, and I'm still screwed up from it.
+['haven', 'seen', 'terrible', 'pure', 'trash', 'saw', '17', 'years', 'ago', 'm', 'still', 'screwed']
+After reset: ['haven', "If you haven't seen this, it's terrible. It is pure trash. I saw this about 17 years ago, and I'm still screwed up from it.", 'VERB', array([-0.12740439, -0.48730239,  1.62661827, ...,  0.        ,
+        0.        ,  0.        ])]
+Episode 1 Step 0 Action NO CHANGE Reward 0 -- (prior -> new) --- ['haven', 'VERB']  -->  ['haven', 'VERB']
+Episode 1 Step 1 Action SUBWORD Reward [111.01666199] -- (prior -> new) --- ['seen', 'VERB']  -->  ['read', 'VERB']
+Episode 1 Step 2 Action SUBWORD Reward [38.36342323] -- (prior -> new) --- ['terrible', 'ADJ']  -->  ['wrong', 'ADJ']
+Episode 1 Step 3 Action SUBWORD Reward [22.78324304] -- (prior -> new) --- ['pure', 'ADJ']  -->  ['useless', 'ADJ']
+Episode 1 Step 4 Action NO CHANGE Reward 0 -- (prior -> new) --- ['trash', 'NOUN']  -->  ['trash', 'NOUN']
+Episode 1 Step 5 Action SUBWORD Reward [12.50919223] -- (prior -> new) --- ['saw', 'VERB']  -->  ['wrote', 'VERB']
+Episode 1 Step 6 Action SUBWORD Reward [5.74377705] -- (prior -> new) --- ['17', 'NUM']  -->  ['five', 'NUM']
+RUNNING PREDICTION ON if you haven't read this, it's wrong. it is useless trash. i wrote this about five minutes ago, and i'm still screwed up from it. DIST: [0.15951314] ['Negative'] [array([-3.4663135e-03, -5.6663995e+00], dtype=float32)] [[0.9965397 0.0034603]]
+Episode 1 Step 7 Action SUBWORD Reward [4.26907603] -- (prior -> new) --- ['years', 'NOUN']  -->  ['minutes', 'NOUN']
+RUNNING PREDICTION ON if you haven't read this, it's wrong. it is useless trash. i wrote this about five minutes now, and i'm still screwed up from it. DIST: [0.18025764] ['Negative'] [array([-4.0136981e-03, -5.5200458e+00], dtype=float32)] [[0.9959943  0.00400566]]
+Episode 1 Step 8 Action SUBWORD Reward [3.54761508] -- (prior -> new) --- ['ago', 'ADV']  -->  ['now', 'ADV']
+RUNNING PREDICTION ON if you haven't read this, it's wrong. it is useless trash. i wrote this about five minutes now, and i've still screwed up from it. DIST: [0.1806023] ['Negative'] [array([-2.3418639e-03, -6.0579734e+00], dtype=float32)] [[0.9976609  0.00233914]]
+Episode 1 Step 9 Action SUBWORD Reward [3.53702813] -- (prior -> new) --- ['m', 'INTJ']  -->  ['ve', {'text': 've', 'start_pos': 0, 'end_pos': 2, 'type': 'X', 'confidence': 0.9175775051116943}]
+Episode 1 Step 10 Action NO CHANGE Reward 0 -- (prior -> new) --- ['still', 'ADV']  -->  ['still', 'ADV']
+RUNNING PREDICTION ON if you haven't read this, it's wrong. it is useless trash. i wrote this about five minutes now, and i've still gotten up from it. DIST: [0.3141508] ['Negative'] [array([-0.01010705, -4.5995665 ], dtype=float32)] [[0.98994386 0.01005619]]
+Episode 1 Step 11 Action SUBWORD Reward [1.18318461] -- (prior -> new) --- ['screwed', 'VERB']  -->  ['gotten', 'VERB']
+RUNNING PREDICTION ON if you didn't read this, it's wrong. it is useless trash. i wrote this about five minutes now, and i've still gotten up from it. DIST: [0.31004728] ['Negative'] [array([-0.00976134, -4.6342044 ], dtype=float32)] [[0.9902862  0.00971383]]
+Episode 1 Step 12 Action SUBWORD Reward [1.22531458] -- (prior -> new) --- ['haven', 'VERB']  -->  ['didn', 'VERB']
+RUNNING PREDICTION ON if you didn't write this, it's wrong. it is useless trash. i wrote this about five minutes now, and i've still gotten up from it. DIST: [0.30258752] ['Negative'] [array([-0.01651299, -4.1118536 ], dtype=float32)] [[0.9836226  0.01637739]]
+Episode 1 Step 13 Action SUBWORD Reward [1.30482902] -- (prior -> new) --- ['read', 'VERB']  -->  ['write', 'VERB']
+WARNING.  changed current_word: wrong  to  useless  which is on the priorly used list.. this should be late restort
+RUNNING PREDICTION ON if you didn't write this, it's useless. it is useless trash. i wrote this about five minutes now, and i've still gotten up from it. DIST: [0.34380571] ['Negative'] [array([-0.01942691, -3.9507942 ], dtype=float32)] [[0.9807606  0.01923941]]
+Episode 1 Step 14 Action SUBWORD Reward [0.90861949] -- (prior -> new) --- ['wrong', 'ADJ']  -->  ['useless', {'text': 'useless', 'start_pos': 0, 'end_pos': 7, 'type': 'ADJ', 'confidence': 0.6542739868164062}]
+Episode 1 Step 15 Action NO CHANGE Reward 0 -- (prior -> new) --- ['useless', 'ADJ']  -->  ['useless', 'ADJ']
+Episode 1 Step 16 Action NO CHANGE Reward 0 -- (prior -> new) --- ['trash', 'NOUN']  -->  ['trash', 'NOUN']
+RUNNING PREDICTION ON if you didn't write this, it's useless. it is useless trash. i have this about five minutes now, and i've still gotten up from it. DIST: [0.35018915] ['Negative'] [array([-0.04720486, -3.0767677 ], dtype=float32)] [[0.953892   0.04610805]]
+Episode 1 Step 17 Action SUBWORD Reward [0.85559961] -- (prior -> new) --- ['wrote', 'VERB']  -->  ['have', 'VERB']
+Episode 1 Step 18 Action NO CHANGE Reward 0 -- (prior -> new) --- ['five', 'NUM']  -->  ['five', 'NUM']
+RUNNING PREDICTION ON if you didn't write this, it's useless. it is useless trash. i have this about five times now, and i've still gotten up from it. DIST: [0.320511] ['Negative'] [array([-0.10750842, -2.283459  ], dtype=float32)] [[0.89806896 0.10193102]]
+Episode 1 Step 19 Action SUBWORD Reward [1.12001774] -- (prior -> new) --- ['minutes', 'NOUN']  -->  ['times', 'NOUN']
+Episode 1 Step 20 Action NO CHANGE Reward 0 -- (prior -> new) --- ['ve', 'INTJ']  -->  ['ve', 'INTJ']
+Episode 1 Step 21 Action NO CHANGE Reward 0 -- (prior -> new) --- ['still', 'ADV']  -->  ['still', 'ADV']
+RUNNING PREDICTION ON if you didn't write this, it's useless. it is useless trash. i have this about five times now, and i've still come up from it. DIST: [0.28764646] ['Negative'] [array([-0.21396248, -1.6470289 ], dtype=float32)] [[0.80737865 0.19262135]]
+Episode 1 Step 22 Action SUBWORD Reward [1.47648988] -- (prior -> new) --- ['gotten', 'VERB']  -->  ['come', 'VERB']
+RUNNING PREDICTION ON if you won't write this, it's useless. it is useless trash. i have this about five times now, and i've still come up from it. DIST: [0.29127026] ['Negative'] [array([-0.16907907, -1.8607376 ], dtype=float32)] [[0.8444421  0.15555786]]
+Episode 1 Step 23 Action SUBWORD Reward [1.4332376] -- (prior -> new) --- ['didn', 'VERB']  -->  ['won', 'VERB']
+Episode 1 Step 24 Action NO CHANGE Reward 0 -- (prior -> new) --- ['write', 'VERB']  -->  ['write', 'VERB']
+Episode 1 Step 25 Action NO CHANGE Reward 0 -- (prior -> new) --- ['useless', 'ADJ']  -->  ['useless', 'ADJ']
+RUNNING PREDICTION ON if you won't write this, it's useless. it is complete trash. i have this about five times now, and i've still come up from it. DIST: [0.25174496] ['Negative'] [array([-0.02785819, -3.5945246 ], dtype=float32)] [[0.97252625 0.02747374]]
+Episode 1 Step 26 Action SUBWORD Reward [1.9722742] -- (prior -> new) --- ['useless', 'ADJ']  -->  ['complete', 'ADJ']
+RUNNING PREDICTION ON if you won't write this, it's useless. it is complete nonsense. i have this about five times now, and i've still come up from it. DIST: [0.28351372] ['Negative'] [array([-0.05013344, -3.0180292 ], dtype=float32)] [[0.9511025  0.04889749]]
+Episode 1 Step 27 Action SUBWORD Reward [1.5271662] -- (prior -> new) --- ['trash', 'NOUN']  -->  ['nonsense', 'NOUN']
+RUNNING PREDICTION ON if you won't write this, it's useless. it is complete nonsense. i have this about ten times now, and i've still come up from it. DIST: [0.3715999] ['Negative'] [array([-0.04957364, -3.0289798 ], dtype=float32)] [[0.95163506 0.04836496]]
+Episode 1 Step 28 Action SUBWORD Reward [0.6910664] -- (prior -> new) --- ['five', 'NUM']  -->  ['ten', 'NUM']
+RUNNING PREDICTION ON if you won't write this, it's useless. it is complete nonsense. i have this about ten miles now, and i've still come up from it. DIST: [0.39468872] ['Negative'] [array([-0.02042079, -3.9013944 ], dtype=float32)] [[0.9797863  0.02021371]]
+Episode 1 Step 29 Action SUBWORD Reward [0.53364222] -- (prior -> new) --- ['times', 'NOUN']  -->  ['miles', 'NOUN']
+RUNNING PREDICTION ON if you won't write this, it's useless. it is complete nonsense. i have this about ten miles now, and i'll still come up from it. DIST: [0.41532145] ['Negative'] [array([-0.02008178, -3.9179664 ], dtype=float32)] [[0.9801185  0.01988149]]
+Episode 1 Step 30 Action SUBWORD Reward [0.40777353] -- (prior -> new) --- ['ve', 'INTJ']  -->  ['ll', {'text': 'll', 'start_pos': 0, 'end_pos': 2, 'type': 'X', 'confidence': 0.6955499053001404}]
+Episode 1 Step 31 Action NO CHANGE Reward 0 -- (prior -> new) --- ['still', 'ADV']  -->  ['still', 'ADV']
+RUNNING PREDICTION ON if you won't write this, it's useless. it is complete nonsense. i have this about ten miles now, and i'll still get up from it. DIST: [0.43342158] ['Negative'] [array([-0.0145759, -4.235665 ], dtype=float32)] [[0.9855298  0.01447019]]
+Episode 1 Step 32 Action SUBWORD Reward [0.30722243] -- (prior -> new) --- ['come', 'VERB']  -->  ['get', 'VERB']
+Episode 1 Step 33 Action NO CHANGE Reward 0 -- (prior -> new) --- ['won', 'VERB']  -->  ['won', 'VERB']
+Episode 1 Step 34 Action NO CHANGE Reward 0 -- (prior -> new) --- ['write', 'VERB']  -->  ['write', 'VERB']
+Episode 1 Step 35 Action NO CHANGE Reward 0 -- (prior -> new) --- ['useless', 'ADJ']  -->  ['useless', 'ADJ']
+RUNNING PREDICTION ON if you won't write this, it's useless. it is endless nonsense. i have this about ten miles now, and i'll still get up from it. DIST: [0.43814981] ['Negative'] [array([-0.01317404, -4.33609   ], dtype=float32)] [[0.98691237 0.0130876 ]]
+Episode 1 Step 36 Action SUBWORD Reward [0.2823244] -- (prior -> new) --- ['complete', 'ADJ']  -->  ['endless', 'ADJ']
+RUNNING PREDICTION ON if you won't write this, it's useless. it is endless possibilities. i have this about ten miles now, and i'll still get up from it. DIST: [0.5538921] ['Positive'] [array([-1.2378026, -0.3425196], dtype=float32)] [[0.2900208 0.7099792]]
+DONE FOUND CF!! with dist [0.5538921]
+Episode 1 Step 37 Action SUBWORD Reward [94.46107905] -- (prior -> new) --- ['nonsense', 'NOUN']  -->  ['possibilities', 'NOUN']
+DONE AT Step 37 @ Episode 2/5 (175.0318945896486)
+Episode collection for ep1=(109.02028918266296)
+************************
+Now look at episode:
+Starting at Input sentence: If you haven't seen this, it's terrible. It is pure trash. I saw this about 17 years ago, and I'm still screwed up from it.
+0 In State haven ( VERB ) took Action NO CHANGE got Reward 0
+
+1 In State seen ( VERB ) took Action SUBWORD got Reward [111.01666199]
+------ (prior -> new) --- ['seen', 'VERB']  -->  ['read', 'VERB']
+--was-- If you haven't seen this, it's terrible. It is pure trash. I saw this about 17 years ago, and I'm still screwed up from it.
+--now-- if you haven't read this, it's terrible. it is pure trash. i saw this about 17 years ago, and i'm still screwed up from it.
+
+2 In State terrible ( ADJ ) took Action SUBWORD got Reward [38.36342323]
+------ (prior -> new) --- ['terrible', 'ADJ']  -->  ['wrong', 'ADJ']
+--was-- if you haven't read this, it's terrible. it is pure trash. i saw this about 17 years ago, and i'm still screwed up from it.
+--now-- if you haven't read this, it's wrong. it is pure trash. i saw this about 17 years ago, and i'm still screwed up from it.
+
+3 In State pure ( ADJ ) took Action SUBWORD got Reward [22.78324304]
+------ (prior -> new) --- ['pure', 'ADJ']  -->  ['useless', 'ADJ']
+--was-- if you haven't read this, it's wrong. it is pure trash. i saw this about 17 years ago, and i'm still screwed up from it.
+--now-- if you haven't read this, it's wrong. it is useless trash. i saw this about 17 years ago, and i'm still screwed up from it.
+
+4 In State trash ( NOUN ) took Action NO CHANGE got Reward 0
+
+5 In State saw ( VERB ) took Action SUBWORD got Reward [12.50919223]
+------ (prior -> new) --- ['saw', 'VERB']  -->  ['wrote', 'VERB']
+--was-- if you haven't read this, it's wrong. it is useless trash. i saw this about 17 years ago, and i'm still screwed up from it.
+--now-- if you haven't read this, it's wrong. it is useless trash. i wrote this about 17 years ago, and i'm still screwed up from it.
+
+6 In State 17 ( NUM ) took Action SUBWORD got Reward [5.74377705]
+------ (prior -> new) --- ['17', 'NUM']  -->  ['five', 'NUM']
+--was-- if you haven't read this, it's wrong. it is useless trash. i wrote this about 17 years ago, and i'm still screwed up from it.
+--now-- if you haven't read this, it's wrong. it is useless trash. i wrote this about five years ago, and i'm still screwed up from it.
+
+7 In State years ( NOUN ) took Action SUBWORD got Reward [4.26907603]
+------ (prior -> new) --- ['years', 'NOUN']  -->  ['minutes', 'NOUN']
+--was-- if you haven't read this, it's wrong. it is useless trash. i wrote this about five years ago, and i'm still screwed up from it.
+--now-- if you haven't read this, it's wrong. it is useless trash. i wrote this about five minutes ago, and i'm still screwed up from it.
+
+8 In State ago ( ADV ) took Action SUBWORD got Reward [3.54761508]
+------ (prior -> new) --- ['ago', 'ADV']  -->  ['now', 'ADV']
+--was-- if you haven't read this, it's wrong. it is useless trash. i wrote this about five minutes ago, and i'm still screwed up from it.
+--now-- if you haven't read this, it's wrong. it is useless trash. i wrote this about five minutes now, and i'm still screwed up from it.
+
+9 In State m ( INTJ ) took Action SUBWORD got Reward [3.53702813]
+------ (prior -> new) --- ['m', 'INTJ']  -->  ['ve', {'text': 've', 'start_pos': 0, 'end_pos': 2, 'type': 'X', 'confidence': 0.9175775051116943}]
+--was-- if you haven't read this, it's wrong. it is useless trash. i wrote this about five minutes now, and i'm still screwed up from it.
+--now-- if you haven't read this, it's wrong. it is useless trash. i wrote this about five minutes now, and i've still screwed up from it.
+
+10 In State still ( ADV ) took Action NO CHANGE got Reward 0
+
+11 In State screwed ( VERB ) took Action SUBWORD got Reward [1.18318461]
+------ (prior -> new) --- ['screwed', 'VERB']  -->  ['gotten', 'VERB']
+--was-- if you haven't read this, it's wrong. it is useless trash. i wrote this about five minutes now, and i've still screwed up from it.
+--now-- if you haven't read this, it's wrong. it is useless trash. i wrote this about five minutes now, and i've still gotten up from it.
+
+12 In State haven ( VERB ) took Action SUBWORD got Reward [1.22531458]
+------ (prior -> new) --- ['haven', 'VERB']  -->  ['didn', 'VERB']
+--was-- if you haven't read this, it's wrong. it is useless trash. i wrote this about five minutes now, and i've still gotten up from it.
+--now-- if you didn't read this, it's wrong. it is useless trash. i wrote this about five minutes now, and i've still gotten up from it.
+
+13 In State read ( VERB ) took Action SUBWORD got Reward [1.30482902]
+------ (prior -> new) --- ['read', 'VERB']  -->  ['write', 'VERB']
+--was-- if you didn't read this, it's wrong. it is useless trash. i wrote this about five minutes now, and i've still gotten up from it.
+--now-- if you didn't write this, it's wrong. it is useless trash. i wrote this about five minutes now, and i've still gotten up from it.
+
+14 In State wrong ( ADJ ) took Action SUBWORD got Reward [0.90861949]
+------ (prior -> new) --- ['wrong', 'ADJ']  -->  ['useless', {'text': 'useless', 'start_pos': 0, 'end_pos': 7, 'type': 'ADJ', 'confidence': 0.6542739868164062}]
+--was-- if you didn't write this, it's wrong. it is useless trash. i wrote this about five minutes now, and i've still gotten up from it.
+--now-- if you didn't write this, it's useless. it is useless trash. i wrote this about five minutes now, and i've still gotten up from it.
+
+15 In State useless ( ADJ ) took Action NO CHANGE got Reward 0
+
+16 In State trash ( NOUN ) took Action NO CHANGE got Reward 0
+
+17 In State wrote ( VERB ) took Action SUBWORD got Reward [0.85559961]
+------ (prior -> new) --- ['wrote', 'VERB']  -->  ['have', 'VERB']
+--was-- if you didn't write this, it's useless. it is useless trash. i wrote this about five minutes now, and i've still gotten up from it.
+--now-- if you didn't write this, it's useless. it is useless trash. i have this about five minutes now, and i've still gotten up from it.
+
+18 In State five ( NUM ) took Action NO CHANGE got Reward 0
+
+19 In State minutes ( NOUN ) took Action SUBWORD got Reward [1.12001774]
+------ (prior -> new) --- ['minutes', 'NOUN']  -->  ['times', 'NOUN']
+--was-- if you didn't write this, it's useless. it is useless trash. i have this about five minutes now, and i've still gotten up from it.
+--now-- if you didn't write this, it's useless. it is useless trash. i have this about five times now, and i've still gotten up from it.
+
+20 In State ve ( INTJ ) took Action NO CHANGE got Reward 0
+
+21 In State still ( ADV ) took Action NO CHANGE got Reward 0
+
+22 In State gotten ( VERB ) took Action SUBWORD got Reward [1.47648988]
+------ (prior -> new) --- ['gotten', 'VERB']  -->  ['come', 'VERB']
+--was-- if you didn't write this, it's useless. it is useless trash. i have this about five times now, and i've still gotten up from it.
+--now-- if you didn't write this, it's useless. it is useless trash. i have this about five times now, and i've still come up from it.
+
+23 In State didn ( VERB ) took Action SUBWORD got Reward [1.4332376]
+------ (prior -> new) --- ['didn', 'VERB']  -->  ['won', 'VERB']
+--was-- if you didn't write this, it's useless. it is useless trash. i have this about five times now, and i've still come up from it.
+--now-- if you won't write this, it's useless. it is useless trash. i have this about five times now, and i've still come up from it.
+
+24 In State write ( VERB ) took Action NO CHANGE got Reward 0
+
+25 In State useless ( ADJ ) took Action NO CHANGE got Reward 0
+
+26 In State useless ( ADJ ) took Action SUBWORD got Reward [1.9722742]
+------ (prior -> new) --- ['useless', 'ADJ']  -->  ['complete', 'ADJ']
+--was-- if you won't write this, it's useless. it is useless trash. i have this about five times now, and i've still come up from it.
+--now-- if you won't write this, it's useless. it is complete trash. i have this about five times now, and i've still come up from it.
+
+27 In State trash ( NOUN ) took Action SUBWORD got Reward [1.5271662]
+------ (prior -> new) --- ['trash', 'NOUN']  -->  ['nonsense', 'NOUN']
+--was-- if you won't write this, it's useless. it is complete trash. i have this about five times now, and i've still come up from it.
+--now-- if you won't write this, it's useless. it is complete nonsense. i have this about five times now, and i've still come up from it.
+
+28 In State five ( NUM ) took Action SUBWORD got Reward [0.6910664]
+------ (prior -> new) --- ['five', 'NUM']  -->  ['ten', 'NUM']
+--was-- if you won't write this, it's useless. it is complete nonsense. i have this about five times now, and i've still come up from it.
+--now-- if you won't write this, it's useless. it is complete nonsense. i have this about ten times now, and i've still come up from it.
+
+29 In State times ( NOUN ) took Action SUBWORD got Reward [0.53364222]
+------ (prior -> new) --- ['times', 'NOUN']  -->  ['miles', 'NOUN']
+--was-- if you won't write this, it's useless. it is complete nonsense. i have this about ten times now, and i've still come up from it.
+--now-- if you won't write this, it's useless. it is complete nonsense. i have this about ten miles now, and i've still come up from it.
+
+30 In State ve ( INTJ ) took Action SUBWORD got Reward [0.40777353]
+------ (prior -> new) --- ['ve', 'INTJ']  -->  ['ll', {'text': 'll', 'start_pos': 0, 'end_pos': 2, 'type': 'X', 'confidence': 0.6955499053001404}]
+--was-- if you won't write this, it's useless. it is complete nonsense. i have this about ten miles now, and i've still come up from it.
+--now-- if you won't write this, it's useless. it is complete nonsense. i have this about ten miles now, and i'll still come up from it.
+
+31 In State still ( ADV ) took Action NO CHANGE got Reward 0
+
+32 In State come ( VERB ) took Action SUBWORD got Reward [0.30722243]
+------ (prior -> new) --- ['come', 'VERB']  -->  ['get', 'VERB']
+--was-- if you won't write this, it's useless. it is complete nonsense. i have this about ten miles now, and i'll still come up from it.
+--now-- if you won't write this, it's useless. it is complete nonsense. i have this about ten miles now, and i'll still get up from it.
+
+33 In State won ( VERB ) took Action NO CHANGE got Reward 0
+
+34 In State write ( VERB ) took Action NO CHANGE got Reward 0
+
+35 In State useless ( ADJ ) took Action NO CHANGE got Reward 0
+
+36 In State complete ( ADJ ) took Action SUBWORD got Reward [0.2823244]
+------ (prior -> new) --- ['complete', 'ADJ']  -->  ['endless', 'ADJ']
+--was-- if you won't write this, it's useless. it is complete nonsense. i have this about ten miles now, and i'll still get up from it.
+--now-- if you won't write this, it's useless. it is endless nonsense. i have this about ten miles now, and i'll still get up from it.
+
+37 In State nonsense ( NOUN ) took Action SUBWORD got Reward [94.46107905]
+------ (prior -> new) --- ['nonsense', 'NOUN']  -->  ['possibilities', 'NOUN']
+--was-- if you won't write this, it's useless. it is endless nonsense. i have this about ten miles now, and i'll still get up from it.
+--now-- if you won't write this, it's useless. it is endless possibilities. i have this about ten miles now, and i'll still get up from it.
+
+##############
+Original Sentence: If you haven't seen this, it's terrible. It is pure trash. I saw this about 17 years ago, and I'm still screwed up from it.
+Current Sentence: if you won't write this, it's useless. it is endless possibilities. i have this about ten miles now, and i'll still get up from it.
+Current Word and Index ten 22
+Current Distance from Original: [0.5538921]
+Current Iteration through sentence:  3
+Total num edits: 24
+Unique words edited: 11
+##############
+in without baseline with STATE haven If you haven't seen this, it's terrible. It is pur VERB ACTION: 1 G [311.45985772]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [311.45985772] gives loss [331.94403]
+in without baseline with STATE seen If you haven't seen this, it's terrible. It is pur VERB ACTION: 0 G [311.45985772]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [311.45985772] gives loss [155.89304]
+in without baseline with STATE terrible if you haven't read this, it's terrible. it is pur ADJ ACTION: 0 G [200.44319574]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [200.44319574] gives loss [127.0217]
+in without baseline with STATE pure if you haven't read this, it's wrong. it is pure t ADJ ACTION: 0 G [162.07977251]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [162.07977251] gives loss [81.540405]
+in without baseline with STATE trash if you haven't read this, it's wrong. it is useles NOUN ACTION: 1 G [139.29652947]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [139.29652947] gives loss [110.6521]
+in without baseline with STATE saw if you haven't read this, it's wrong. it is useles VERB ACTION: 0 G [139.29652947]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [139.29652947] gives loss [56.750694]
+in without baseline with STATE 17 if you haven't read this, it's wrong. it is useles NUM ACTION: 0 G [126.78733725]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [126.78733725] gives loss [53.76837]
+in without baseline with STATE years if you haven't read this, it's wrong. it is useles NOUN ACTION: 0 G [121.0435602]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [121.0435602] gives loss [37.753166]
+in without baseline with STATE ago if you haven't read this, it's wrong. it is useles ADV ACTION: 0 G [116.77448417]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [116.77448417] gives loss [41.28546]
+in without baseline with STATE m if you haven't read this, it's wrong. it is useles INTJ ACTION: 0 G [113.22686909]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [113.22686909] gives loss [31.427532]
+in without baseline with STATE still if you haven't read this, it's wrong. it is useles ADV ACTION: 1 G [109.68984096]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [109.68984096] gives loss [112.014435]
+in without baseline with STATE screwed if you haven't read this, it's wrong. it is useles VERB ACTION: 0 G [109.68984096]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [109.68984096] gives loss [45.792747]
+in without baseline with STATE haven if you haven't read this, it's wrong. it is useles VERB ACTION: 0 G [108.50665635]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [108.50665635] gives loss [50.357674]
+in without baseline with STATE read if you didn't read this, it's wrong. it is useless VERB ACTION: 0 G [107.28134177]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [107.28134177] gives loss [34.552048]
+in without baseline with STATE wrong if you didn't write this, it's wrong. it is useles ADJ ACTION: 0 G [105.97651276]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [105.97651276] gives loss [49.278297]
+in without baseline with STATE useless if you didn't write this, it's useless. it is usel ADJ ACTION: 1 G [105.06789326]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [105.06789326] gives loss [100.98905]
+in without baseline with STATE trash if you didn't write this, it's useless. it is usel NOUN ACTION: 1 G [105.06789326]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [105.06789326] gives loss [106.97064]
+in without baseline with STATE wrote if you didn't write this, it's useless. it is usel VERB ACTION: 0 G [105.06789326]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [105.06789326] gives loss [26.499245]
+in without baseline with STATE five if you didn't write this, it's useless. it is usel NUM ACTION: 1 G [104.21229366]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [104.21229366] gives loss [148.94576]
+in without baseline with STATE minutes if you didn't write this, it's useless. it is usel NOUN ACTION: 0 G [104.21229366]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [104.21229366] gives loss [27.2604]
+in without baseline with STATE ve if you didn't write this, it's useless. it is usel INTJ ACTION: 1 G [103.09227592]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [103.09227592] gives loss [161.0897]
+in without baseline with STATE still if you didn't write this, it's useless. it is usel ADV ACTION: 1 G [103.09227592]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [103.09227592] gives loss [107.435074]
+in without baseline with STATE gotten if you didn't write this, it's useless. it is usel VERB ACTION: 0 G [103.09227592]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [103.09227592] gives loss [25.07264]
+in without baseline with STATE didn if you didn't write this, it's useless. it is usel VERB ACTION: 0 G [101.61578604]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [101.61578604] gives loss [42.303787]
+in without baseline with STATE write if you won't write this, it's useless. it is usele VERB ACTION: 1 G [100.18254844]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [100.18254844] gives loss [142.68442]
+in without baseline with STATE useless if you won't write this, it's useless. it is usele ADJ ACTION: 1 G [100.18254844]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [100.18254844] gives loss [89.65344]
+in without baseline with STATE useless if you won't write this, it's useless. it is usele ADJ ACTION: 0 G [100.18254844]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [100.18254844] gives loss [56.454334]
+in without baseline with STATE trash if you won't write this, it's useless. it is compl NOUN ACTION: 0 G [98.21027423]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [98.21027423] gives loss [63.877342]
+in without baseline with STATE five if you won't write this, it's useless. it is compl NUM ACTION: 0 G [96.68310803]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [96.68310803] gives loss [38.469795]
+in without baseline with STATE times if you won't write this, it's useless. it is compl NOUN ACTION: 0 G [95.99204163]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [95.99204163] gives loss [30.188204]
+in without baseline with STATE ve if you won't write this, it's useless. it is compl INTJ ACTION: 0 G [95.4583994]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [95.4583994] gives loss [29.844604]
+in without baseline with STATE still if you won't write this, it's useless. it is compl ADV ACTION: 1 G [95.05062588]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [95.05062588] gives loss [90.27381]
+in without baseline with STATE come if you won't write this, it's useless. it is compl VERB ACTION: 0 G [95.05062588]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [95.05062588] gives loss [21.437532]
+in without baseline with STATE won if you won't write this, it's useless. it is compl VERB ACTION: 1 G [94.74340345]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [94.74340345] gives loss [114.809135]
+in without baseline with STATE write if you won't write this, it's useless. it is compl VERB ACTION: 1 G [94.74340345]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [94.74340345] gives loss [98.88842]
+in without baseline with STATE useless if you won't write this, it's useless. it is compl ADJ ACTION: 1 G [94.74340345]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [94.74340345] gives loss [70.646034]
+in without baseline with STATE complete if you won't write this, it's useless. it is compl ADJ ACTION: 0 G [94.74340345]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [94.74340345] gives loss [48.784283]
+in without baseline with STATE nonsense if you won't write this, it's useless. it is endle NOUN ACTION: 0 G [94.46107905]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [94.46107905] gives loss [71.21003]
+--- Episode time for ep1=(109.0631275177002)
+I think it's one of the most ridiculous movies ever made, and I've seen many... The book is way better and it's a very mediocre movie!
+['think', 'one', 'ridiculous', 'movies', 'ever', 'made', 've', 'seen', 'many', 'book', 'way', 'better', 'mediocre', 'movie']
+After reset: ['think', "I think it's one of the most ridiculous movies ever made, and I've seen many... The book is way better and it's a very mediocre movie!", 'VERB', array([-0.03118682, -0.2309836 ,  2.41849303, ...,  0.        ,
+        0.        ,  0.        ])]
+Episode 2 Step 0 Action NO CHANGE Reward 0 -- (prior -> new) --- ['think', 'VERB']  -->  ['think', 'VERB']
+Episode 2 Step 1 Action SUBWORD Reward [275.10026394] -- (prior -> new) --- ['one', 'NUM']  -->  ['two', 'NUM']
+Episode 2 Step 2 Action SUBWORD Reward [11.73134553] -- (prior -> new) --- ['ridiculous', 'ADJ']  -->  ['expensive', 'ADJ']
+Episode 2 Step 3 Action SUBWORD Reward [11.36783746] -- (prior -> new) --- ['movies', 'NOUN']  -->  ['films', 'NOUN']
+Episode 2 Step 4 Action NO CHANGE Reward 0 -- (prior -> new) --- ['ever', 'ADV']  -->  ['ever', 'ADV']
+Episode 2 Step 5 Action SUBWORD Reward [11.44478066] -- (prior -> new) --- ['made', 'VERB']  -->  ['produced', 'VERB']
+Episode 2 Step 6 Action SUBWORD Reward [11.62549224] -- (prior -> new) --- ['ve', 'VERB']  -->  ['have', 'VERB']
+RUNNING PREDICTION ON i think it's two of the most expensive films ever produced, and i'have watched many... the book is way better and it's a very mediocre movie ! DIST: [0.07193972] ['Positive'] [array([-0.76672435, -0.6246146 ], dtype=float32)] [[0.46453223 0.53546774]]
+DONE FOUND CF!! with dist [0.07193972]
+Episode 2 Step 7 Action SUBWORD Reward [99.2806028] -- (prior -> new) --- ['seen', 'VERB']  -->  ['watched', 'VERB']
+DONE AT Step 7 @ Episode 3/5 (311.4598577218372)
+Episode collection for ep2=(9.545186996459961)
+************************
+Now look at episode:
+Starting at Input sentence: I think it's one of the most ridiculous movies ever made, and I've seen many... The book is way better and it's a very mediocre movie!
+0 In State think ( VERB ) took Action NO CHANGE got Reward 0
+
+1 In State one ( NUM ) took Action SUBWORD got Reward [275.10026394]
+------ (prior -> new) --- ['one', 'NUM']  -->  ['two', 'NUM']
+--was-- I think it's one of the most ridiculous movies ever made, and I've seen many... The book is way better and it's a very mediocre movie!
+--now-- i think it's two of the most ridiculous movies ever made, and i've seen many... the book is way better and it's a very mediocre movie !
+
+2 In State ridiculous ( ADJ ) took Action SUBWORD got Reward [11.73134553]
+------ (prior -> new) --- ['ridiculous', 'ADJ']  -->  ['expensive', 'ADJ']
+--was-- i think it's two of the most ridiculous movies ever made, and i've seen many... the book is way better and it's a very mediocre movie !
+--now-- i think it's two of the most expensive movies ever made, and i've seen many... the book is way better and it's a very mediocre movie !
+
+3 In State movies ( NOUN ) took Action SUBWORD got Reward [11.36783746]
+------ (prior -> new) --- ['movies', 'NOUN']  -->  ['films', 'NOUN']
+--was-- i think it's two of the most expensive movies ever made, and i've seen many... the book is way better and it's a very mediocre movie !
+--now-- i think it's two of the most expensive films ever made, and i've seen many... the book is way better and it's a very mediocre movie !
+
+4 In State ever ( ADV ) took Action NO CHANGE got Reward 0
+
+5 In State made ( VERB ) took Action SUBWORD got Reward [11.44478066]
+------ (prior -> new) --- ['made', 'VERB']  -->  ['produced', 'VERB']
+--was-- i think it's two of the most expensive films ever made, and i've seen many... the book is way better and it's a very mediocre movie !
+--now-- i think it's two of the most expensive films ever produced, and i've seen many... the book is way better and it's a very mediocre movie !
+
+6 In State ve ( VERB ) took Action SUBWORD got Reward [11.62549224]
+------ (prior -> new) --- ['ve', 'VERB']  -->  ['have', 'VERB']
+--was-- i think it's two of the most expensive films ever produced, and i've seen many... the book is way better and it's a very mediocre movie !
+--now-- i think it's two of the most expensive films ever produced, and i'have seen many... the book is way better and it's a very mediocre movie !
+
+7 In State seen ( VERB ) took Action SUBWORD got Reward [99.2806028]
+------ (prior -> new) --- ['seen', 'VERB']  -->  ['watched', 'VERB']
+--was-- i think it's two of the most expensive films ever produced, and i'have seen many... the book is way better and it's a very mediocre movie !
+--now-- i think it's two of the most expensive films ever produced, and i'have watched many... the book is way better and it's a very mediocre movie !
+
+##############
+Original Sentence: I think it's one of the most ridiculous movies ever made, and I've seen many... The book is way better and it's a very mediocre movie!
+Current Sentence: i think it's two of the most expensive films ever produced, and i'have watched many... the book is way better and it's a very mediocre movie !
+Current Word and Index many 19
+Current Distance from Original: [0.07193972]
+Current Iteration through sentence:  0
+Total num edits: 6
+Unique words edited: 6
+##############
+in without baseline with STATE think I think it's one of the most ridiculous movies eve VERB ACTION: 1 G [420.55032262]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [420.55032262] gives loss [504.70267]
+in without baseline with STATE one I think it's one of the most ridiculous movies eve NUM ACTION: 0 G [420.55032262]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [420.55032262] gives loss [231.41391]
+in without baseline with STATE ridiculous i think it's two of the most ridiculous movies eve ADJ ACTION: 0 G [145.45005869]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [145.45005869] gives loss [85.40365]
+in without baseline with STATE movies i think it's two of the most expensive movies ever NOUN ACTION: 0 G [133.71871316]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [133.71871316] gives loss [85.23056]
+in without baseline with STATE ever i think it's two of the most expensive films ever  ADV ACTION: 1 G [122.3508757]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [122.3508757] gives loss [114.64134]
+in without baseline with STATE made i think it's two of the most expensive films ever  VERB ACTION: 0 G [122.3508757]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [122.3508757] gives loss [61.999176]
+in without baseline with STATE ve i think it's two of the most expensive films ever  VERB ACTION: 0 G [110.90609504]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [110.90609504] gives loss [51.91754]
+in without baseline with STATE seen i think it's two of the most expensive films ever  VERB ACTION: 0 G [99.2806028]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [99.2806028] gives loss [46.87747]
+--- Episode time for ep2=(9.554717540740967)
+This film made John Glover a mockery. Alan Raimy is one of the most boring characters that I have ever seen on film. And I mean that friend.
+['film', 'made', 'john', 'glover', 'mockery', 'alan', 'raimy', 'one', 'boring', 'characters', 'ever', 'seen', 'mean', 'friend']
+After reset: ['film', 'This film made John Glover a mockery. Alan Raimy is one of the most boring characters that I have ever seen on film. And I mean that friend.', 'NOUN', array([1.01015532, 0.17201345, 1.7761687 , ..., 0.        , 0.        ,
+       0.        ])]
+Episode 3 Step 0 Action SUBWORD Reward [381.93659815] -- (prior -> new) --- ['film', 'NOUN']  -->  ['movie', 'NOUN']
+Episode 3 Step 1 Action SUBWORD Reward [282.86644133] -- (prior -> new) --- ['made', 'VERB']  -->  ['makes', 'VERB']
+Episode 3 Step 2 Action SUBWORD Reward [133.20537273] -- (prior -> new) --- ['john', 'PROPN']  -->  ['donald', 'PROPN']
+Episode 3 Step 3 Action SUBWORD Reward [12.00140932] -- (prior -> new) --- ['glover', 'NOUN']  -->  ['duck', 'NOUN']
+Episode 3 Step 4 Action NO CHANGE Reward 0 -- (prior -> new) --- ['mockery', 'NOUN']  -->  ['mockery', 'NOUN']
+Episode 3 Step 5 Action SUBWORD Reward [11.40270548] -- (prior -> new) --- ['alan', 'PROPN']  -->  ['george', 'PROPN']
+RUNNING PREDICTION ON this movie makes donald duck a mockery. george washington is one of the most boring characters that i have ever seen on film. and i mean that friend. DIST: [0.09316828] ['Negative'] [array([-2.2135298e-03, -6.1142931e+00], dtype=float32)] [[0.9977889  0.00221104]]
+Episode 3 Step 6 Action SUBWORD Reward [8.7332672] -- (prior -> new) --- ['raimy', 'PROPN']  -->  ['washington', 'PROPN']
+RUNNING PREDICTION ON this movie makes donald duck a mockery. george washington is two of the most boring characters that i have ever seen on film. and i mean that friend. DIST: [0.10044996] ['Negative'] [array([-1.5215022e-03, -6.4887986e+00], dtype=float32)] [[0.99847966 0.00152037]]
+Episode 3 Step 7 Action SUBWORD Reward [7.95520551] -- (prior -> new) --- ['one', 'NUM']  -->  ['two', 'NUM']
+Episode 3 Step 8 Action NO CHANGE Reward 0 -- (prior -> new) --- ['boring', 'ADJ']  -->  ['boring', 'ADJ']
+RUNNING PREDICTION ON this movie makes donald duck a mockery. george washington is two of the most boring men that i have ever seen on film. and i mean that friend. DIST: [0.10219277] ['Negative'] [array([-2.9432334e-03, -5.8297234e+00], dtype=float32)] [[0.9970611  0.00293889]]
+Episode 3 Step 9 Action SUBWORD Reward [7.78542821] -- (prior -> new) --- ['characters', 'NOUN']  -->  ['men', 'NOUN']
+Episode 3 Step 10 Action NO CHANGE Reward 0 -- (prior -> new) --- ['ever', 'ADV']  -->  ['ever', 'ADV']
+RUNNING PREDICTION ON this movie makes donald duck a mockery. george washington is two of the most boring men that i have ever met on film. and i mean that friend. DIST: [0.10113583] ['Negative'] [array([-3.4268722e-03, -5.6778069e+00], dtype=float32)] [[0.996579   0.00342105]]
+Episode 3 Step 11 Action SUBWORD Reward [7.8876931] -- (prior -> new) --- ['seen', 'VERB']  -->  ['met', 'VERB']
+RUNNING PREDICTION ON this movie makes donald duck a mockery. george washington is two of the most boring men that i have ever met on television. and i mean that friend. DIST: [0.12209308] ['Negative'] [array([-3.5620593e-03, -5.6391912e+00], dtype=float32)] [[0.9964443  0.00355574]]
+Episode 3 Step 12 Action SUBWORD Reward [6.19047259] -- (prior -> new) --- ['film', 'NOUN']  -->  ['television', 'NOUN']
+RUNNING PREDICTION ON this movie makes donald duck a mockery. george washington is two of the most boring men that i have ever met on television. and i am that friend. DIST: [0.13719037] ['Negative'] [array([-4.1212635e-03, -5.4936643e+00], dtype=float32)] [[0.9958872  0.00411275]]
+Episode 3 Step 13 Action SUBWORD Reward [5.28914128] -- (prior -> new) --- ['mean', 'VERB']  -->  ['am', 'VERB']
+Episode 3 Step 14 Action NO CHANGE Reward 0 -- (prior -> new) --- ['friend', 'NOUN']  -->  ['friend', 'NOUN']
+RUNNING PREDICTION ON this guy makes donald duck a mockery. george washington is two of the most boring men that i have ever met on television. and i am that friend. DIST: [0.1511989] ['Negative'] [array([-0.01179259, -4.4461765 ], dtype=float32)] [[0.98827666 0.01172331]]
+Episode 3 Step 15 Action SUBWORD Reward [4.61380475] -- (prior -> new) --- ['movie', 'NOUN']  -->  ['guy', 'NOUN']
+Episode 3 Step 16 Action NO CHANGE Reward 0 -- (prior -> new) --- ['makes', 'VERB']  -->  ['makes', 'VERB']
+RUNNING PREDICTION ON this guy makes a duck a mockery. george washington is two of the most boring men that i have ever met on television. and i am that friend. DIST: [0.14235673] ['Negative'] [array([-0.01239772, -4.3964367 ], dtype=float32)] [[0.9876788  0.01232117]]
+Episode 3 Step 17 Action SUBWORD Reward [5.02460648] -- (prior -> new) --- ['donald', 'PROPN']  -->  ['a', {'text': 'a', 'start_pos': 0, 'end_pos': 1, 'type': 'DET', 'confidence': 0.9986138343811035}]
+RUNNING PREDICTION ON this guy makes a life a mockery. george washington is two of the most boring men that i have ever met on television. and i am that friend. DIST: [0.10936635] ['Negative'] [array([-0.01007743, -4.602496  ], dtype=float32)] [[0.9899732  0.01002678]]
+Episode 3 Step 18 Action SUBWORD Reward [7.14358064] -- (prior -> new) --- ['duck', 'NOUN']  -->  ['life', 'NOUN']
+RUNNING PREDICTION ON this guy makes a life a misery. george washington is two of the most boring men that i have ever met on television. and i am that friend. DIST: [0.09960803] ['Negative'] [array([-0.06553295, -2.75779   ], dtype=float32)] [[0.9365682  0.06343179]]
+Episode 3 Step 19 Action SUBWORD Reward [8.03935169] -- (prior -> new) --- ['mockery', 'NOUN']  -->  ['misery', 'NOUN']
+RUNNING PREDICTION ON this guy makes a life a misery. mason washington is two of the most boring men that i have ever met on television. and i am that friend. DIST: [0.10189088] ['Negative'] [array([-0.02638916, -3.6479683 ], dtype=float32)] [[0.973956   0.02604399]]
+Episode 3 Step 20 Action SUBWORD Reward [7.81442086] -- (prior -> new) --- ['george', 'PROPN']  -->  ['mason', 'PROPN']
+RUNNING PREDICTION ON this guy makes a life a misery. mason he is two of the most boring men that i have ever met on television. and i am that friend. DIST: [0.10938547] ['Negative'] [array([-0.0138356, -4.2874236], dtype=float32)] [[0.9862597  0.01374028]]
+Episode 3 Step 21 Action SUBWORD Reward [7.14198187] -- (prior -> new) --- ['washington', 'PROPN']  -->  ['he', {'text': 'he', 'start_pos': 5, 'end_pos': 7, 'type': 'PRON', 'confidence': 0.9998360872268677}]
+Episode 3 Step 22 Action NO CHANGE Reward 0 -- (prior -> new) --- ['two', 'NUM']  -->  ['two', 'NUM']
+RUNNING PREDICTION ON this guy makes a life a misery. mason he is two of the most beautiful men that i have ever met on television. and i am that friend. DIST: [0.3722993] ['Positive'] [array([-4.791378  , -0.00833568], dtype=float32)] [[0.00830101 0.991699  ]]
+DONE FOUND CF!! with dist [0.3722993]
+Episode 3 Step 23 Action SUBWORD Reward [96.27700701] -- (prior -> new) --- ['boring', 'ADJ']  -->  ['beautiful', 'ADJ']
+DONE AT Step 23 @ Episode 4/5 (420.5503226240716)
+Episode collection for ep3=(74.41637992858887)
+************************
+Now look at episode:
+Starting at Input sentence: This film made John Glover a mockery. Alan Raimy is one of the most boring characters that I have ever seen on film. And I mean that friend.
+0 In State film ( NOUN ) took Action SUBWORD got Reward [381.93659815]
+------ (prior -> new) --- ['film', 'NOUN']  -->  ['movie', 'NOUN']
+--was-- This film made John Glover a mockery. Alan Raimy is one of the most boring characters that I have ever seen on film. And I mean that friend.
+--now-- this movie made john glover a mockery. alan raimy is one of the most boring characters that i have ever seen on film. and i mean that friend.
+
+1 In State made ( VERB ) took Action SUBWORD got Reward [282.86644133]
+------ (prior -> new) --- ['made', 'VERB']  -->  ['makes', 'VERB']
+--was-- this movie made john glover a mockery. alan raimy is one of the most boring characters that i have ever seen on film. and i mean that friend.
+--now-- this movie makes john glover a mockery. alan raimy is one of the most boring characters that i have ever seen on film. and i mean that friend.
+
+2 In State john ( PROPN ) took Action SUBWORD got Reward [133.20537273]
+------ (prior -> new) --- ['john', 'PROPN']  -->  ['donald', 'PROPN']
+--was-- this movie makes john glover a mockery. alan raimy is one of the most boring characters that i have ever seen on film. and i mean that friend.
+--now-- this movie makes donald glover a mockery. alan raimy is one of the most boring characters that i have ever seen on film. and i mean that friend.
+
+3 In State glover ( NOUN ) took Action SUBWORD got Reward [12.00140932]
+------ (prior -> new) --- ['glover', 'NOUN']  -->  ['duck', 'NOUN']
+--was-- this movie makes donald glover a mockery. alan raimy is one of the most boring characters that i have ever seen on film. and i mean that friend.
+--now-- this movie makes donald duck a mockery. alan raimy is one of the most boring characters that i have ever seen on film. and i mean that friend.
+
+4 In State mockery ( NOUN ) took Action NO CHANGE got Reward 0
+
+5 In State alan ( PROPN ) took Action SUBWORD got Reward [11.40270548]
+------ (prior -> new) --- ['alan', 'PROPN']  -->  ['george', 'PROPN']
+--was-- this movie makes donald duck a mockery. alan raimy is one of the most boring characters that i have ever seen on film. and i mean that friend.
+--now-- this movie makes donald duck a mockery. george raimy is one of the most boring characters that i have ever seen on film. and i mean that friend.
+
+6 In State raimy ( PROPN ) took Action SUBWORD got Reward [8.7332672]
+------ (prior -> new) --- ['raimy', 'PROPN']  -->  ['washington', 'PROPN']
+--was-- this movie makes donald duck a mockery. george raimy is one of the most boring characters that i have ever seen on film. and i mean that friend.
+--now-- this movie makes donald duck a mockery. george washington is one of the most boring characters that i have ever seen on film. and i mean that friend.
+
+7 In State one ( NUM ) took Action SUBWORD got Reward [7.95520551]
+------ (prior -> new) --- ['one', 'NUM']  -->  ['two', 'NUM']
+--was-- this movie makes donald duck a mockery. george washington is one of the most boring characters that i have ever seen on film. and i mean that friend.
+--now-- this movie makes donald duck a mockery. george washington is two of the most boring characters that i have ever seen on film. and i mean that friend.
+
+8 In State boring ( ADJ ) took Action NO CHANGE got Reward 0
+
+9 In State characters ( NOUN ) took Action SUBWORD got Reward [7.78542821]
+------ (prior -> new) --- ['characters', 'NOUN']  -->  ['men', 'NOUN']
+--was-- this movie makes donald duck a mockery. george washington is two of the most boring characters that i have ever seen on film. and i mean that friend.
+--now-- this movie makes donald duck a mockery. george washington is two of the most boring men that i have ever seen on film. and i mean that friend.
+
+10 In State ever ( ADV ) took Action NO CHANGE got Reward 0
+
+11 In State seen ( VERB ) took Action SUBWORD got Reward [7.8876931]
+------ (prior -> new) --- ['seen', 'VERB']  -->  ['met', 'VERB']
+--was-- this movie makes donald duck a mockery. george washington is two of the most boring men that i have ever seen on film. and i mean that friend.
+--now-- this movie makes donald duck a mockery. george washington is two of the most boring men that i have ever met on film. and i mean that friend.
+
+12 In State film ( NOUN ) took Action SUBWORD got Reward [6.19047259]
+------ (prior -> new) --- ['film', 'NOUN']  -->  ['television', 'NOUN']
+--was-- this movie makes donald duck a mockery. george washington is two of the most boring men that i have ever met on film. and i mean that friend.
+--now-- this movie makes donald duck a mockery. george washington is two of the most boring men that i have ever met on television. and i mean that friend.
+
+13 In State mean ( VERB ) took Action SUBWORD got Reward [5.28914128]
+------ (prior -> new) --- ['mean', 'VERB']  -->  ['am', 'VERB']
+--was-- this movie makes donald duck a mockery. george washington is two of the most boring men that i have ever met on television. and i mean that friend.
+--now-- this movie makes donald duck a mockery. george washington is two of the most boring men that i have ever met on television. and i am that friend.
+
+14 In State friend ( NOUN ) took Action NO CHANGE got Reward 0
+
+15 In State movie ( NOUN ) took Action SUBWORD got Reward [4.61380475]
+------ (prior -> new) --- ['movie', 'NOUN']  -->  ['guy', 'NOUN']
+--was-- this movie makes donald duck a mockery. george washington is two of the most boring men that i have ever met on television. and i am that friend.
+--now-- this guy makes donald duck a mockery. george washington is two of the most boring men that i have ever met on television. and i am that friend.
+
+16 In State makes ( VERB ) took Action NO CHANGE got Reward 0
+
+17 In State donald ( PROPN ) took Action SUBWORD got Reward [5.02460648]
+------ (prior -> new) --- ['donald', 'PROPN']  -->  ['a', {'text': 'a', 'start_pos': 0, 'end_pos': 1, 'type': 'DET', 'confidence': 0.9986138343811035}]
+--was-- this guy makes donald duck a mockery. george washington is two of the most boring men that i have ever met on television. and i am that friend.
+--now-- this guy makes a duck a mockery. george washington is two of the most boring men that i have ever met on television. and i am that friend.
+
+18 In State duck ( NOUN ) took Action SUBWORD got Reward [7.14358064]
+------ (prior -> new) --- ['duck', 'NOUN']  -->  ['life', 'NOUN']
+--was-- this guy makes a duck a mockery. george washington is two of the most boring men that i have ever met on television. and i am that friend.
+--now-- this guy makes a life a mockery. george washington is two of the most boring men that i have ever met on television. and i am that friend.
+
+19 In State mockery ( NOUN ) took Action SUBWORD got Reward [8.03935169]
+------ (prior -> new) --- ['mockery', 'NOUN']  -->  ['misery', 'NOUN']
+--was-- this guy makes a life a mockery. george washington is two of the most boring men that i have ever met on television. and i am that friend.
+--now-- this guy makes a life a misery. george washington is two of the most boring men that i have ever met on television. and i am that friend.
+
+20 In State george ( PROPN ) took Action SUBWORD got Reward [7.81442086]
+------ (prior -> new) --- ['george', 'PROPN']  -->  ['mason', 'PROPN']
+--was-- this guy makes a life a misery. george washington is two of the most boring men that i have ever met on television. and i am that friend.
+--now-- this guy makes a life a misery. mason washington is two of the most boring men that i have ever met on television. and i am that friend.
+
+21 In State washington ( PROPN ) took Action SUBWORD got Reward [7.14198187]
+------ (prior -> new) --- ['washington', 'PROPN']  -->  ['he', {'text': 'he', 'start_pos': 5, 'end_pos': 7, 'type': 'PRON', 'confidence': 0.9998360872268677}]
+--was-- this guy makes a life a misery. mason washington is two of the most boring men that i have ever met on television. and i am that friend.
+--now-- this guy makes a life a misery. mason he is two of the most boring men that i have ever met on television. and i am that friend.
+
+22 In State two ( NUM ) took Action NO CHANGE got Reward 0
+
+23 In State boring ( ADJ ) took Action SUBWORD got Reward [96.27700701]
+------ (prior -> new) --- ['boring', 'ADJ']  -->  ['beautiful', 'ADJ']
+--was-- this guy makes a life a misery. mason he is two of the most boring men that i have ever met on television. and i am that friend.
+--now-- this guy makes a life a misery. mason he is two of the most beautiful men that i have ever met on television. and i am that friend.
+
+##############
+Original Sentence: This film made John Glover a mockery. Alan Raimy is one of the most boring characters that I have ever seen on film. And I mean that friend.
+Current Sentence: this guy makes a life a misery. mason he is two of the most beautiful men that i have ever met on television. and i am that friend.
+Current Word and Index men 16
+Current Distance from Original: [0.3722993]
+Current Iteration through sentence:  1
+Total num edits: 18
+Unique words edited: 13
+##############
+in without baseline with STATE film This film made John Glover a mockery. Alan Raimy i NOUN ACTION: 0 G [1001.30848817]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [1001.30848817] gives loss [326.61316]
+in without baseline with STATE made this movie made john glover a mockery. alan raimy  VERB ACTION: 0 G [619.37189003]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [619.37189003] gives loss [230.54758]
+in without baseline with STATE john this movie makes john glover a mockery. alan raimy PROPN ACTION: 0 G [336.50544869]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [336.50544869] gives loss [164.56238]
+in without baseline with STATE glover this movie makes donald glover a mockery. alan rai NOUN ACTION: 0 G [203.30007597]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [203.30007597] gives loss [66.46662]
+in without baseline with STATE mockery this movie makes donald duck a mockery. alan raimy NOUN ACTION: 1 G [191.29866665]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [191.29866665] gives loss [253.95403]
+in without baseline with STATE alan this movie makes donald duck a mockery. alan raimy PROPN ACTION: 0 G [191.29866665]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [191.29866665] gives loss [69.74711]
+in without baseline with STATE raimy this movie makes donald duck a mockery. george rai PROPN ACTION: 0 G [179.89596117]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [179.89596117] gives loss [45.4751]
+in without baseline with STATE one this movie makes donald duck a mockery. george was NUM ACTION: 0 G [171.16269397]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [171.16269397] gives loss [30.052896]
+in without baseline with STATE boring this movie makes donald duck a mockery. george was ADJ ACTION: 1 G [163.20748845]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [163.20748845] gives loss [220.32838]
+in without baseline with STATE characters this movie makes donald duck a mockery. george was NOUN ACTION: 0 G [163.20748845]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [163.20748845] gives loss [34.66867]
+in without baseline with STATE ever this movie makes donald duck a mockery. george was ADV ACTION: 1 G [155.42206025]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [155.42206025] gives loss [316.41415]
+in without baseline with STATE seen this movie makes donald duck a mockery. george was VERB ACTION: 0 G [155.42206025]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [155.42206025] gives loss [22.606058]
+in without baseline with STATE film this movie makes donald duck a mockery. george was NOUN ACTION: 0 G [147.53436715]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [147.53436715] gives loss [16.396053]
+in without baseline with STATE mean this movie makes donald duck a mockery. george was VERB ACTION: 0 G [141.34389456]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [141.34389456] gives loss [20.828516]
+in without baseline with STATE friend this movie makes donald duck a mockery. george was NOUN ACTION: 1 G [136.05475328]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [136.05475328] gives loss [222.67972]
+in without baseline with STATE movie this movie makes donald duck a mockery. george was NOUN ACTION: 0 G [136.05475328]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [136.05475328] gives loss [16.170214]
+in without baseline with STATE makes this guy makes donald duck a mockery. george washi VERB ACTION: 1 G [131.44094853]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [131.44094853] gives loss [262.47174]
+in without baseline with STATE donald this guy makes donald duck a mockery. george washi PROPN ACTION: 0 G [131.44094853]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [131.44094853] gives loss [22.252037]
+in without baseline with STATE duck this guy makes a duck a mockery. george washington NOUN ACTION: 0 G [126.41634205]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [126.41634205] gives loss [23.964619]
+in without baseline with STATE mockery this guy makes a life a mockery. george washington NOUN ACTION: 0 G [119.27276141]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [119.27276141] gives loss [25.631628]
+in without baseline with STATE george this guy makes a life a misery. george washington  PROPN ACTION: 0 G [111.23340973]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [111.23340973] gives loss [20.350279]
+in without baseline with STATE washington this guy makes a life a misery. mason washington i PROPN ACTION: 0 G [103.41898887]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [103.41898887] gives loss [15.980122]
+in without baseline with STATE two this guy makes a life a misery. mason he is two of NUM ACTION: 1 G [96.27700701]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [96.27700701] gives loss [202.81325]
+in without baseline with STATE boring this guy makes a life a misery. mason he is two of ADJ ACTION: 0 G [96.27700701]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [96.27700701] gives loss [19.969625]
+--- Episode time for ep3=(74.44414019584656)
+This is a 'snoozefest'. It defines Nicholas Cage. The plot is not intricate and totally bland. The ending will bore you.  Don't see it ever.
+['snoozefest', 'defines', 'nicholas', 'cage', 'plot', 'not', 'intricate', 'totally', 'bland', 'ending', 'bore', 'see', 'ever']
+After reset: ['snoozefest', "This is a 'snoozefest'. It defines Nicholas Cage. The plot is not intricate and totally bland. The ending will bore you.  Don't see it ever.", 'ADJ', array([0.00250405, 0.41864872, 2.03743196, ..., 0.        , 0.        ,
+       0.        ])]
+Episode 4 Step 0 Action SUBWORD Reward [25.53844411] -- (prior -> new) --- ['snoozefest', 'ADJ']  -->  ['movie', {'text': 'movie', 'start_pos': 6, 'end_pos': 11, 'type': 'NOUN', 'confidence': 0.9964017868041992}]
+Episode 4 Step 1 Action SUBWORD Reward [21.51906608] -- (prior -> new) --- ['defines', 'VERB']  -->  ['is', 'VERB']
+Episode 4 Step 2 Action NO CHANGE Reward 0 -- (prior -> new) --- ['nicholas', 'NOUN']  -->  ['nicholas', 'NOUN']
+Episode 4 Step 3 Action NO CHANGE Reward 0 -- (prior -> new) --- ['cage', 'NOUN']  -->  ['cage', 'NOUN']
+Episode 4 Step 4 Action NO CHANGE Reward 0 -- (prior -> new) --- ['plot', 'NOUN']  -->  ['plot', 'NOUN']
+Episode 4 Step 5 Action SUBWORD Reward [6.40764225] -- (prior -> new) --- ['not', 'ADV']  -->  ['very', 'ADV']
+Episode 4 Step 6 Action SUBWORD Reward [9.49794348] -- (prior -> new) --- ['intricate', 'ADJ']  -->  ['short', 'ADJ']
+Episode 4 Step 7 Action SUBWORD Reward [8.57231851] -- (prior -> new) --- ['totally', 'ADV']  -->  ['rather', 'ADV']
+RUNNING PREDICTION ON this is a'movie '. it is nicholas cage. the plot is very short and rather complicated. the ending will bore you. don't see it ever. DIST: [0.15883331] ['Positive'] [array([-2.8971071 , -0.05676366], dtype=float32)] [[0.05518262 0.94481736]]
+DONE FOUND CF!! with dist [0.15883331]
+Episode 4 Step 8 Action SUBWORD Reward [98.4116669] -- (prior -> new) --- ['bland', 'ADJ']  -->  ['complicated', 'ADJ']
+DONE AT Step 8 @ Episode 5/5 (1001.3084881748689)
+Episode collection for ep4=(9.058263301849365)
+************************
+Now look at episode:
+Starting at Input sentence: This is a 'snoozefest'. It defines Nicholas Cage. The plot is not intricate and totally bland. The ending will bore you.  Don't see it ever.
+0 In State snoozefest ( ADJ ) took Action SUBWORD got Reward [25.53844411]
+------ (prior -> new) --- ['snoozefest', 'ADJ']  -->  ['movie', {'text': 'movie', 'start_pos': 6, 'end_pos': 11, 'type': 'NOUN', 'confidence': 0.9964017868041992}]
+--was-- This is a 'snoozefest'. It defines Nicholas Cage. The plot is not intricate and totally bland. The ending will bore you.  Don't see it ever.
+--now-- this is a'movie '. it defines nicholas cage. the plot is not intricate and totally bland. the ending will bore you. don't see it ever.
+
+1 In State defines ( VERB ) took Action SUBWORD got Reward [21.51906608]
+------ (prior -> new) --- ['defines', 'VERB']  -->  ['is', 'VERB']
+--was-- this is a'movie '. it defines nicholas cage. the plot is not intricate and totally bland. the ending will bore you. don't see it ever.
+--now-- this is a'movie '. it is nicholas cage. the plot is not intricate and totally bland. the ending will bore you. don't see it ever.
+
+2 In State nicholas ( NOUN ) took Action NO CHANGE got Reward 0
+
+3 In State cage ( NOUN ) took Action NO CHANGE got Reward 0
+
+4 In State plot ( NOUN ) took Action NO CHANGE got Reward 0
+
+5 In State not ( ADV ) took Action SUBWORD got Reward [6.40764225]
+------ (prior -> new) --- ['not', 'ADV']  -->  ['very', 'ADV']
+--was-- this is a'movie '. it is nicholas cage. the plot is not intricate and totally bland. the ending will bore you. don't see it ever.
+--now-- this is a'movie '. it is nicholas cage. the plot is very intricate and totally bland. the ending will bore you. don't see it ever.
+
+6 In State intricate ( ADJ ) took Action SUBWORD got Reward [9.49794348]
+------ (prior -> new) --- ['intricate', 'ADJ']  -->  ['short', 'ADJ']
+--was-- this is a'movie '. it is nicholas cage. the plot is very intricate and totally bland. the ending will bore you. don't see it ever.
+--now-- this is a'movie '. it is nicholas cage. the plot is very short and totally bland. the ending will bore you. don't see it ever.
+
+7 In State totally ( ADV ) took Action SUBWORD got Reward [8.57231851]
+------ (prior -> new) --- ['totally', 'ADV']  -->  ['rather', 'ADV']
+--was-- this is a'movie '. it is nicholas cage. the plot is very short and totally bland. the ending will bore you. don't see it ever.
+--now-- this is a'movie '. it is nicholas cage. the plot is very short and rather bland. the ending will bore you. don't see it ever.
+
+8 In State bland ( ADJ ) took Action SUBWORD got Reward [98.4116669]
+------ (prior -> new) --- ['bland', 'ADJ']  -->  ['complicated', 'ADJ']
+--was-- this is a'movie '. it is nicholas cage. the plot is very short and rather bland. the ending will bore you. don't see it ever.
+--now-- this is a'movie '. it is nicholas cage. the plot is very short and rather complicated. the ending will bore you. don't see it ever.
+
+##############
+Original Sentence: This is a 'snoozefest'. It defines Nicholas Cage. The plot is not intricate and totally bland. The ending will bore you.  Don't see it ever.
+Current Sentence: this is a'movie '. it is nicholas cage. the plot is very short and rather complicated. the ending will bore you. don't see it ever.
+Current Word and Index ending 22
+Current Distance from Original: [0.15883331]
+Current Iteration through sentence:  0
+Total num edits: 6
+Unique words edited: 6
+##############
+in without baseline with STATE snoozefest This is a 'snoozefest'. It defines Nicholas Cage.  ADJ ACTION: 0 G [169.94708133]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [169.94708133] gives loss [47.71897]
+in without baseline with STATE defines this is a'movie '. it defines nicholas cage. the p VERB ACTION: 0 G [144.40863722]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [144.40863722] gives loss [23.12973]
+in without baseline with STATE nicholas this is a'movie '. it is nicholas cage. the plot i NOUN ACTION: 1 G [122.88957114]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [122.88957114] gives loss [193.99088]
+in without baseline with STATE cage this is a'movie '. it is nicholas cage. the plot i NOUN ACTION: 1 G [122.88957114]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [122.88957114] gives loss [209.19539]
+in without baseline with STATE plot this is a'movie '. it is nicholas cage. the plot i NOUN ACTION: 1 G [122.88957114]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [122.88957114] gives loss [199.27382]
+in without baseline with STATE not this is a'movie '. it is nicholas cage. the plot i ADV ACTION: 0 G [122.88957114]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [122.88957114] gives loss [20.042906]
+in without baseline with STATE intricate this is a'movie '. it is nicholas cage. the plot i ADJ ACTION: 0 G [116.48192889]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [116.48192889] gives loss [29.34794]
+in without baseline with STATE totally this is a'movie '. it is nicholas cage. the plot i ADV ACTION: 0 G [106.98398541]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [106.98398541] gives loss [19.619328]
+in without baseline with STATE bland this is a'movie '. it is nicholas cage. the plot i ADJ ACTION: 0 G [98.4116669]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [98.4116669] gives loss [28.337866]
+--- Episode time for ep4=(9.06999158859253)
+DONE !!!
+{'episode_lengths': array([33., 37.,  7., 23.,  8.]), 'episode_rewards': array([ 175.03189459,  311.45985772,  420.55032262, 1001.30848817,
+        169.94708133])}
+Elapsed Time 286.6139039993286
+Without baseline [ 175.03189459  311.45985772  420.55032262 1001.30848817  169.94708133]
+2019-12-08 11:39:17,775 loading file /home/diego/.flair/models/en-pos-ontonotes-fast-v0.4.pt
+I don't know why I hate this movie so much, but I am very tired of watching it.
+['know', 'hate', 'movie', 'much', 'tired', 'watching']
+ENV INFO
+<CounterFac<counterfac-v0>>
+<class 'gym_counterfac.envs.counterfac_env.CounterFac'>
+['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__enter__', '__eq__', '__exit__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'action_space', 'aug', 'cf_all_labels', 'cf_all_sentences', 'cf_neg_sentences', 'cf_pos_sentences', 'close', 'counter', 'cur_class_label', 'cur_emb', 'current_iteration', 'current_pos', 'current_sentence', 'current_word', 'current_word_index', 'distance_from_original', 'done', 'filter_candidates', 'human_cf', 'input_sentence', 'make_embedded_version', 'max_iterations', 'max_word_edit_percent', 'max_word_edits', 'metadata', 'minimum_word_edits_needed', 'next_word', 'num_edits', 'num_non_stopwords', 'num_words_edited', 'observation_space', 'original_label', 'percent_changed_needed', 'prior_words_used', 'render', 'reset', 'reward', 'reward_range', 'row_id', 'seed', 'sent_pos', 'sent_to_int', 'skipword', 'spec', 'state', 'step', 'subword', 'tagger', 'tokens', 'tokens_text', 'unwrapped', 'words_edited']
+action_space Discrete(2) <class 'gym.spaces.discrete.Discrete'> 2
+observation_space Discrete(1556) <class 'gym.spaces.discrete.Discrete'> 1556
+meta_data {'render.modes': ['human']} <class 'dict'>
+reward_range (-inf, inf) <class 'tuple'>
+state ['know', "I don't know why I hate this movie so much, but I am very tired of watching it.", 'VERB', array([-0.02218761, -0.15021476,  2.55078697, ...,  0.        ,
+        0.        ,  0.        ])]
+WARNING:tensorflow:From /home/diego/rl_proj_cf/reinforce.py:126: The name tf.squared_difference is deprecated. Please use tf.math.squared_difference instead.
+
+WARNING:tensorflow:From /home/diego/rl_proj_cf/reinforce.py:126: The name tf.squared_difference is deprecated. Please use tf.math.squared_difference instead.
+
+session initialize:  1.1920928955078125e-06
+With Baseline: 1  V type <class 'reinforce.VApproximationWithNN'>
+Long, boring, blasphemous. Never have I been so glad to see ending credits roll.
+['long', 'boring', 'blasphemous', 'never', 'glad', 'see', 'ending', 'credits', 'roll']
+After reset: ['long', 'Long, boring, blasphemous. Never have I been so glad to see ending credits roll.', 'ADJ', array([ 0.34884524, -0.73088783,  2.0266583 , ...,  0.        ,
+        0.        ,  0.        ])]
+Episode 0 Step 0 Action NO CHANGE Reward 0 -- (prior -> new) --- ['long', 'ADJ']  -->  ['long', 'ADJ']
+Episode 0 Step 1 Action NO CHANGE Reward 0 -- (prior -> new) --- ['boring', 'ADJ']  -->  ['boring', 'ADJ']
+Episode 0 Step 2 Action SUBWORD Reward [29.45294047] -- (prior -> new) --- ['blasphemous', 'ADJ']  -->  ['interesting', 'ADJ']
+Episode 0 Step 3 Action NO CHANGE Reward 0 -- (prior -> new) --- ['never', 'ADV']  -->  ['never', 'ADV']
+Episode 0 Step 4 Action NO CHANGE Reward 0 -- (prior -> new) --- ['glad', 'ADJ']  -->  ['glad', 'ADJ']
+Episode 0 Step 5 Action NO CHANGE Reward 0 -- (prior -> new) --- ['see', 'VERB']  -->  ['see', 'VERB']
+Episode 0 Step 6 Action NO CHANGE Reward 0 -- (prior -> new) --- ['ending', 'VERB']  -->  ['ending', 'VERB']
+Episode 0 Step 7 Action SUBWORD Reward [12.25048683] -- (prior -> new) --- ['credits', 'NOUN']  -->  ['star', 'NOUN']
+Episode 0 Step 8 Action NO CHANGE Reward 0 -- (prior -> new) --- ['roll', 'NOUN']  -->  ['roll', 'NOUN']
+Episode 0 Step 9 Action NO CHANGE Reward 0 -- (prior -> new) --- ['long', 'ADJ']  -->  ['long', 'ADJ']
+Episode 0 Step 10 Action NO CHANGE Reward 0 -- (prior -> new) --- ['boring', 'ADJ']  -->  ['boring', 'ADJ']
+Episode 0 Step 11 Action NO CHANGE Reward 0 -- (prior -> new) --- ['interesting', 'ADJ']  -->  ['interesting', 'ADJ']
+Episode 0 Step 12 Action SUBWORD Reward [2.91309081] -- (prior -> new) --- ['never', 'ADV']  -->  ['why', 'ADV']
+Episode 0 Step 13 Action NO CHANGE Reward 0 -- (prior -> new) --- ['glad', 'ADJ']  -->  ['glad', 'ADJ']
+Episode 0 Step 14 Action SUBWORD Reward [2.5890289] -- (prior -> new) --- ['see', 'VERB']  -->  ['be', 'VERB']
+Episode 0 Step 15 Action NO CHANGE Reward 0 -- (prior -> new) --- ['ending', 'VERB']  -->  ['ending', 'VERB']
+Episode 0 Step 16 Action SUBWORD Reward [2.32667728] -- (prior -> new) --- ['star', 'NOUN']  -->  ['this', {'text': 'this', 'start_pos': 0, 'end_pos': 4, 'type': 'DET', 'confidence': 0.9997522234916687}]
+Episode 0 Step 17 Action NO CHANGE Reward 0 -- (prior -> new) --- ['roll', 'NOUN']  -->  ['roll', 'NOUN']
+RUNNING PREDICTION ON bored, boring, interesting. why have i been so glad to be ending this roll. DIST: [0.23799926] ['Negative'] [array([-0.00526399, -5.249495  ], dtype=float32)] [[0.99474984 0.00525017]]
+Episode 0 Step 18 Action SUBWORD Reward [2.20169374] -- (prior -> new) --- ['long', 'ADJ']  -->  ['bored', 'ADJ']
+RUNNING PREDICTION ON bored, exciting, interesting. why have i been so glad to be ending this roll. DIST: [0.30314582] ['Negative'] [array([-0.00674969, -5.0016303 ], dtype=float32)] [[0.993273   0.00672697]]
+Episode 0 Step 19 Action SUBWORD Reward [1.29874254] -- (prior -> new) --- ['boring', 'ADJ']  -->  ['exciting', 'ADJ']
+Episode 0 Step 20 Action NO CHANGE Reward 0 -- (prior -> new) --- ['interesting', 'ADJ']  -->  ['interesting', 'ADJ']
+Episode 0 Step 21 Action NO CHANGE Reward 0 -- (prior -> new) --- ['glad', 'ADJ']  -->  ['glad', 'ADJ']
+Episode 0 Step 22 Action NO CHANGE Reward 0 -- (prior -> new) --- ['ending', 'VERB']  -->  ['ending', 'VERB']
+Episode 0 Step 23 Action NO CHANGE Reward 0 -- (prior -> new) --- ['roll', 'NOUN']  -->  ['roll', 'NOUN']
+RUNNING PREDICTION ON big, exciting, interesting. why have i been so glad to be ending this roll. DIST: [0.41291989] ['Negative'] [array([-0.41833395, -1.0733609 ], dtype=float32)] [[0.6581424  0.34185764]]
+Episode 0 Step 24 Action SUBWORD Reward [0.42177724] -- (prior -> new) --- ['bored', 'ADJ']  -->  ['big', 'ADJ']
+Episode 0 Step 25 Action NO CHANGE Reward 0 -- (prior -> new) --- ['exciting', 'ADJ']  -->  ['exciting', 'ADJ']
+RUNNING PREDICTION ON big, exciting, amazing. why have i been so glad to be ending this roll. DIST: [0.40758667] ['Positive'] [array([-4.83332   , -0.00799196], dtype=float32)] [[0.00796005 0.9920399 ]]
+DONE FOUND CF!! with dist [0.40758667]
+Episode 0 Step 26 Action SUBWORD Reward [95.92413334] -- (prior -> new) --- ['interesting', 'ADJ']  -->  ['amazing', 'ADJ']
+DONE AT Step 26 @ Episode 1/5 (0.0)
+Episode collection for ep0=(23.894462823867798)
+************************
+Now look at episode:
+Starting at Input sentence: Long, boring, blasphemous. Never have I been so glad to see ending credits roll.
+0 In State long ( ADJ ) took Action NO CHANGE got Reward 0
+
+1 In State boring ( ADJ ) took Action NO CHANGE got Reward 0
+
+2 In State blasphemous ( ADJ ) took Action SUBWORD got Reward [29.45294047]
+------ (prior -> new) --- ['blasphemous', 'ADJ']  -->  ['interesting', 'ADJ']
+--was-- Long, boring, blasphemous. Never have I been so glad to see ending credits roll.
+--now-- long, boring, interesting. never have i been so glad to see ending credits roll.
+
+3 In State never ( ADV ) took Action NO CHANGE got Reward 0
+
+4 In State glad ( ADJ ) took Action NO CHANGE got Reward 0
+
+5 In State see ( VERB ) took Action NO CHANGE got Reward 0
+
+6 In State ending ( VERB ) took Action NO CHANGE got Reward 0
+
+7 In State credits ( NOUN ) took Action SUBWORD got Reward [12.25048683]
+------ (prior -> new) --- ['credits', 'NOUN']  -->  ['star', 'NOUN']
+--was-- long, boring, interesting. never have i been so glad to see ending credits roll.
+--now-- long, boring, interesting. never have i been so glad to see ending star roll.
+
+8 In State roll ( NOUN ) took Action NO CHANGE got Reward 0
+
+9 In State long ( ADJ ) took Action NO CHANGE got Reward 0
+
+10 In State boring ( ADJ ) took Action NO CHANGE got Reward 0
+
+11 In State interesting ( ADJ ) took Action NO CHANGE got Reward 0
+
+12 In State never ( ADV ) took Action SUBWORD got Reward [2.91309081]
+------ (prior -> new) --- ['never', 'ADV']  -->  ['why', 'ADV']
+--was-- long, boring, interesting. never have i been so glad to see ending star roll.
+--now-- long, boring, interesting. why have i been so glad to see ending star roll.
+
+13 In State glad ( ADJ ) took Action NO CHANGE got Reward 0
+
+14 In State see ( VERB ) took Action SUBWORD got Reward [2.5890289]
+------ (prior -> new) --- ['see', 'VERB']  -->  ['be', 'VERB']
+--was-- long, boring, interesting. why have i been so glad to see ending star roll.
+--now-- long, boring, interesting. why have i been so glad to be ending star roll.
+
+15 In State ending ( VERB ) took Action NO CHANGE got Reward 0
+
+16 In State star ( NOUN ) took Action SUBWORD got Reward [2.32667728]
+------ (prior -> new) --- ['star', 'NOUN']  -->  ['this', {'text': 'this', 'start_pos': 0, 'end_pos': 4, 'type': 'DET', 'confidence': 0.9997522234916687}]
+--was-- long, boring, interesting. why have i been so glad to be ending star roll.
+--now-- long, boring, interesting. why have i been so glad to be ending this roll.
+
+17 In State roll ( NOUN ) took Action NO CHANGE got Reward 0
+
+18 In State long ( ADJ ) took Action SUBWORD got Reward [2.20169374]
+------ (prior -> new) --- ['long', 'ADJ']  -->  ['bored', 'ADJ']
+--was-- long, boring, interesting. why have i been so glad to be ending this roll.
+--now-- bored, boring, interesting. why have i been so glad to be ending this roll.
+
+19 In State boring ( ADJ ) took Action SUBWORD got Reward [1.29874254]
+------ (prior -> new) --- ['boring', 'ADJ']  -->  ['exciting', 'ADJ']
+--was-- bored, boring, interesting. why have i been so glad to be ending this roll.
+--now-- bored, exciting, interesting. why have i been so glad to be ending this roll.
+
+20 In State interesting ( ADJ ) took Action NO CHANGE got Reward 0
+
+21 In State glad ( ADJ ) took Action NO CHANGE got Reward 0
+
+22 In State ending ( VERB ) took Action NO CHANGE got Reward 0
+
+23 In State roll ( NOUN ) took Action NO CHANGE got Reward 0
+
+24 In State bored ( ADJ ) took Action SUBWORD got Reward [0.42177724]
+------ (prior -> new) --- ['bored', 'ADJ']  -->  ['big', 'ADJ']
+--was-- bored, exciting, interesting. why have i been so glad to be ending this roll.
+--now-- big, exciting, interesting. why have i been so glad to be ending this roll.
+
+25 In State exciting ( ADJ ) took Action NO CHANGE got Reward 0
+
+26 In State interesting ( ADJ ) took Action SUBWORD got Reward [95.92413334]
+------ (prior -> new) --- ['interesting', 'ADJ']  -->  ['amazing', 'ADJ']
+--was-- big, exciting, interesting. why have i been so glad to be ending this roll.
+--now-- big, exciting, amazing. why have i been so glad to be ending this roll.
+
+##############
+Original Sentence: Long, boring, blasphemous. Never have I been so glad to see ending credits roll.
+Current Sentence: big, exciting, amazing. why have i been so glad to be ending this roll.
+Current Word and Index glad 11
+Current Distance from Original: [0.40758667]
+Current Iteration through sentence:  3
+Total num edits: 9
+Unique words edited: 6
+##############
+UPDATE State s With Action 1 and Gamma 1.0 and Target [149.26925012] gives loss [50.295174]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [149.62534454] gives loss [45.71137]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [149.7134934] gives loss [202.62224]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [118.97553896] gives loss [33.932]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [119.33826112] gives loss [21.015375]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [118.57589137] gives loss [37.117664]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [118.49989115] gives loss [18.62915]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [118.28580879] gives loss [168.05757]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [105.77607132] gives loss [19.310562]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [105.27919305] gives loss [14.515706]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [105.30672682] gives loss [10.224166]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [105.21980227] gives loss [24.16261]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [104.84940256] gives loss [295.90588]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [102.87090232] gives loss [7.6048913]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [101.90356638] gives loss [173.93713]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [99.11608716] gives loss [8.003151]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [99.37658258] gives loss [194.163]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [96.33288693] gives loss [21.247177]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [95.75491428] gives loss [190.10457]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [93.86810259] gives loss [175.9547]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [92.67084983] gives loss [36.83166]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [92.84698227] gives loss [17.78232]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [91.74369672] gives loss [23.1257]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [91.54711631] gives loss [35.79393]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [91.64595511] gives loss [120.93644]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [91.81588558] gives loss [37.160877]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [91.16904072] gives loss [90.03061]
+--- Episode time for ep0=(24.04891562461853)
+If you haven't seen this, it's terrible. It is pure trash. I saw this about 17 years ago, and I'm still screwed up from it.
+['haven', 'seen', 'terrible', 'pure', 'trash', 'saw', '17', 'years', 'ago', 'm', 'still', 'screwed']
+After reset: ['haven', "If you haven't seen this, it's terrible. It is pure trash. I saw this about 17 years ago, and I'm still screwed up from it.", 'VERB', array([-0.12740439, -0.48730239,  1.62661827, ...,  0.        ,
+        0.        ,  0.        ])]
+Episode 1 Step 0 Action SUBWORD Reward [6592.65680867] -- (prior -> new) --- ['haven', 'VERB']  -->  ['have', 'VERB']
+Episode 1 Step 1 Action NO CHANGE Reward 0 -- (prior -> new) --- ['seen', 'VERB']  -->  ['seen', 'VERB']
+Episode 1 Step 2 Action NO CHANGE Reward 0 -- (prior -> new) --- ['terrible', 'ADJ']  -->  ['terrible', 'ADJ']
+Episode 1 Step 3 Action NO CHANGE Reward 0 -- (prior -> new) --- ['pure', 'ADJ']  -->  ['pure', 'ADJ']
+Episode 1 Step 4 Action NO CHANGE Reward 0 -- (prior -> new) --- ['trash', 'NOUN']  -->  ['trash', 'NOUN']
+Episode 1 Step 5 Action NO CHANGE Reward 0 -- (prior -> new) --- ['saw', 'VERB']  -->  ['saw', 'VERB']
+Episode 1 Step 6 Action NO CHANGE Reward 0 -- (prior -> new) --- ['17', 'NUM']  -->  ['17', 'NUM']
+Episode 1 Step 7 Action NO CHANGE Reward 0 -- (prior -> new) --- ['years', 'NOUN']  -->  ['years', 'NOUN']
+Episode 1 Step 8 Action NO CHANGE Reward 0 -- (prior -> new) --- ['ago', 'ADV']  -->  ['ago', 'ADV']
+Episode 1 Step 9 Action SUBWORD Reward [461.94701755] -- (prior -> new) --- ['m', 'INTJ']  -->  ['ve', {'text': 've', 'start_pos': 0, 'end_pos': 2, 'type': 'X', 'confidence': 0.9596471786499023}]
+Episode 1 Step 10 Action SUBWORD Reward [56.59323695] -- (prior -> new) --- ['still', 'ADV']  -->  ['completely', 'ADV']
+Episode 1 Step 11 Action SUBWORD Reward [13.17873237] -- (prior -> new) --- ['screwed', 'VERB']  -->  ['given', 'VERB']
+Episode 1 Step 12 Action SUBWORD Reward [12.55367082] -- (prior -> new) --- ['seen', 'VERB']  -->  ['read', 'VERB']
+RUNNING PREDICTION ON if you have't read this, it's ridiculous. it is pure trash. i saw this about 17 years ago, and i've completely given up from it. DIST: [0.08602504] ['Negative'] [array([-2.8039210e-03, -5.8781357e+00], dtype=float32)] [[0.9972 0.0028]]
+Episode 1 Step 13 Action SUBWORD Reward [9.62452253] -- (prior -> new) --- ['terrible', 'ADJ']  -->  ['ridiculous', 'ADJ']
+Episode 1 Step 14 Action NO CHANGE Reward 0 -- (prior -> new) --- ['pure', 'ADJ']  -->  ['pure', 'ADJ']
+Episode 1 Step 15 Action NO CHANGE Reward 0 -- (prior -> new) --- ['trash', 'NOUN']  -->  ['trash', 'NOUN']
+RUNNING PREDICTION ON if you have't read this, it's ridiculous. it is pure trash. i wrote this about 17 years ago, and i've completely given up from it. DIST: [0.11045728] ['Negative'] [array([-3.6387916e-03, -5.6179118e+00], dtype=float32)] [[0.9963678  0.00363222]]
+Episode 1 Step 16 Action SUBWORD Reward [7.05327419] -- (prior -> new) --- ['saw', 'VERB']  -->  ['wrote', 'VERB']
+Episode 1 Step 17 Action NO CHANGE Reward 0 -- (prior -> new) --- ['17', 'NUM']  -->  ['17', 'NUM']
+Episode 1 Step 18 Action NO CHANGE Reward 0 -- (prior -> new) --- ['years', 'NOUN']  -->  ['years', 'NOUN']
+Episode 1 Step 19 Action NO CHANGE Reward 0 -- (prior -> new) --- ['ago', 'ADV']  -->  ['ago', 'ADV']
+RUNNING PREDICTION ON if you have't read this, it's ridiculous. it is pure trash. i wrote this about 17 years ago, and i'd completely given up from it. DIST: [0.11189048] ['Negative'] [array([-3.7294137e-03, -5.5933528e+00], dtype=float32)] [[0.9962775  0.00372253]]
+Episode 1 Step 20 Action SUBWORD Reward [6.93731075] -- (prior -> new) --- ['ve', 'INTJ']  -->  ['d', {'text': 'd', 'start_pos': 0, 'end_pos': 1, 'type': 'X', 'confidence': 0.9929665327072144}]
+Episode 1 Step 21 Action NO CHANGE Reward 0 -- (prior -> new) --- ['completely', 'ADV']  -->  ['completely', 'ADV']
+RUNNING PREDICTION ON if you have't read this, it's ridiculous. it is pure trash. i wrote this about 17 years ago, and i'd completely grown up from it. DIST: [0.1815196] ['Negative'] [array([-0.01058924, -4.55321   ], dtype=float32)] [[0.9894666  0.01053334]]
+Episode 1 Step 22 Action SUBWORD Reward [3.50904685] -- (prior -> new) --- ['given', 'VERB']  -->  ['grown', 'VERB']
+RUNNING PREDICTION ON if you have't written this, it's ridiculous. it is pure trash. i wrote this about 17 years ago, and i'd completely grown up from it. DIST: [0.17783532] ['Negative'] [array([-0.01155022, -4.466823  ], dtype=float32)] [[0.9885162  0.01148374]]
+Episode 1 Step 23 Action SUBWORD Reward [3.62317981] -- (prior -> new) --- ['read', 'VERB']  -->  ['written', 'VERB']
+RUNNING PREDICTION ON if you have't written this, it's stupid. it is pure trash. i wrote this about 17 years ago, and i'd completely grown up from it. DIST: [0.16817667] ['Negative'] [array([-0.01795632, -4.0287786 ], dtype=float32)] [[0.98220396 0.01779605]]
+Episode 1 Step 24 Action SUBWORD Reward [3.94612785] -- (prior -> new) --- ['ridiculous', 'ADJ']  -->  ['stupid', 'ADJ']
+RUNNING PREDICTION ON if you have't written this, it's stupid. it is pathetic trash. i wrote this about 17 years ago, and i'd completely grown up from it. DIST: [0.14636903] ['Negative'] [array([-0.01071285, -4.5416646 ], dtype=float32)] [[0.9893443  0.01065565]]
+Episode 1 Step 25 Action SUBWORD Reward [4.83204649] -- (prior -> new) --- ['pure', 'ADJ']  -->  ['pathetic', 'ADJ']
+Episode 1 Step 26 Action NO CHANGE Reward 0 -- (prior -> new) --- ['trash', 'NOUN']  -->  ['trash', 'NOUN']
+Episode 1 Step 27 Action NO CHANGE Reward 0 -- (prior -> new) --- ['wrote', 'VERB']  -->  ['wrote', 'VERB']
+Episode 1 Step 28 Action NO CHANGE Reward 0 -- (prior -> new) --- ['17', 'NUM']  -->  ['17', 'NUM']
+RUNNING PREDICTION ON if you have't written this, it's stupid. it is pathetic trash. i wrote this about 17 months ago, and i'd completely grown up from it. DIST: [0.1533809] ['Negative'] [array([-0.01028287, -4.582414  ], dtype=float32)] [[0.9897698  0.01023017]]
+Episode 1 Step 29 Action SUBWORD Reward [4.51971657] -- (prior -> new) --- ['years', 'NOUN']  -->  ['months', 'NOUN']
+RUNNING PREDICTION ON if you have't written this, it's stupid. it is pathetic trash. i wrote this about 17 months later, and i'd completely grown up from it. DIST: [0.17469201] ['Negative'] [array([-0.02547557, -3.6827457 ], dtype=float32)] [[0.9748462  0.02515382]]
+Episode 1 Step 30 Action SUBWORD Reward [3.72436016] -- (prior -> new) --- ['ago', 'ADV']  -->  ['later', 'ADV']
+WARNING.  changed current_word: d  to  ve  which is on the priorly used list.. this should be late restort
+RUNNING PREDICTION ON if you have't written this, it's stupid. it is pathetic trash. i wrote this about 17 months later, and i've completely grown up from it. DIST: [0.17048526] ['Negative'] [array([-0.08822286, -2.4716763 ], dtype=float32)] [[0.9155568  0.08444318]]
+Episode 1 Step 31 Action SUBWORD Reward [3.86560979] -- (prior -> new) --- ['d', 'INTJ']  -->  ['ve', {'text': 've', 'start_pos': 0, 'end_pos': 2, 'type': 'X', 'confidence': 0.9331009387969971}]
+RUNNING PREDICTION ON if you have't written this, it's stupid. it is pathetic trash. i wrote this about 17 months later, and i've never grown up from it. DIST: [0.15408265] ['Negative'] [array([-0.01382948, -4.2878575 ], dtype=float32)] [[0.9862657  0.01373432]]
+Episode 1 Step 32 Action SUBWORD Reward [4.49002333] -- (prior -> new) --- ['completely', 'ADV']  -->  ['never', 'ADV']
+Episode 1 Step 33 Action NO CHANGE Reward 0 -- (prior -> new) --- ['grown', 'VERB']  -->  ['grown', 'VERB']
+RUNNING PREDICTION ON if you have't done this, it's stupid. it is pathetic trash. i wrote this about 17 months later, and i've never grown up from it. DIST: [0.14883328] ['Negative'] [array([-0.02637812, -3.6483808 ], dtype=float32)] [[0.9739667  0.02603325]]
+Episode 1 Step 34 Action SUBWORD Reward [4.71892725] -- (prior -> new) --- ['written', 'VERB']  -->  ['done', 'VERB']
+Episode 1 Step 35 Action NO CHANGE Reward 0 -- (prior -> new) --- ['stupid', 'ADJ']  -->  ['stupid', 'ADJ']
+Episode 1 Step 36 Action NO CHANGE Reward 0 -- (prior -> new) --- ['pathetic', 'ADJ']  -->  ['pathetic', 'ADJ']
+Episode 1 Step 37 Action NO CHANGE Reward 0 -- (prior -> new) --- ['trash', 'NOUN']  -->  ['trash', 'NOUN']
+Episode 1 Step 38 Action NO CHANGE Reward 0 -- (prior -> new) --- ['wrote', 'VERB']  -->  ['wrote', 'VERB']
+Episode 1 Step 39 Action NO CHANGE Reward 0 -- (prior -> new) --- ['17', 'NUM']  -->  ['17', 'NUM']
+Episode 1 Step 40 Action NO CHANGE Reward 0 -- (prior -> new) --- ['months', 'NOUN']  -->  ['months', 'NOUN']
+Episode 1 Step 41 Action NO CHANGE Reward 0 -- (prior -> new) --- ['later', 'ADV']  -->  ['later', 'ADV']
+Episode 1 Step 42 Action NO CHANGE Reward 0 -- (prior -> new) --- ['ve', 'INTJ']  -->  ['ve', 'INTJ']
+Episode 1 Step 43 Action NO CHANGE Reward 0 -- (prior -> new) --- ['never', 'ADV']  -->  ['never', 'ADV']
+Episode 1 Step 44 Action NO CHANGE Reward 0 -- (prior -> new) --- ['grown', 'VERB']  -->  ['grown', 'VERB']
+RUNNING PREDICTION ON if you have't liked this, it's stupid. it is pathetic trash. i wrote this about 17 months later, and i've never grown up from it. DIST: [0.14301087] ['Negative'] [array([-0.02659418, -3.6403313 ], dtype=float32)] [[0.9737563  0.02624365]]
+Episode 1 Step 45 Action SUBWORD Reward [4.99247534] -- (prior -> new) --- ['done', 'VERB']  -->  ['liked', 'VERB']
+Episode 1 Step 46 Action NO CHANGE Reward 0 -- (prior -> new) --- ['stupid', 'ADJ']  -->  ['stupid', 'ADJ']
+RUNNING PREDICTION ON if you have't liked this, it's stupid. it is fucking trash. i wrote this about 17 months later, and i've never grown up from it. DIST: [0.14741734] ['Negative'] [array([-0.03789004, -3.2919521 ], dtype=float32)] [[0.9628188  0.03718119]]
+Episode 1 Step 47 Action SUBWORD Reward [4.78346261] -- (prior -> new) --- ['pathetic', 'ADJ']  -->  ['fucking', 'ADJ']
+RUNNING PREDICTION ON if you have't liked this, it's stupid. it is fucking cool. i wrote this about 17 months later, and i've never grown up from it. DIST: [0.2857255] ['Positive'] [array([-6.5509343e+00, -1.4298464e-03], dtype=float32)] [[0.00142878 0.99857116]]
+DONE FOUND CF!! with dist [0.2857255]
+Episode 1 Step 48 Action SUBWORD Reward [97.14274504] -- (prior -> new) --- ['trash', 'NOUN']  -->  ['cool', 'NOUN']
+DONE AT Step 48 @ Episode 2/5 (149.37857114849743)
+Episode collection for ep1=(89.09219646453857)
+************************
+Now look at episode:
+Starting at Input sentence: If you haven't seen this, it's terrible. It is pure trash. I saw this about 17 years ago, and I'm still screwed up from it.
+0 In State haven ( VERB ) took Action SUBWORD got Reward [6592.65680867]
+------ (prior -> new) --- ['haven', 'VERB']  -->  ['have', 'VERB']
+--was-- If you haven't seen this, it's terrible. It is pure trash. I saw this about 17 years ago, and I'm still screwed up from it.
+--now-- if you have't seen this, it's terrible. it is pure trash. i saw this about 17 years ago, and i'm still screwed up from it.
+
+1 In State seen ( VERB ) took Action NO CHANGE got Reward 0
+
+2 In State terrible ( ADJ ) took Action NO CHANGE got Reward 0
+
+3 In State pure ( ADJ ) took Action NO CHANGE got Reward 0
+
+4 In State trash ( NOUN ) took Action NO CHANGE got Reward 0
+
+5 In State saw ( VERB ) took Action NO CHANGE got Reward 0
+
+6 In State 17 ( NUM ) took Action NO CHANGE got Reward 0
+
+7 In State years ( NOUN ) took Action NO CHANGE got Reward 0
+
+8 In State ago ( ADV ) took Action NO CHANGE got Reward 0
+
+9 In State m ( INTJ ) took Action SUBWORD got Reward [461.94701755]
+------ (prior -> new) --- ['m', 'INTJ']  -->  ['ve', {'text': 've', 'start_pos': 0, 'end_pos': 2, 'type': 'X', 'confidence': 0.9596471786499023}]
+--was-- if you have't seen this, it's terrible. it is pure trash. i saw this about 17 years ago, and i'm still screwed up from it.
+--now-- if you have't seen this, it's terrible. it is pure trash. i saw this about 17 years ago, and i've still screwed up from it.
+
+10 In State still ( ADV ) took Action SUBWORD got Reward [56.59323695]
+------ (prior -> new) --- ['still', 'ADV']  -->  ['completely', 'ADV']
+--was-- if you have't seen this, it's terrible. it is pure trash. i saw this about 17 years ago, and i've still screwed up from it.
+--now-- if you have't seen this, it's terrible. it is pure trash. i saw this about 17 years ago, and i've completely screwed up from it.
+
+11 In State screwed ( VERB ) took Action SUBWORD got Reward [13.17873237]
+------ (prior -> new) --- ['screwed', 'VERB']  -->  ['given', 'VERB']
+--was-- if you have't seen this, it's terrible. it is pure trash. i saw this about 17 years ago, and i've completely screwed up from it.
+--now-- if you have't seen this, it's terrible. it is pure trash. i saw this about 17 years ago, and i've completely given up from it.
+
+12 In State seen ( VERB ) took Action SUBWORD got Reward [12.55367082]
+------ (prior -> new) --- ['seen', 'VERB']  -->  ['read', 'VERB']
+--was-- if you have't seen this, it's terrible. it is pure trash. i saw this about 17 years ago, and i've completely given up from it.
+--now-- if you have't read this, it's terrible. it is pure trash. i saw this about 17 years ago, and i've completely given up from it.
+
+13 In State terrible ( ADJ ) took Action SUBWORD got Reward [9.62452253]
+------ (prior -> new) --- ['terrible', 'ADJ']  -->  ['ridiculous', 'ADJ']
+--was-- if you have't read this, it's terrible. it is pure trash. i saw this about 17 years ago, and i've completely given up from it.
+--now-- if you have't read this, it's ridiculous. it is pure trash. i saw this about 17 years ago, and i've completely given up from it.
+
+14 In State pure ( ADJ ) took Action NO CHANGE got Reward 0
+
+15 In State trash ( NOUN ) took Action NO CHANGE got Reward 0
+
+16 In State saw ( VERB ) took Action SUBWORD got Reward [7.05327419]
+------ (prior -> new) --- ['saw', 'VERB']  -->  ['wrote', 'VERB']
+--was-- if you have't read this, it's ridiculous. it is pure trash. i saw this about 17 years ago, and i've completely given up from it.
+--now-- if you have't read this, it's ridiculous. it is pure trash. i wrote this about 17 years ago, and i've completely given up from it.
+
+17 In State 17 ( NUM ) took Action NO CHANGE got Reward 0
+
+18 In State years ( NOUN ) took Action NO CHANGE got Reward 0
+
+19 In State ago ( ADV ) took Action NO CHANGE got Reward 0
+
+20 In State ve ( INTJ ) took Action SUBWORD got Reward [6.93731075]
+------ (prior -> new) --- ['ve', 'INTJ']  -->  ['d', {'text': 'd', 'start_pos': 0, 'end_pos': 1, 'type': 'X', 'confidence': 0.9929665327072144}]
+--was-- if you have't read this, it's ridiculous. it is pure trash. i wrote this about 17 years ago, and i've completely given up from it.
+--now-- if you have't read this, it's ridiculous. it is pure trash. i wrote this about 17 years ago, and i'd completely given up from it.
+
+21 In State completely ( ADV ) took Action NO CHANGE got Reward 0
+
+22 In State given ( VERB ) took Action SUBWORD got Reward [3.50904685]
+------ (prior -> new) --- ['given', 'VERB']  -->  ['grown', 'VERB']
+--was-- if you have't read this, it's ridiculous. it is pure trash. i wrote this about 17 years ago, and i'd completely given up from it.
+--now-- if you have't read this, it's ridiculous. it is pure trash. i wrote this about 17 years ago, and i'd completely grown up from it.
+
+23 In State read ( VERB ) took Action SUBWORD got Reward [3.62317981]
+------ (prior -> new) --- ['read', 'VERB']  -->  ['written', 'VERB']
+--was-- if you have't read this, it's ridiculous. it is pure trash. i wrote this about 17 years ago, and i'd completely grown up from it.
+--now-- if you have't written this, it's ridiculous. it is pure trash. i wrote this about 17 years ago, and i'd completely grown up from it.
+
+24 In State ridiculous ( ADJ ) took Action SUBWORD got Reward [3.94612785]
+------ (prior -> new) --- ['ridiculous', 'ADJ']  -->  ['stupid', 'ADJ']
+--was-- if you have't written this, it's ridiculous. it is pure trash. i wrote this about 17 years ago, and i'd completely grown up from it.
+--now-- if you have't written this, it's stupid. it is pure trash. i wrote this about 17 years ago, and i'd completely grown up from it.
+
+25 In State pure ( ADJ ) took Action SUBWORD got Reward [4.83204649]
+------ (prior -> new) --- ['pure', 'ADJ']  -->  ['pathetic', 'ADJ']
+--was-- if you have't written this, it's stupid. it is pure trash. i wrote this about 17 years ago, and i'd completely grown up from it.
+--now-- if you have't written this, it's stupid. it is pathetic trash. i wrote this about 17 years ago, and i'd completely grown up from it.
+
+26 In State trash ( NOUN ) took Action NO CHANGE got Reward 0
+
+27 In State wrote ( VERB ) took Action NO CHANGE got Reward 0
+
+28 In State 17 ( NUM ) took Action NO CHANGE got Reward 0
+
+29 In State years ( NOUN ) took Action SUBWORD got Reward [4.51971657]
+------ (prior -> new) --- ['years', 'NOUN']  -->  ['months', 'NOUN']
+--was-- if you have't written this, it's stupid. it is pathetic trash. i wrote this about 17 years ago, and i'd completely grown up from it.
+--now-- if you have't written this, it's stupid. it is pathetic trash. i wrote this about 17 months ago, and i'd completely grown up from it.
+
+30 In State ago ( ADV ) took Action SUBWORD got Reward [3.72436016]
+------ (prior -> new) --- ['ago', 'ADV']  -->  ['later', 'ADV']
+--was-- if you have't written this, it's stupid. it is pathetic trash. i wrote this about 17 months ago, and i'd completely grown up from it.
+--now-- if you have't written this, it's stupid. it is pathetic trash. i wrote this about 17 months later, and i'd completely grown up from it.
+
+31 In State d ( INTJ ) took Action SUBWORD got Reward [3.86560979]
+------ (prior -> new) --- ['d', 'INTJ']  -->  ['ve', {'text': 've', 'start_pos': 0, 'end_pos': 2, 'type': 'X', 'confidence': 0.9331009387969971}]
+--was-- if you have't written this, it's stupid. it is pathetic trash. i wrote this about 17 months later, and i'd completely grown up from it.
+--now-- if you have't written this, it's stupid. it is pathetic trash. i wrote this about 17 months later, and i've completely grown up from it.
+
+32 In State completely ( ADV ) took Action SUBWORD got Reward [4.49002333]
+------ (prior -> new) --- ['completely', 'ADV']  -->  ['never', 'ADV']
+--was-- if you have't written this, it's stupid. it is pathetic trash. i wrote this about 17 months later, and i've completely grown up from it.
+--now-- if you have't written this, it's stupid. it is pathetic trash. i wrote this about 17 months later, and i've never grown up from it.
+
+33 In State grown ( VERB ) took Action NO CHANGE got Reward 0
+
+34 In State written ( VERB ) took Action SUBWORD got Reward [4.71892725]
+------ (prior -> new) --- ['written', 'VERB']  -->  ['done', 'VERB']
+--was-- if you have't written this, it's stupid. it is pathetic trash. i wrote this about 17 months later, and i've never grown up from it.
+--now-- if you have't done this, it's stupid. it is pathetic trash. i wrote this about 17 months later, and i've never grown up from it.
+
+35 In State stupid ( ADJ ) took Action NO CHANGE got Reward 0
+
+36 In State pathetic ( ADJ ) took Action NO CHANGE got Reward 0
+
+37 In State trash ( NOUN ) took Action NO CHANGE got Reward 0
+
+38 In State wrote ( VERB ) took Action NO CHANGE got Reward 0
+
+39 In State 17 ( NUM ) took Action NO CHANGE got Reward 0
+
+40 In State months ( NOUN ) took Action NO CHANGE got Reward 0
+
+41 In State later ( ADV ) took Action NO CHANGE got Reward 0
+
+42 In State ve ( INTJ ) took Action NO CHANGE got Reward 0
+
+43 In State never ( ADV ) took Action NO CHANGE got Reward 0
+
+44 In State grown ( VERB ) took Action NO CHANGE got Reward 0
+
+45 In State done ( VERB ) took Action SUBWORD got Reward [4.99247534]
+------ (prior -> new) --- ['done', 'VERB']  -->  ['liked', 'VERB']
+--was-- if you have't done this, it's stupid. it is pathetic trash. i wrote this about 17 months later, and i've never grown up from it.
+--now-- if you have't liked this, it's stupid. it is pathetic trash. i wrote this about 17 months later, and i've never grown up from it.
+
+46 In State stupid ( ADJ ) took Action NO CHANGE got Reward 0
+
+47 In State pathetic ( ADJ ) took Action SUBWORD got Reward [4.78346261]
+------ (prior -> new) --- ['pathetic', 'ADJ']  -->  ['fucking', 'ADJ']
+--was-- if you have't liked this, it's stupid. it is pathetic trash. i wrote this about 17 months later, and i've never grown up from it.
+--now-- if you have't liked this, it's stupid. it is fucking trash. i wrote this about 17 months later, and i've never grown up from it.
+
+48 In State trash ( NOUN ) took Action SUBWORD got Reward [97.14274504]
+------ (prior -> new) --- ['trash', 'NOUN']  -->  ['cool', 'NOUN']
+--was-- if you have't liked this, it's stupid. it is fucking trash. i wrote this about 17 months later, and i've never grown up from it.
+--now-- if you have't liked this, it's stupid. it is fucking cool. i wrote this about 17 months later, and i've never grown up from it.
+
+##############
+Original Sentence: If you haven't seen this, it's terrible. It is pure trash. I saw this about 17 years ago, and I'm still screwed up from it.
+Current Sentence: if you have't liked this, it's stupid. it is fucking cool. i wrote this about 17 months later, and i've never grown up from it.
+Current Word and Index wrote 19
+Current Distance from Original: [0.2857255]
+Current Iteration through sentence:  4
+Total num edits: 20
+Unique words edited: 11
+##############
+UPDATE State s With Action 0 and Gamma 1.0 and Target [7299.90292105] gives loss [9424.011]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [706.77924207] gives loss [302.54272]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [706.99523786] gives loss [504.266]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [706.69682601] gives loss [205.3134]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [706.92291025] gives loss [557.12976]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [705.91351274] gives loss [300.75336]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [706.1345177] gives loss [298.2904]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [706.35107234] gives loss [332.56335]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [705.224062] gives loss [271.1587]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [704.88569215] gives loss [889.6262]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [242.68828026] gives loss [326.10858]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [185.83582032] gives loss [179.20819]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [172.47933164] gives loss [222.36192]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [160.2584922] gives loss [123.52609]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [150.36962021] gives loss [31.082777]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [150.59389866] gives loss [120.115906]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [149.52407492] gives loss [182.495]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [142.7469152] gives loss [52.654385]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [143.05515513] gives loss [50.276222]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [141.90115294] gives loss [60.20886]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [141.90954432] gives loss [149.19005]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [135.27292041] gives loss [48.190422]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [134.32132128] gives loss [155.70665]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [131.62282131] gives loss [183.70114]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [128.24693211] gives loss [78.93144]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [124.10086166] gives loss [158.48788]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [119.36896147] gives loss [92.85601]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [118.56054129] gives loss [68.1525]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [118.61112704] gives loss [54.295506]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [118.97529711] gives loss [129.10522]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [113.12785227] gives loss [98.10646]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [109.14453807] gives loss [85.6721]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [105.9938426] gives loss [79.122955]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [101.12574176] gives loss [52.022186]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [100.66652564] gives loss [80.46194]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [96.34623235] gives loss [86.86988]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [96.24565881] gives loss [84.62727]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [96.52796548] gives loss [72.822395]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [95.72099966] gives loss [73.30486]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [95.85165304] gives loss [59.07056]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [97.1995191] gives loss [54.830875]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [96.80586237] gives loss [71.32487]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [95.1153602] gives loss [64.31921]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [96.24497598] gives loss [68.949844]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [95.36869711] gives loss [51.32093]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [94.29869836] gives loss [76.152466]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [90.2659341] gives loss [62.482277]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [90.11573326] gives loss [65.09376]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [85.75991061] gives loss [72.59349]
+--- Episode time for ep1=(89.20732402801514)
+I think it's one of the most ridiculous movies ever made, and I've seen many... The book is way better and it's a very mediocre movie!
+['think', 'one', 'ridiculous', 'movies', 'ever', 'made', 've', 'seen', 'many', 'book', 'way', 'better', 'mediocre', 'movie']
+After reset: ['think', "I think it's one of the most ridiculous movies ever made, and I've seen many... The book is way better and it's a very mediocre movie!", 'VERB', array([-0.03118682, -0.2309836 ,  2.41849303, ...,  0.        ,
+        0.        ,  0.        ])]
+Episode 2 Step 0 Action SUBWORD Reward [293.40411007] -- (prior -> new) --- ['think', 'VERB']  -->  ['swear', 'VERB']
+Episode 2 Step 1 Action SUBWORD Reward [137.73956248] -- (prior -> new) --- ['one', 'NUM']  -->  ['two', 'NUM']
+Episode 2 Step 2 Action SUBWORD Reward [14.36802709] -- (prior -> new) --- ['ridiculous', 'ADJ']  -->  ['great', 'ADJ']
+Episode 2 Step 3 Action NO CHANGE Reward 0 -- (prior -> new) --- ['movies', 'NOUN']  -->  ['movies', 'NOUN']
+Episode 2 Step 4 Action NO CHANGE Reward 0 -- (prior -> new) --- ['ever', 'ADV']  -->  ['ever', 'ADV']
+Episode 2 Step 5 Action NO CHANGE Reward 0 -- (prior -> new) --- ['made', 'VERB']  -->  ['made', 'VERB']
+Episode 2 Step 6 Action NO CHANGE Reward 0 -- (prior -> new) --- ['ve', 'VERB']  -->  ['ve', 'VERB']
+Episode 2 Step 7 Action NO CHANGE Reward 0 -- (prior -> new) --- ['seen', 'VERB']  -->  ['seen', 'VERB']
+Episode 2 Step 8 Action SUBWORD Reward [20.5540044] -- (prior -> new) --- ['many', 'ADJ']  -->  ['worse', 'ADJ']
+Episode 2 Step 9 Action SUBWORD Reward [12.29767329] -- (prior -> new) --- ['book', 'NOUN']  -->  ['quality', 'NOUN']
+Episode 2 Step 10 Action NO CHANGE Reward 0 -- (prior -> new) --- ['way', 'ADV']  -->  ['way', 'ADV']
+Episode 2 Step 11 Action NO CHANGE Reward 0 -- (prior -> new) --- ['better', 'ADV']  -->  ['better', 'ADV']
+RUNNING PREDICTION ON i swear it's two of the most great movies ever made, and i've seen worse... the quality is way better and it's a very good movie ! DIST: [0.15492413] ['Positive'] [array([-6.0467038e+00, -2.3685042e-03], dtype=float32)] [[0.00236565 0.9976343 ]]
+DONE FOUND CF!! with dist [0.15492413]
+Episode 2 Step 12 Action SUBWORD Reward [98.45075871] -- (prior -> new) --- ['mediocre', 'ADJ']  -->  ['good', 'ADJ']
+DONE AT Step 12 @ Episode 3/5 (7304.692294924835)
+Episode collection for ep2=(9.53680419921875)
+************************
+Now look at episode:
+Starting at Input sentence: I think it's one of the most ridiculous movies ever made, and I've seen many... The book is way better and it's a very mediocre movie!
+0 In State think ( VERB ) took Action SUBWORD got Reward [293.40411007]
+------ (prior -> new) --- ['think', 'VERB']  -->  ['swear', 'VERB']
+--was-- I think it's one of the most ridiculous movies ever made, and I've seen many... The book is way better and it's a very mediocre movie!
+--now-- i swear it's one of the most ridiculous movies ever made, and i've seen many... the book is way better and it's a very mediocre movie !
+
+1 In State one ( NUM ) took Action SUBWORD got Reward [137.73956248]
+------ (prior -> new) --- ['one', 'NUM']  -->  ['two', 'NUM']
+--was-- i swear it's one of the most ridiculous movies ever made, and i've seen many... the book is way better and it's a very mediocre movie !
+--now-- i swear it's two of the most ridiculous movies ever made, and i've seen many... the book is way better and it's a very mediocre movie !
+
+2 In State ridiculous ( ADJ ) took Action SUBWORD got Reward [14.36802709]
+------ (prior -> new) --- ['ridiculous', 'ADJ']  -->  ['great', 'ADJ']
+--was-- i swear it's two of the most ridiculous movies ever made, and i've seen many... the book is way better and it's a very mediocre movie !
+--now-- i swear it's two of the most great movies ever made, and i've seen many... the book is way better and it's a very mediocre movie !
+
+3 In State movies ( NOUN ) took Action NO CHANGE got Reward 0
+
+4 In State ever ( ADV ) took Action NO CHANGE got Reward 0
+
+5 In State made ( VERB ) took Action NO CHANGE got Reward 0
+
+6 In State ve ( VERB ) took Action NO CHANGE got Reward 0
+
+7 In State seen ( VERB ) took Action NO CHANGE got Reward 0
+
+8 In State many ( ADJ ) took Action SUBWORD got Reward [20.5540044]
+------ (prior -> new) --- ['many', 'ADJ']  -->  ['worse', 'ADJ']
+--was-- i swear it's two of the most great movies ever made, and i've seen many... the book is way better and it's a very mediocre movie !
+--now-- i swear it's two of the most great movies ever made, and i've seen worse... the book is way better and it's a very mediocre movie !
+
+9 In State book ( NOUN ) took Action SUBWORD got Reward [12.29767329]
+------ (prior -> new) --- ['book', 'NOUN']  -->  ['quality', 'NOUN']
+--was-- i swear it's two of the most great movies ever made, and i've seen worse... the book is way better and it's a very mediocre movie !
+--now-- i swear it's two of the most great movies ever made, and i've seen worse... the quality is way better and it's a very mediocre movie !
+
+10 In State way ( ADV ) took Action NO CHANGE got Reward 0
+
+11 In State better ( ADV ) took Action NO CHANGE got Reward 0
+
+12 In State mediocre ( ADJ ) took Action SUBWORD got Reward [98.45075871]
+------ (prior -> new) --- ['mediocre', 'ADJ']  -->  ['good', 'ADJ']
+--was-- i swear it's two of the most great movies ever made, and i've seen worse... the quality is way better and it's a very mediocre movie !
+--now-- i swear it's two of the most great movies ever made, and i've seen worse... the quality is way better and it's a very good movie !
+
+##############
+Original Sentence: I think it's one of the most ridiculous movies ever made, and I've seen many... The book is way better and it's a very mediocre movie!
+Current Sentence: i swear it's two of the most great movies ever made, and i've seen worse... the quality is way better and it's a very good movie !
+Current Word and Index movie 35
+Current Distance from Original: [0.15492413]
+Current Iteration through sentence:  0
+Total num edits: 6
+Unique words edited: 6
+##############
+UPDATE State s With Action 0 and Gamma 1.0 and Target [565.65440799] gives loss [415.9666]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [271.98396433] gives loss [187.74918]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [134.84942142] gives loss [75.652504]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [122.08142428] gives loss [72.87065]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [120.84337] gives loss [87.43066]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [119.32974677] gives loss [86.52306]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [119.58595233] gives loss [82.52155]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [119.28491835] gives loss [88.7045]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [120.38556532] gives loss [94.69133]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [99.20072349] gives loss [82.372314]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [85.19274308] gives loss [60.914097]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [87.14018609] gives loss [62.115868]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [86.7360151] gives loss [66.94589]
+--- Episode time for ep2=(9.560125350952148)
+This film made John Glover a mockery. Alan Raimy is one of the most boring characters that I have ever seen on film. And I mean that friend.
+['film', 'made', 'john', 'glover', 'mockery', 'alan', 'raimy', 'one', 'boring', 'characters', 'ever', 'seen', 'mean', 'friend']
+After reset: ['film', 'This film made John Glover a mockery. Alan Raimy is one of the most boring characters that I have ever seen on film. And I mean that friend.', 'NOUN', array([1.01015532, 0.17201345, 1.7761687 , ..., 0.        , 0.        ,
+       0.        ])]
+Episode 3 Step 0 Action SUBWORD Reward [381.93659815] -- (prior -> new) --- ['film', 'NOUN']  -->  ['movie', 'NOUN']
+Episode 3 Step 1 Action NO CHANGE Reward 0 -- (prior -> new) --- ['made', 'VERB']  -->  ['made', 'VERB']
+Episode 3 Step 2 Action SUBWORD Reward [185.20827786] -- (prior -> new) --- ['john', 'PROPN']  -->  ['roger', 'PROPN']
+Episode 3 Step 3 Action NO CHANGE Reward 0 -- (prior -> new) --- ['glover', 'NOUN']  -->  ['glover', 'NOUN']
+Episode 3 Step 4 Action SUBWORD Reward [23.70497089] -- (prior -> new) --- ['mockery', 'NOUN']  -->  ['hero', 'NOUN']
+Episode 3 Step 5 Action NO CHANGE Reward 0 -- (prior -> new) --- ['alan', 'PROPN']  -->  ['alan', 'PROPN']
+Episode 3 Step 6 Action NO CHANGE Reward 0 -- (prior -> new) --- ['raimy', 'PROPN']  -->  ['raimy', 'PROPN']
+Episode 3 Step 7 Action NO CHANGE Reward 0 -- (prior -> new) --- ['one', 'NUM']  -->  ['one', 'NUM']
+Episode 3 Step 8 Action SUBWORD Reward [0.35566705] -- (prior -> new) --- ['boring', 'ADJ']  -->  ['important', 'ADJ']
+Episode 3 Step 9 Action SUBWORD Reward [0.32379501] -- (prior -> new) --- ['characters', 'NOUN']  -->  ['people', 'NOUN']
+RUNNING PREDICTION ON this movie made roger glover a hero. alan raimy is one of the most important people that i have never seen on film. and i mean that friend. DIST: [0.26918942] ['Positive'] [array([-6.4106889e+00, -1.6452837e-03], dtype=float32)] [[0.00164389 0.99835604]]
+DONE FOUND CF!! with dist [0.26918942]
+Episode 3 Step 10 Action SUBWORD Reward [97.30810576] -- (prior -> new) --- ['ever', 'ADV']  -->  ['never', 'ADV']
+DONE AT Step 10 @ Episode 4/5 (576.814136035376)
+Episode collection for ep3=(9.106297969818115)
+************************
+Now look at episode:
+Starting at Input sentence: This film made John Glover a mockery. Alan Raimy is one of the most boring characters that I have ever seen on film. And I mean that friend.
+0 In State film ( NOUN ) took Action SUBWORD got Reward [381.93659815]
+------ (prior -> new) --- ['film', 'NOUN']  -->  ['movie', 'NOUN']
+--was-- This film made John Glover a mockery. Alan Raimy is one of the most boring characters that I have ever seen on film. And I mean that friend.
+--now-- this movie made john glover a mockery. alan raimy is one of the most boring characters that i have ever seen on film. and i mean that friend.
+
+1 In State made ( VERB ) took Action NO CHANGE got Reward 0
+
+2 In State john ( PROPN ) took Action SUBWORD got Reward [185.20827786]
+------ (prior -> new) --- ['john', 'PROPN']  -->  ['roger', 'PROPN']
+--was-- this movie made john glover a mockery. alan raimy is one of the most boring characters that i have ever seen on film. and i mean that friend.
+--now-- this movie made roger glover a mockery. alan raimy is one of the most boring characters that i have ever seen on film. and i mean that friend.
+
+3 In State glover ( NOUN ) took Action NO CHANGE got Reward 0
+
+4 In State mockery ( NOUN ) took Action SUBWORD got Reward [23.70497089]
+------ (prior -> new) --- ['mockery', 'NOUN']  -->  ['hero', 'NOUN']
+--was-- this movie made roger glover a mockery. alan raimy is one of the most boring characters that i have ever seen on film. and i mean that friend.
+--now-- this movie made roger glover a hero. alan raimy is one of the most boring characters that i have ever seen on film. and i mean that friend.
+
+5 In State alan ( PROPN ) took Action NO CHANGE got Reward 0
+
+6 In State raimy ( PROPN ) took Action NO CHANGE got Reward 0
+
+7 In State one ( NUM ) took Action NO CHANGE got Reward 0
+
+8 In State boring ( ADJ ) took Action SUBWORD got Reward [0.35566705]
+------ (prior -> new) --- ['boring', 'ADJ']  -->  ['important', 'ADJ']
+--was-- this movie made roger glover a hero. alan raimy is one of the most boring characters that i have ever seen on film. and i mean that friend.
+--now-- this movie made roger glover a hero. alan raimy is one of the most important characters that i have ever seen on film. and i mean that friend.
+
+9 In State characters ( NOUN ) took Action SUBWORD got Reward [0.32379501]
+------ (prior -> new) --- ['characters', 'NOUN']  -->  ['people', 'NOUN']
+--was-- this movie made roger glover a hero. alan raimy is one of the most important characters that i have ever seen on film. and i mean that friend.
+--now-- this movie made roger glover a hero. alan raimy is one of the most important people that i have ever seen on film. and i mean that friend.
+
+10 In State ever ( ADV ) took Action SUBWORD got Reward [97.30810576]
+------ (prior -> new) --- ['ever', 'ADV']  -->  ['never', 'ADV']
+--was-- this movie made roger glover a hero. alan raimy is one of the most important people that i have ever seen on film. and i mean that friend.
+--now-- this movie made roger glover a hero. alan raimy is one of the most important people that i have never seen on film. and i mean that friend.
+
+##############
+Original Sentence: This film made John Glover a mockery. Alan Raimy is one of the most boring characters that I have ever seen on film. And I mean that friend.
+Current Sentence: this movie made roger glover a hero. alan raimy is one of the most important people that i have never seen on film. and i mean that friend.
+Current Word and Index seen 21
+Current Distance from Original: [0.26918942]
+Current Iteration through sentence:  0
+Total num edits: 6
+Unique words edited: 6
+##############
+UPDATE State s With Action 0 and Gamma 1.0 and Target [676.4772415] gives loss [557.8537]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [292.6268269] gives loss [190.30612]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [294.0314423] gives loss [212.39122]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [107.67230174] gives loss [66.335014]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [108.07699821] gives loss [78.09462]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [83.98312752] gives loss [62.971947]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [84.25176327] gives loss [51.635784]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [82.79273216] gives loss [60.808968]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [83.59924976] gives loss [59.618748]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [85.96188735] gives loss [70.931816]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [85.78494769] gives loss [65.87958]
+--- Episode time for ep3=(9.126003980636597)
+This is a 'snoozefest'. It defines Nicholas Cage. The plot is not intricate and totally bland. The ending will bore you.  Don't see it ever.
+['snoozefest', 'defines', 'nicholas', 'cage', 'plot', 'not', 'intricate', 'totally', 'bland', 'ending', 'bore', 'see', 'ever']
+After reset: ['snoozefest', "This is a 'snoozefest'. It defines Nicholas Cage. The plot is not intricate and totally bland. The ending will bore you.  Don't see it ever.", 'ADJ', array([0.00250405, 0.41864872, 2.03743196, ..., 0.        , 0.        ,
+       0.        ])]
+Episode 4 Step 0 Action SUBWORD Reward [37.5499922] -- (prior -> new) --- ['snoozefest', 'ADJ']  -->  ['reality', {'text': 'reality', 'start_pos': 18, 'end_pos': 25, 'type': 'NOUN', 'confidence': 0.9988338351249695}]
+Episode 4 Step 1 Action SUBWORD Reward [33.5110241] -- (prior -> new) --- ['defines', 'VERB']  -->  ['is', 'VERB']
+Episode 4 Step 2 Action NO CHANGE Reward 0 -- (prior -> new) --- ['nicholas', 'NOUN']  -->  ['nicholas', 'NOUN']
+Episode 4 Step 3 Action SUBWORD Reward [15.42520186] -- (prior -> new) --- ['cage', 'NOUN']  -->  ['lawson', 'NOUN']
+Episode 4 Step 4 Action SUBWORD Reward [12.34748164] -- (prior -> new) --- ['plot', 'NOUN']  -->  ['story', 'NOUN']
+Episode 4 Step 5 Action NO CHANGE Reward 0 -- (prior -> new) --- ['not', 'ADV']  -->  ['not', 'ADV']
+Episode 4 Step 6 Action SUBWORD Reward [5.36244467] -- (prior -> new) --- ['intricate', 'ADJ']  -->  ['perfect', 'ADJ']
+Episode 4 Step 7 Action NO CHANGE Reward 0 -- (prior -> new) --- ['totally', 'ADV']  -->  ['totally', 'ADV']
+Episode 4 Step 8 Action NO CHANGE Reward 0 -- (prior -> new) --- ['bland', 'ADJ']  -->  ['bland', 'ADJ']
+RUNNING PREDICTION ON this is a'reality '. it is nicholas lawson. the story is not perfect and totally bland. the tale will bore you. don't see it ever. DIST: [0.16117601] ['Negative'] [array([-0.21891375, -1.6265383 ], dtype=float32)] [[0.803391 0.196609]]
+Episode 4 Step 9 Action SUBWORD Reward [4.20439727] -- (prior -> new) --- ['ending', 'NOUN']  -->  ['tale', 'NOUN']
+RUNNING PREDICTION ON this is a'reality '. it is nicholas lawson. the story is not perfect and totally bland. the tale will haunt you. don't see it ever. DIST: [0.16959998] ['Positive'] [array([-4.392562  , -0.01244611], dtype=float32)] [[0.012369 0.987631]]
+DONE FOUND CF!! with dist [0.16959998]
+Episode 4 Step 10 Action SUBWORD Reward [98.30400022] -- (prior -> new) --- ['bore', 'VERB']  -->  ['haunt', 'VERB']
+DONE AT Step 10 @ Episode 5/5 (688.8374147210366)
+Episode collection for ep4=(14.923986911773682)
+************************
+Now look at episode:
+Starting at Input sentence: This is a 'snoozefest'. It defines Nicholas Cage. The plot is not intricate and totally bland. The ending will bore you.  Don't see it ever.
+0 In State snoozefest ( ADJ ) took Action SUBWORD got Reward [37.5499922]
+------ (prior -> new) --- ['snoozefest', 'ADJ']  -->  ['reality', {'text': 'reality', 'start_pos': 18, 'end_pos': 25, 'type': 'NOUN', 'confidence': 0.9988338351249695}]
+--was-- This is a 'snoozefest'. It defines Nicholas Cage. The plot is not intricate and totally bland. The ending will bore you.  Don't see it ever.
+--now-- this is a'reality '. it defines nicholas cage. the plot is not intricate and totally bland. the ending will bore you. don't see it ever.
+
+1 In State defines ( VERB ) took Action SUBWORD got Reward [33.5110241]
+------ (prior -> new) --- ['defines', 'VERB']  -->  ['is', 'VERB']
+--was-- this is a'reality '. it defines nicholas cage. the plot is not intricate and totally bland. the ending will bore you. don't see it ever.
+--now-- this is a'reality '. it is nicholas cage. the plot is not intricate and totally bland. the ending will bore you. don't see it ever.
+
+2 In State nicholas ( NOUN ) took Action NO CHANGE got Reward 0
+
+3 In State cage ( NOUN ) took Action SUBWORD got Reward [15.42520186]
+------ (prior -> new) --- ['cage', 'NOUN']  -->  ['lawson', 'NOUN']
+--was-- this is a'reality '. it is nicholas cage. the plot is not intricate and totally bland. the ending will bore you. don't see it ever.
+--now-- this is a'reality '. it is nicholas lawson. the plot is not intricate and totally bland. the ending will bore you. don't see it ever.
+
+4 In State plot ( NOUN ) took Action SUBWORD got Reward [12.34748164]
+------ (prior -> new) --- ['plot', 'NOUN']  -->  ['story', 'NOUN']
+--was-- this is a'reality '. it is nicholas lawson. the plot is not intricate and totally bland. the ending will bore you. don't see it ever.
+--now-- this is a'reality '. it is nicholas lawson. the story is not intricate and totally bland. the ending will bore you. don't see it ever.
+
+5 In State not ( ADV ) took Action NO CHANGE got Reward 0
+
+6 In State intricate ( ADJ ) took Action SUBWORD got Reward [5.36244467]
+------ (prior -> new) --- ['intricate', 'ADJ']  -->  ['perfect', 'ADJ']
+--was-- this is a'reality '. it is nicholas lawson. the story is not intricate and totally bland. the ending will bore you. don't see it ever.
+--now-- this is a'reality '. it is nicholas lawson. the story is not perfect and totally bland. the ending will bore you. don't see it ever.
+
+7 In State totally ( ADV ) took Action NO CHANGE got Reward 0
+
+8 In State bland ( ADJ ) took Action NO CHANGE got Reward 0
+
+9 In State ending ( NOUN ) took Action SUBWORD got Reward [4.20439727]
+------ (prior -> new) --- ['ending', 'NOUN']  -->  ['tale', 'NOUN']
+--was-- this is a'reality '. it is nicholas lawson. the story is not perfect and totally bland. the ending will bore you. don't see it ever.
+--now-- this is a'reality '. it is nicholas lawson. the story is not perfect and totally bland. the tale will bore you. don't see it ever.
+
+10 In State bore ( VERB ) took Action SUBWORD got Reward [98.30400022]
+------ (prior -> new) --- ['bore', 'VERB']  -->  ['haunt', 'VERB']
+--was-- this is a'reality '. it is nicholas lawson. the story is not perfect and totally bland. the tale will bore you. don't see it ever.
+--now-- this is a'reality '. it is nicholas lawson. the story is not perfect and totally bland. the tale will haunt you. don't see it ever.
+
+##############
+Original Sentence: This is a 'snoozefest'. It defines Nicholas Cage. The plot is not intricate and totally bland. The ending will bore you.  Don't see it ever.
+Current Sentence: this is a'reality '. it is nicholas lawson. the story is not perfect and totally bland. the tale will haunt you. don't see it ever.
+Current Word and Index see 30
+Current Distance from Original: [0.16959998]
+Current Iteration through sentence:  0
+Total num edits: 7
+Unique words edited: 7
+##############
+UPDATE State s With Action 0 and Gamma 1.0 and Target [194.69518451] gives loss [112.03237]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [155.06997315] gives loss [107.54179]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [123.32217937] gives loss [78.85813]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [123.28657108] gives loss [79.39677]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [106.30712518] gives loss [59.630295]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [93.26198977] gives loss [78.13478]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [93.9720127] gives loss [49.615]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [86.84257164] gives loss [84.150475]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [87.25987568] gives loss [86.60865]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [86.55920258] gives loss [46.047146]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [81.67400296] gives loss [34.846905]
+--- Episode time for ep4=(14.947301387786865)
+DONE !!!
+{'episode_lengths': array([26., 48., 12., 10., 10.]), 'episode_rewards': array([ 149.37857115, 7304.69229492,  576.81413604,  688.83741472,
+        206.70454196])}
+Elapsed Time 146.89017629623413
+With baseline [ 149.37857115 7304.69229492  576.81413604  688.83741472  206.70454196]
+Elapsed time:  443.721631526947

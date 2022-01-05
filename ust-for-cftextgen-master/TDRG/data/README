@@ -1,0 +1,33 @@
+Dataset info:
+
+    * amazon / yelp / imagecaption data from 
+        original Liang paper implementation: https://github.com/lijuncen/Sentiment-and-Style-Transfer
+    * lipton data from:
+        https://github.com/acmi-lab/counterfactually-augmented-data
+
+    * aclImdb data from original ACL 2011 paper
+    * wikitext-2-raw for use with fastText classifier
+
+Model outputs for B-GST and G-GST models on the yelp, amazon and imagecaption datasets can be found here:
+    http://diegoolano.com/sriram/TDRG/
+
+
+TODO: move following classifiers to google drive and link here
+
+bert_classifier_dir = "./data/yelp/bert_classifier_2epochs/"   #gives 98% acc  #for yelp
+bert_classifier_dir = "./data/imagecaption/bert_classifier_10epochs/"  #for imagecaption
+bert_classifier_dir = "./data/amazon/bert_classifier_3epochs/"
+
+XXX bgst_model_path = "./emnlp_weights/B-GST/pytorch_model_zero_grad_1.bin"  #for YELP  
+    <-- Already linked to in TDRG code: https://github.com/agaralabs/transformer-drg-style-transfer
+bgst_model_path = "./data/imagecaption/bgst_classifier/pytorch_model_zero_grad_1.bin"  #Image Caption
+bgst_model_path = "./data/amazon/bgst_classifier/pytorch_model_zero_grad_1.bin"   #Amazon
+
+XXXggst_model_path = "./emnlp_weights/G-GST/pytorch_model_zero_grad_1.bin"  #YELP
+    <-- Already linked to in TDRG code: https://github.com/agaralabs/transformer-drg-style-transfer
+ggst_model_path = "./data/imagecaption/ggst_classifier/pytorch_model_zero_grad_1.bin"  #IMAGE CAPTION
+ggst_model_path = "./data/amazon/ggst_classifier/pytorch_model_zero_grad_1.bin"  #Amazon
+
+
+TODO: add Lipton work once better
+

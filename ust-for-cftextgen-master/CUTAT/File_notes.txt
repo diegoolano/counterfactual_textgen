@@ -1,0 +1,45 @@
+- data
+	- the processed_files/ folder contain tokenized data + word_to_id dictionary
+		- created by preprocessed_data
+	- 4 types of data w/positive and negative sentiment for each - 8 total data files
+		- train, dev self-explanatory
+		- human.txt contains the gold standard for each test sample, ordered (neg->pos) then (pos->neg)
+		- test.0 contains negative test samples, reference.0 has negative test samples w/corresp. gold standard on same line (separated by '\t')
+		- (test.1 and reference.1 have same structure)
+	- IMPORTANT - use '\n' delmiter between samples in train, dev, test - b/c/ matched pairs in reference separated by '\t' - don't want confusion	
+	- preprocessed_data.py takes 8 data files (listed above) and produces tokenized versions & a reference dictionary
+		- Changed encoding for file open to UTF-8 - YMMV depending on OS
+- method
+	- save/ contains saved training weights, training log, and transformed test outputs
+		- outputs include gold standard as well as output for all w in W
+	- data.py prepares training data in batches for training
+		- have to change line 101 - expand possible tasks from yelp and amazon (file for captions is different but doesnt have parse checking on line 172!) #DONE
+		- Changed encoding for file open to UTF-8 - YMMV depending on OS
+	- bleu.py calculates bleu scores....
+		- should this even be here?
+		- no changes
+	- model.py and model2.py house the different autoencoder and classifier models
+		- Changed encoding for file open to UTF-8 - YMMV depending on OS
+	- main.py takes arguments and runs the program
+		- change default arguments as needed 
+		- Changed encoding for file open to UTF-8 - YMMV depending on OS
+- results
+	- has entire listout (i.e. all w's) of test results from each model on test data
+		- these are used in outputs/evaluate.py
+		- these come from main.py
+	- also has JSON files from output of evaluate.py  
+- outputs
+	- bleu.py (this is where it should be!)
+		- nothing to change
+	- multi-bleu.py
+	- evaluate.py - performs BLEU, accuracy, and perplexity evaluatuion
+		- change multiple references to amazon, yelp, captions
+		- change srilm install loc
+		- change main method during each testing
+		- uses results from main.py, located in results/
+	- also has matched gold standard and model output samples (on test set)
+		- these are generated from output files from main
+- Lipton data
+	- new/test-negatives correspond to orig/test-positives and same for positives-negatives
+		- but they aren't matched in the same lines in the files!
+		- to create references for orig/new have to go into combined/paired and create the test & reference sets for new & orig from there

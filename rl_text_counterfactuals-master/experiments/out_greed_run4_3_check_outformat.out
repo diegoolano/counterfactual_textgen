@@ -1,0 +1,631 @@
+With Baseline: 0  V type <class 'reinforce.Baseline'>
+Long, boring, blasphemous. Never have I been so glad to see ending credits roll.
+['long', 'boring', 'blasphemous', 'never', 'glad', 'see', 'ending', 'credits', 'roll']
+After reset: ['long', 'Long, boring, blasphemous. Never have I been so glad to see ending credits roll.', 'ADJ', array([ 0.34884524, -0.73088783,  2.0266583 , ...,  0.        ,
+        0.        ,  0.        ])]
+Ep 0 Step 0 Act NO CHANGE Reward 0 Dist 0 LabProb: 0 --(prior -> new)-- ['long', 'ADJ']  -->  ['long', 'ADJ'] Goal: 0
+Ep 0 Step 1 Act NO CHANGE Reward 0 Dist 0 LabProb: 0 --(prior -> new)-- ['boring', 'ADJ']  -->  ['boring', 'ADJ'] Goal: 0
+Ep 0 Step 2 Act NO CHANGE Reward 0 Dist 0 LabProb: 0 --(prior -> new)-- ['blasphemous', 'ADJ']  -->  ['blasphemous', 'ADJ'] Goal: 0
+Ep 0 Step 3 Act NO CHANGE Reward 0 Dist 0 LabProb: 0 --(prior -> new)-- ['never', 'ADV']  -->  ['never', 'ADV'] Goal: 0
+Ep 0 Step 4 Act NO CHANGE Reward 0 Dist 0 LabProb: 0 --(prior -> new)-- ['glad', 'ADJ']  -->  ['glad', 'ADJ'] Goal: 0
+Ep 0 Step 5 Act NO CHANGE Reward 0 Dist 0 LabProb: 0 --(prior -> new)-- ['see', 'VERB']  -->  ['see', 'VERB'] Goal: 0
+Ep 0 Step 6 Act SUBWORD Reward [72.40030409] Dist 0.0134 LabProb: 0 --(prior -> new)-- ['ending', 'VERB']  -->  ['the', {'text': 'the', 'start_pos': 0, 'end_pos': 3, 'type': 'DET', 'confidence': 0.9999313354492188}] Goal: 0
+Ep 0 Step 7 Act NO CHANGE Reward 0 Dist 0.0134 LabProb: 0 --(prior -> new)-- ['credits', 'NOUN']  -->  ['credits', 'NOUN'] Goal: 0
+Ep 0 Step 8 Act NO CHANGE Reward 0 Dist 0.0134 LabProb: 0 --(prior -> new)-- ['roll', 'NOUN']  -->  ['roll', 'NOUN'] Goal: 0
+Ep 0 Step 9 Act NO CHANGE Reward 0 Dist 0.0134 LabProb: 0 --(prior -> new)-- ['long', 'ADJ']  -->  ['long', 'ADJ'] Goal: 0
+Ep 0 Step 10 Act NO CHANGE Reward 0 Dist 0.0134 LabProb: 0 --(prior -> new)-- ['boring', 'ADJ']  -->  ['boring', 'ADJ'] Goal: 0
+Ep 0 Step 11 Act SUBWORD Reward [31.02961227] Dist 0.0303 LabProb: 0 --(prior -> new)-- ['blasphemous', 'ADJ']  -->  ['miserable', 'ADJ'] Goal: 0
+Ep 0 Step 12 Act NO CHANGE Reward 0 Dist 0.0303 LabProb: 0 --(prior -> new)-- ['never', 'ADV']  -->  ['never', 'ADV'] Goal: 0
+Ep 0 Step 13 Act NO CHANGE Reward 0 Dist 0.0303 LabProb: 0 --(prior -> new)-- ['glad', 'ADJ']  -->  ['glad', 'ADJ'] Goal: 0
+Ep 0 Step 14 Act NO CHANGE Reward 0 Dist 0.0303 LabProb: 0 --(prior -> new)-- ['see', 'VERB']  -->  ['see', 'VERB'] Goal: 0
+Ep 0 Step 15 Act NO CHANGE Reward 0 Dist 0.0303 LabProb: 0 --(prior -> new)-- ['credits', 'NOUN']  -->  ['credits', 'NOUN'] Goal: 0
+Ep 0 Step 16 Act NO CHANGE Reward 0 Dist 0.0303 LabProb: 0 --(prior -> new)-- ['roll', 'NOUN']  -->  ['roll', 'NOUN'] Goal: 0
+Ep 0 Step 17 Act NO CHANGE Reward 0 Dist 0.0303 LabProb: 0 --(prior -> new)-- ['long', 'ADJ']  -->  ['long', 'ADJ'] Goal: 0
+Ep 0 Step 18 Act NO CHANGE Reward 0 Dist 0.0303 LabProb: 0 --(prior -> new)-- ['boring', 'ADJ']  -->  ['boring', 'ADJ'] Goal: 0
+Ep 0 Step 19 Act NO CHANGE Reward 0 Dist 0.0303 LabProb: 0 --(prior -> new)-- ['miserable', 'ADJ']  -->  ['miserable', 'ADJ'] Goal: 0
+Ep 0 Step 20 Act NO CHANGE Reward 0 Dist 0.0303 LabProb: 0 --(prior -> new)-- ['never', 'ADV']  -->  ['never', 'ADV'] Goal: 0
+Ep 0 Step 21 Act NO CHANGE Reward 0 Dist 0.0303 LabProb: 0 --(prior -> new)-- ['glad', 'ADJ']  -->  ['glad', 'ADJ'] Goal: 0
+Ep 0 Step 22 Act NO CHANGE Reward 0 Dist 0.0303 LabProb: 0 --(prior -> new)-- ['see', 'VERB']  -->  ['see', 'VERB'] Goal: 0
+Ep 0 Step 23 Act NO CHANGE Reward 0 Dist 0.0303 LabProb: 0 --(prior -> new)-- ['credits', 'NOUN']  -->  ['credits', 'NOUN'] Goal: 0
+Ep 0 Step 24 Act SUBWORD Reward [31.89218865] Dist 0.0295 LabProb: 0 --(prior -> new)-- ['roll', 'NOUN']  -->  ['spin', 'NOUN'] Goal: 0
+Ep 0 Step 25 Act SUBWORD Reward [14.78793173] Dist 0.0596 LabProb: 0 --(prior -> new)-- ['long', 'ADJ']  -->  ['bored', 'ADJ'] Goal: 0
+Ep 0 Step 26 Act NO CHANGE Reward 0 Dist 0.0596 LabProb: 0 --(prior -> new)-- ['boring', 'ADJ']  -->  ['boring', 'ADJ'] Goal: 0
+Ep 0 Step 27 Act SUBWORD Reward [13.35620168] Dist 0.0651 LabProb: 0 --(prior -> new)-- ['miserable', 'ADJ']  -->  ['tired', 'ADJ'] Goal: 0
+Ep 0 Step 28 Act NO CHANGE Reward 0 Dist 0.0651 LabProb: 0 --(prior -> new)-- ['never', 'ADV']  -->  ['never', 'ADV'] Goal: 0
+Ep 0 Step 29 Act NO CHANGE Reward 0 Dist 0.0651 LabProb: 0 --(prior -> new)-- ['glad', 'ADJ']  -->  ['glad', 'ADJ'] Goal: 0
+Ep 0 Step 30 Act NO CHANGE Reward 0 Dist 0.0651 LabProb: 0 --(prior -> new)-- ['see', 'VERB']  -->  ['see', 'VERB'] Goal: 0
+Ep 0 Step 31 Act NO CHANGE Reward 0 Dist 0.0651 LabProb: 0 --(prior -> new)-- ['credits', 'NOUN']  -->  ['credits', 'NOUN'] Goal: 0
+Ep 0 Step 32 Act NO CHANGE Reward 0 Dist 0.0651 LabProb: 0 --(prior -> new)-- ['spin', 'NOUN']  -->  ['spin', 'NOUN'] Goal: 0
+INFO:absl:Using /tmp/tfhub_modules to cache modules.
+WARNING:tensorflow:From /home/diego/rl_proj_cf/rl_cf_proj37/lib/python3.7/site-packages/bert/tokenization.py:131: The name tf.gfile.GFile is deprecated. Please use tf.io.gfile.GFile instead.
+
+WARNING:tensorflow:From /home/diego/rl_proj_cf/rl_cf_proj37/lib/python3.7/site-packages/bert/tokenization.py:131: The name tf.gfile.GFile is deprecated. Please use tf.io.gfile.GFile instead.
+
+WARNING:tensorflow:From /home/diego/rl_proj_cf/rl_cf_proj37/lib/python3.7/site-packages/tensorflow_core/contrib/predictor/saved_model_predictor.py:153: load (from tensorflow.python.saved_model.loader_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This function will only be available through the v1 compatibility library as tf.compat.v1.saved_model.loader.load or tf.compat.v1.saved_model.load. There will be a new function for importing SavedModels in Tensorflow 2.0.
+WARNING:tensorflow:From /home/diego/rl_proj_cf/rl_cf_proj37/lib/python3.7/site-packages/tensorflow_core/contrib/predictor/saved_model_predictor.py:153: load (from tensorflow.python.saved_model.loader_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This function will only be available through the v1 compatibility library as tf.compat.v1.saved_model.loader.load or tf.compat.v1.saved_model.load. There will be a new function for importing SavedModels in Tensorflow 2.0.
+WARNING:tensorflow:From /home/diego/rl_proj_cf/rl_cf_proj37/lib/python3.7/site-packages/bert/run_classifier.py:774: The name tf.logging.info is deprecated. Please use tf.compat.v1.logging.info instead.
+
+WARNING:tensorflow:From /home/diego/rl_proj_cf/rl_cf_proj37/lib/python3.7/site-packages/bert/run_classifier.py:774: The name tf.logging.info is deprecated. Please use tf.compat.v1.logging.info instead.
+
+Ep 0 Step 33 Act SUBWORD Reward [9.95100914] Dist 0.0837 LabProb: 0 --(prior -> new)-- ['bored', 'ADJ']  -->  ['dull', 'ADJ'] Goal: 0
+Ep 0 Step 34 Act SUBWORD Reward [10.93765323] Dist 0.0773 LabProb: 0 --(prior -> new)-- ['boring', 'ADJ']  -->  ['depressed', 'ADJ'] Goal: 0
+Ep 0 Step 35 Act NO CHANGE Reward 0 Dist 0.0773 LabProb: 0 --(prior -> new)-- ['tired', 'ADJ']  -->  ['tired', 'ADJ'] Goal: 0
+Ep 0 Step 36 Act NO CHANGE Reward 0 Dist 0.0773 LabProb: 0 --(prior -> new)-- ['never', 'ADV']  -->  ['never', 'ADV'] Goal: 0
+Ep 0 Step 37 Act SUBWORD Reward [11.51644318] Dist 0.074 LabProb: 0 --(prior -> new)-- ['glad', 'ADJ']  -->  ['proud', 'ADJ'] Goal: 0
+Ep 0 Step 38 Act SUBWORD Reward [11.06182389] Dist 0.0766 LabProb: 0 --(prior -> new)-- ['see', 'VERB']  -->  ['watch', 'VERB'] Goal: 0
+Ep 0 Step 39 Act NO CHANGE Reward 0 Dist 0.0766 LabProb: 0 --(prior -> new)-- ['credits', 'NOUN']  -->  ['credits', 'NOUN'] Goal: 0
+Ep 0 Step 40 Act SUBWORD Reward [9.73311466] Dist 0.0852 LabProb: 0 --(prior -> new)-- ['spin', 'NOUN']  -->  ['rolling', 'NOUN'] Goal: 0
+Ep 0 Step 41 Act NO CHANGE Reward 0 Dist 0.0852 LabProb: 0 --(prior -> new)-- ['dull', 'ADJ']  -->  ['dull', 'ADJ'] Goal: 0
+Ep 0 Step 42 Act NO CHANGE Reward 0 Dist 0.0852 LabProb: 0 --(prior -> new)-- ['depressed', 'ADJ']  -->  ['depressed', 'ADJ'] Goal: 0
+Ep 0 Step 43 Act SUBWORD Reward [11.00932795] Dist 0.0769 LabProb: 0 --(prior -> new)-- ['tired', 'ADJ']  -->  ['empty', 'ADJ'] Goal: 0
+Ep 0 Step 44 Act NO CHANGE Reward 0 Dist 0.0769 LabProb: 0 --(prior -> new)-- ['never', 'ADV']  -->  ['never', 'ADV'] Goal: 0
+Ep 0 Step 45 Act NO CHANGE Reward 0 Dist 0.0769 LabProb: 0 --(prior -> new)-- ['proud', 'ADJ']  -->  ['proud', 'ADJ'] Goal: 0
+Ep 0 Step 46 Act NO CHANGE Reward 0 Dist 0.0769 LabProb: 0 --(prior -> new)-- ['watch', 'VERB']  -->  ['watch', 'VERB'] Goal: 0
+Ep 0 Step 47 Act SUBWORD Reward [4.27947185] Dist 0.1592 LabProb: 0 --(prior -> new)-- ['credits', 'NOUN']  -->  ['stones', 'NOUN'] Goal: 0
+Ep 0 Step 48 Act NO CHANGE Reward 0 Dist 0.1592 LabProb: 0 --(prior -> new)-- ['rolling', 'NOUN']  -->  ['rolling', 'NOUN'] Goal: 0
+DONE FOUND CF!! with dist [0.16992542]
+Ep 0 Step 49 Act SUBWORD Reward [98.3007458] Dist 0.1699 LabProb: 0 --(prior -> new)-- ['dull', 'ADJ']  -->  ['lonely', 'ADJ'] Goal: 1
+DONE AT Step 49 @ Episode 1/3 (0.0)
+Episode collection for ep0=(45.26629972457886)
+************************
+Now look at episode:
+##############
+Original Sentence: Long, boring, blasphemous. Never have I been so glad to see ending credits roll.
+Current Sentence: lonely, depressed, empty. never have i been so proud to watch the stones rolling.
+Current Word and Index depressed 2
+Current Distance from Original: [0.16992542]
+Current Iteration through sentence:  6
+Total num edits: 13
+Unique words edited: 8
+##############
+in without baseline with STATE long Long, boring, blasphemous. Never have I been so gl ADJ ACTION: 1 G [330.25582813]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [330.25582813] gives loss [184.65012]
+in without baseline with STATE boring Long, boring, blasphemous. Never have I been so gl ADJ ACTION: 1 G [330.25582813]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [330.25582813] gives loss [113.238625]
+in without baseline with STATE blasphemous Long, boring, blasphemous. Never have I been so gl ADJ ACTION: 1 G [330.25582813]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [330.25582813] gives loss [51.60246]
+in without baseline with STATE never Long, boring, blasphemous. Never have I been so gl ADV ACTION: 1 G [330.25582813]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [330.25582813] gives loss [34.206177]
+in without baseline with STATE glad Long, boring, blasphemous. Never have I been so gl ADJ ACTION: 1 G [330.25582813]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [330.25582813] gives loss [24.387526]
+in without baseline with STATE see Long, boring, blasphemous. Never have I been so gl VERB ACTION: 1 G [330.25582813]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [330.25582813] gives loss [12.000903]
+in without baseline with STATE ending Long, boring, blasphemous. Never have I been so gl VERB ACTION: 0 G [330.25582813]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [330.25582813] gives loss [1109.4922]
+in without baseline with STATE credits long, boring, blasphemous. never have i been so gl NOUN ACTION: 1 G [257.85552404]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [257.85552404] gives loss [14.042194]
+in without baseline with STATE roll long, boring, blasphemous. never have i been so gl NOUN ACTION: 1 G [257.85552404]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [257.85552404] gives loss [8.620426]
+in without baseline with STATE long long, boring, blasphemous. never have i been so gl ADJ ACTION: 1 G [257.85552404]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [257.85552404] gives loss [6.842451]
+in without baseline with STATE boring long, boring, blasphemous. never have i been so gl ADJ ACTION: 1 G [257.85552404]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [257.85552404] gives loss [9.385595]
+in without baseline with STATE blasphemous long, boring, blasphemous. never have i been so gl ADJ ACTION: 0 G [257.85552404]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [257.85552404] gives loss [926.8659]
+in without baseline with STATE never long, boring, miserable. never have i been so glad ADV ACTION: 1 G [226.82591177]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [226.82591177] gives loss [5.614431]
+in without baseline with STATE glad long, boring, miserable. never have i been so glad ADJ ACTION: 1 G [226.82591177]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [226.82591177] gives loss [9.509605]
+in without baseline with STATE see long, boring, miserable. never have i been so glad VERB ACTION: 1 G [226.82591177]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [226.82591177] gives loss [8.344901]
+in without baseline with STATE credits long, boring, miserable. never have i been so glad NOUN ACTION: 1 G [226.82591177]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [226.82591177] gives loss [18.168325]
+in without baseline with STATE roll long, boring, miserable. never have i been so glad NOUN ACTION: 1 G [226.82591177]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [226.82591177] gives loss [10.294217]
+in without baseline with STATE long long, boring, miserable. never have i been so glad ADJ ACTION: 1 G [226.82591177]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [226.82591177] gives loss [8.4578705]
+in without baseline with STATE boring long, boring, miserable. never have i been so glad ADJ ACTION: 1 G [226.82591177]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [226.82591177] gives loss [16.508078]
+in without baseline with STATE miserable long, boring, miserable. never have i been so glad ADJ ACTION: 1 G [226.82591177]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [226.82591177] gives loss [20.780296]
+in without baseline with STATE never long, boring, miserable. never have i been so glad ADV ACTION: 1 G [226.82591177]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [226.82591177] gives loss [9.634781]
+in without baseline with STATE glad long, boring, miserable. never have i been so glad ADJ ACTION: 1 G [226.82591177]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [226.82591177] gives loss [10.054118]
+in without baseline with STATE see long, boring, miserable. never have i been so glad VERB ACTION: 1 G [226.82591177]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [226.82591177] gives loss [7.9041533]
+in without baseline with STATE credits long, boring, miserable. never have i been so glad NOUN ACTION: 1 G [226.82591177]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [226.82591177] gives loss [15.249832]
+in without baseline with STATE roll long, boring, miserable. never have i been so glad NOUN ACTION: 0 G [226.82591177]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [226.82591177] gives loss [753.0689]
+in without baseline with STATE long long, boring, miserable. never have i been so glad ADJ ACTION: 0 G [194.93372312]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [194.93372312] gives loss [669.0914]
+in without baseline with STATE boring bored, boring, miserable. never have i been so gla ADJ ACTION: 1 G [180.14579138]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [180.14579138] gives loss [15.778238]
+in without baseline with STATE miserable bored, boring, miserable. never have i been so gla ADJ ACTION: 0 G [180.14579138]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [180.14579138] gives loss [388.13812]
+in without baseline with STATE never bored, boring, tired. never have i been so glad to ADV ACTION: 1 G [166.7895897]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [166.7895897] gives loss [13.808391]
+in without baseline with STATE glad bored, boring, tired. never have i been so glad to ADJ ACTION: 1 G [166.7895897]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [166.7895897] gives loss [17.285154]
+in without baseline with STATE see bored, boring, tired. never have i been so glad to VERB ACTION: 1 G [166.7895897]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [166.7895897] gives loss [17.372347]
+in without baseline with STATE credits bored, boring, tired. never have i been so glad to NOUN ACTION: 1 G [166.7895897]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [166.7895897] gives loss [37.76845]
+in without baseline with STATE spin bored, boring, tired. never have i been so glad to NOUN ACTION: 1 G [166.7895897]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [166.7895897] gives loss [28.32714]
+in without baseline with STATE bored bored, boring, tired. never have i been so glad to ADJ ACTION: 0 G [166.7895897]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [166.7895897] gives loss [221.50134]
+in without baseline with STATE boring dull, boring, tired. never have i been so glad to  ADJ ACTION: 0 G [156.83858056]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [156.83858056] gives loss [254.25697]
+in without baseline with STATE tired dull, depressed, tired. never have i been so glad  ADJ ACTION: 1 G [145.90092733]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [145.90092733] gives loss [51.222904]
+in without baseline with STATE never dull, depressed, tired. never have i been so glad  ADV ACTION: 1 G [145.90092733]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [145.90092733] gives loss [29.941418]
+in without baseline with STATE glad dull, depressed, tired. never have i been so glad  ADJ ACTION: 0 G [145.90092733]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [145.90092733] gives loss [234.2313]
+in without baseline with STATE see dull, depressed, tired. never have i been so proud VERB ACTION: 0 G [134.38448415]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [134.38448415] gives loss [191.34395]
+in without baseline with STATE credits dull, depressed, tired. never have i been so proud NOUN ACTION: 1 G [123.32266026]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [123.32266026] gives loss [48.046967]
+in without baseline with STATE spin dull, depressed, tired. never have i been so proud NOUN ACTION: 0 G [123.32266026]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [123.32266026] gives loss [128.76358]
+in without baseline with STATE dull dull, depressed, tired. never have i been so proud ADJ ACTION: 1 G [113.5895456]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [113.5895456] gives loss [78.01669]
+in without baseline with STATE depressed dull, depressed, tired. never have i been so proud ADJ ACTION: 1 G [113.5895456]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [113.5895456] gives loss [86.049164]
+in without baseline with STATE tired dull, depressed, tired. never have i been so proud ADJ ACTION: 0 G [113.5895456]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [113.5895456] gives loss [71.69778]
+in without baseline with STATE never dull, depressed, empty. never have i been so proud ADV ACTION: 1 G [102.58021764]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [102.58021764] gives loss [46.124638]
+in without baseline with STATE proud dull, depressed, empty. never have i been so proud ADJ ACTION: 1 G [102.58021764]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [102.58021764] gives loss [68.38063]
+in without baseline with STATE watch dull, depressed, empty. never have i been so proud VERB ACTION: 1 G [102.58021764]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [102.58021764] gives loss [58.51554]
+in without baseline with STATE credits dull, depressed, empty. never have i been so proud NOUN ACTION: 0 G [102.58021764]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [102.58021764] gives loss [79.47967]
+in without baseline with STATE rolling dull, depressed, empty. never have i been so proud NOUN ACTION: 1 G [98.3007458]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [98.3007458] gives loss [58.002686]
+in without baseline with STATE dull dull, depressed, empty. never have i been so proud ADJ ACTION: 0 G [98.3007458]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [98.3007458] gives loss [77.6798]
+--- Episode time for ep0=(45.37661099433899)
+If you haven't seen this, it's terrible. It is pure trash. I saw this about 17 years ago, and I'm still screwed up from it.
+['haven', 'seen', 'terrible', 'pure', 'trash', 'saw', '17', 'years', 'ago', 'm', 'still', 'screwed']
+After reset: ['haven', "If you haven't seen this, it's terrible. It is pure trash. I saw this about 17 years ago, and I'm still screwed up from it.", 'VERB', array([-0.12740439, -0.48730239,  1.62661827, ...,  0.        ,
+        0.        ,  0.        ])]
+Ep 1 Step 0 Act NO CHANGE Reward 0 Dist 0 LabProb: 0 --(prior -> new)-- ['haven', 'VERB']  -->  ['haven', 'VERB'] Goal: 0
+Ep 1 Step 1 Act NO CHANGE Reward 0 Dist 0 LabProb: 0 --(prior -> new)-- ['seen', 'VERB']  -->  ['seen', 'VERB'] Goal: 0
+Ep 1 Step 2 Act SUBWORD Reward [43.2703872] Dist 0.0221 LabProb: 0 --(prior -> new)-- ['terrible', 'ADJ']  -->  ['obscene', 'ADJ'] Goal: 0
+Ep 1 Step 3 Act SUBWORD Reward [9.30329489] Dist 0.0885 LabProb: 0 --(prior -> new)-- ['pure', 'ADJ']  -->  ['legal', 'ADJ'] Goal: 0
+Ep 1 Step 4 Act NO CHANGE Reward 0 Dist 0.0885 LabProb: 0 --(prior -> new)-- ['trash', 'NOUN']  -->  ['trash', 'NOUN'] Goal: 0
+Ep 1 Step 5 Act NO CHANGE Reward 0 Dist 0.0885 LabProb: 0 --(prior -> new)-- ['saw', 'VERB']  -->  ['saw', 'VERB'] Goal: 0
+Ep 1 Step 6 Act NO CHANGE Reward 0 Dist 0.0885 LabProb: 0 --(prior -> new)-- ['17', 'NUM']  -->  ['17', 'NUM'] Goal: 0
+Ep 1 Step 7 Act NO CHANGE Reward 0 Dist 0.0885 LabProb: 0 --(prior -> new)-- ['years', 'NOUN']  -->  ['years', 'NOUN'] Goal: 0
+Ep 1 Step 8 Act NO CHANGE Reward 0 Dist 0.0885 LabProb: 0 --(prior -> new)-- ['ago', 'ADV']  -->  ['ago', 'ADV'] Goal: 0
+Ep 1 Step 9 Act SUBWORD Reward [8.80971165] Dist 0.0925 LabProb: 0 --(prior -> new)-- ['m', 'INTJ']  -->  ['ve', {'text': 've', 'start_pos': 0, 'end_pos': 2, 'type': 'X', 'confidence': 0.9039222002029419}] Goal: 0
+Ep 1 Step 10 Act NO CHANGE Reward 0 Dist 0.0925 LabProb: 0 --(prior -> new)-- ['still', 'ADV']  -->  ['still', 'ADV'] Goal: 0
+Ep 1 Step 11 Act NO CHANGE Reward 0 Dist 0.0925 LabProb: 0 --(prior -> new)-- ['screwed', 'VERB']  -->  ['screwed', 'VERB'] Goal: 0
+Ep 1 Step 12 Act SUBWORD Reward [8.99994161] Dist 0.0909 LabProb: 0 --(prior -> new)-- ['haven', 'VERB']  -->  ['don', 'VERB'] Goal: 0
+Ep 1 Step 13 Act NO CHANGE Reward 0 Dist 0.0909 LabProb: 0 --(prior -> new)-- ['seen', 'VERB']  -->  ['seen', 'VERB'] Goal: 0
+Ep 1 Step 14 Act NO CHANGE Reward 0 Dist 0.0909 LabProb: 0 --(prior -> new)-- ['obscene', 'ADJ']  -->  ['obscene', 'ADJ'] Goal: 0
+Ep 1 Step 15 Act NO CHANGE Reward 0 Dist 0.0909 LabProb: 0 --(prior -> new)-- ['legal', 'ADJ']  -->  ['legal', 'ADJ'] Goal: 0
+Ep 1 Step 16 Act SUBWORD Reward [4.53099206] Dist 0.1531 LabProb: 0 --(prior -> new)-- ['trash', 'NOUN']  -->  ['tender', 'NOUN'] Goal: 0
+Ep 1 Step 17 Act NO CHANGE Reward 0 Dist 0.1531 LabProb: 0 --(prior -> new)-- ['saw', 'VERB']  -->  ['saw', 'VERB'] Goal: 0
+Ep 1 Step 18 Act SUBWORD Reward [2.61453674] Dist 0.2167 LabProb: 0 --(prior -> new)-- ['17', 'NUM']  -->  ['five', 'NUM'] Goal: 0
+Ep 1 Step 19 Act NO CHANGE Reward 0 Dist 0.2167 LabProb: 0 --(prior -> new)-- ['years', 'NOUN']  -->  ['years', 'NOUN'] Goal: 0
+Ep 1 Step 20 Act NO CHANGE Reward 0 Dist 0.2167 LabProb: 0 --(prior -> new)-- ['ago', 'ADV']  -->  ['ago', 'ADV'] Goal: 0
+WARNING.  changed current_word: ve  to  m  which is on the priorly used list.. this should be late restort
+Ep 1 Step 21 Act SUBWORD Reward [2.66978253] Dist 0.2141 LabProb: 0 --(prior -> new)-- ['ve', 'INTJ']  -->  ['m', {'text': 'm', 'start_pos': 0, 'end_pos': 1, 'type': 'INTJ', 'confidence': 0.7593573927879333}] Goal: 0
+Ep 1 Step 22 Act NO CHANGE Reward 0 Dist 0.2141 LabProb: 0 --(prior -> new)-- ['still', 'ADV']  -->  ['still', 'ADV'] Goal: 0
+DONE FOUND CF!! with dist [0.24813056]
+Ep 1 Step 23 Act SUBWORD Reward [97.51869441] Dist 0.2481 LabProb: 0 --(prior -> new)-- ['screwed', 'VERB']  -->  ['shaken', 'VERB'] Goal: 1
+DONE AT Step 23 @ Episode 2/3 (330.2558281281716)
+Episode collection for ep1=(19.919381380081177)
+************************
+Now look at episode:
+##############
+Original Sentence: If you haven't seen this, it's terrible. It is pure trash. I saw this about 17 years ago, and I'm still screwed up from it.
+Current Sentence: if you don't seen this, it's obscene. it is legal tender. i saw this about five years ago, and i'm still shaken up from it.
+Current Word and Index seen 5
+Current Distance from Original: [0.24813056]
+Current Iteration through sentence:  2
+Total num edits: 8
+Unique words edited: 7
+##############
+in without baseline with STATE haven If you haven't seen this, it's terrible. It is pur VERB ACTION: 1 G [177.7173411]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [177.7173411] gives loss [124.55426]
+in without baseline with STATE seen If you haven't seen this, it's terrible. It is pur VERB ACTION: 1 G [177.7173411]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [177.7173411] gives loss [113.81401]
+in without baseline with STATE terrible If you haven't seen this, it's terrible. It is pur ADJ ACTION: 0 G [177.7173411]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [177.7173411] gives loss [122.41274]
+in without baseline with STATE pure if you haven't seen this, it's obscene. it is pure ADJ ACTION: 0 G [134.4469539]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [134.4469539] gives loss [113.62284]
+in without baseline with STATE trash if you haven't seen this, it's obscene. it is lega NOUN ACTION: 1 G [125.14365901]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [125.14365901] gives loss [68.823204]
+in without baseline with STATE saw if you haven't seen this, it's obscene. it is lega VERB ACTION: 1 G [125.14365901]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [125.14365901] gives loss [58.88534]
+in without baseline with STATE 17 if you haven't seen this, it's obscene. it is lega NUM ACTION: 1 G [125.14365901]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [125.14365901] gives loss [70.1358]
+in without baseline with STATE years if you haven't seen this, it's obscene. it is lega NOUN ACTION: 1 G [125.14365901]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [125.14365901] gives loss [62.6698]
+in without baseline with STATE ago if you haven't seen this, it's obscene. it is lega ADV ACTION: 1 G [125.14365901]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [125.14365901] gives loss [69.165146]
+in without baseline with STATE m if you haven't seen this, it's obscene. it is lega INTJ ACTION: 0 G [125.14365901]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [125.14365901] gives loss [151.61296]
+in without baseline with STATE still if you haven't seen this, it's obscene. it is lega ADV ACTION: 1 G [116.33394735]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [116.33394735] gives loss [45.634064]
+in without baseline with STATE screwed if you haven't seen this, it's obscene. it is lega VERB ACTION: 1 G [116.33394735]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [116.33394735] gives loss [47.70732]
+in without baseline with STATE haven if you haven't seen this, it's obscene. it is lega VERB ACTION: 0 G [116.33394735]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [116.33394735] gives loss [121.12504]
+in without baseline with STATE seen if you don't seen this, it's obscene. it is legal  VERB ACTION: 1 G [107.33400574]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [107.33400574] gives loss [39.049664]
+in without baseline with STATE obscene if you don't seen this, it's obscene. it is legal  ADJ ACTION: 1 G [107.33400574]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [107.33400574] gives loss [35.59151]
+in without baseline with STATE legal if you don't seen this, it's obscene. it is legal  ADJ ACTION: 1 G [107.33400574]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [107.33400574] gives loss [26.834084]
+in without baseline with STATE trash if you don't seen this, it's obscene. it is legal  NOUN ACTION: 0 G [107.33400574]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [107.33400574] gives loss [117.83812]
+in without baseline with STATE saw if you don't seen this, it's obscene. it is legal  VERB ACTION: 1 G [102.80301369]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [102.80301369] gives loss [32.911278]
+in without baseline with STATE 17 if you don't seen this, it's obscene. it is legal  NUM ACTION: 0 G [102.80301369]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [102.80301369] gives loss [126.98502]
+in without baseline with STATE years if you don't seen this, it's obscene. it is legal  NOUN ACTION: 1 G [100.18847694]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [100.18847694] gives loss [39.562576]
+in without baseline with STATE ago if you don't seen this, it's obscene. it is legal  ADV ACTION: 1 G [100.18847694]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [100.18847694] gives loss [50.89387]
+in without baseline with STATE ve if you don't seen this, it's obscene. it is legal  INTJ ACTION: 0 G [100.18847694]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [100.18847694] gives loss [105.04753]
+in without baseline with STATE still if you don't seen this, it's obscene. it is legal  ADV ACTION: 1 G [97.51869441]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [97.51869441] gives loss [40.287098]
+in without baseline with STATE screwed if you don't seen this, it's obscene. it is legal  VERB ACTION: 0 G [97.51869441]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [97.51869441] gives loss [115.63967]
+--- Episode time for ep1=(19.94712996482849)
+I think it's one of the most ridiculous movies ever made, and I've seen many... The book is way better and it's a very mediocre movie!
+['think', 'one', 'ridiculous', 'movies', 'ever', 'made', 've', 'seen', 'many', 'book', 'way', 'better', 'mediocre', 'movie']
+After reset: ['think', "I think it's one of the most ridiculous movies ever made, and I've seen many... The book is way better and it's a very mediocre movie!", 'VERB', array([-0.03118682, -0.2309836 ,  2.41849303, ...,  0.        ,
+        0.        ,  0.        ])]
+Ep 2 Step 0 Act NO CHANGE Reward 0 Dist 0 LabProb: 0 --(prior -> new)-- ['think', 'VERB']  -->  ['think', 'VERB'] Goal: 0
+Ep 2 Step 1 Act NO CHANGE Reward 0 Dist 0 LabProb: 0 --(prior -> new)-- ['one', 'NUM']  -->  ['one', 'NUM'] Goal: 0
+Ep 2 Step 2 Act SUBWORD Reward [11.96283888] Dist 0.0716 LabProb: 0 --(prior -> new)-- ['ridiculous', 'ADJ']  -->  ['expensive', 'ADJ'] Goal: 0
+Ep 2 Step 3 Act SUBWORD Reward [11.61696512] Dist 0.0734 LabProb: 0 --(prior -> new)-- ['movies', 'NOUN']  -->  ['films', 'NOUN'] Goal: 0
+Ep 2 Step 4 Act NO CHANGE Reward 0 Dist 0.0734 LabProb: 0 --(prior -> new)-- ['ever', 'ADV']  -->  ['ever', 'ADV'] Goal: 0
+Ep 2 Step 5 Act NO CHANGE Reward 0 Dist 0.0734 LabProb: 0 --(prior -> new)-- ['made', 'VERB']  -->  ['made', 'VERB'] Goal: 0
+Ep 2 Step 6 Act NO CHANGE Reward 0 Dist 0.0734 LabProb: 0 --(prior -> new)-- ['ve', 'VERB']  -->  ['ve', 'VERB'] Goal: 0
+Ep 2 Step 7 Act SUBWORD Reward [11.93374413] Dist 0.0718 LabProb: 0 --(prior -> new)-- ['seen', 'VERB']  -->  ['watched', 'VERB'] Goal: 0
+Ep 2 Step 8 Act NO CHANGE Reward 0 Dist 0.0718 LabProb: 0 --(prior -> new)-- ['many', 'ADJ']  -->  ['many', 'ADJ'] Goal: 0
+Ep 2 Step 9 Act NO CHANGE Reward 0 Dist 0.0718 LabProb: 0 --(prior -> new)-- ['book', 'NOUN']  -->  ['book', 'NOUN'] Goal: 0
+Ep 2 Step 10 Act NO CHANGE Reward 0 Dist 0.0718 LabProb: 0 --(prior -> new)-- ['way', 'ADV']  -->  ['way', 'ADV'] Goal: 0
+Ep 2 Step 11 Act NO CHANGE Reward 0 Dist 0.0718 LabProb: 0 --(prior -> new)-- ['better', 'ADV']  -->  ['better', 'ADV'] Goal: 0
+Ep 2 Step 12 Act NO CHANGE Reward 0 Dist 0.0718 LabProb: 0 --(prior -> new)-- ['mediocre', 'ADJ']  -->  ['mediocre', 'ADJ'] Goal: 0
+Ep 2 Step 13 Act NO CHANGE Reward 0 Dist 0.0718 LabProb: 0 --(prior -> new)-- ['movie', 'NOUN']  -->  ['movie', 'NOUN'] Goal: 0
+Ep 2 Step 14 Act NO CHANGE Reward 0 Dist 0.0718 LabProb: 0 --(prior -> new)-- ['think', 'VERB']  -->  ['think', 'VERB'] Goal: 0
+Ep 2 Step 15 Act NO CHANGE Reward 0 Dist 0.0718 LabProb: 0 --(prior -> new)-- ['one', 'NUM']  -->  ['one', 'NUM'] Goal: 0
+Ep 2 Step 16 Act NO CHANGE Reward 0 Dist 0.0718 LabProb: 0 --(prior -> new)-- ['expensive', 'ADJ']  -->  ['expensive', 'ADJ'] Goal: 0
+Ep 2 Step 17 Act NO CHANGE Reward 0 Dist 0.0718 LabProb: 0 --(prior -> new)-- ['films', 'NOUN']  -->  ['films', 'NOUN'] Goal: 0
+Ep 2 Step 18 Act SUBWORD Reward [11.18930726] Dist 0.0758 LabProb: 0 --(prior -> new)-- ['ever', 'ADV']  -->  ['i', {'text': 'i', 'start_pos': 0, 'end_pos': 1, 'type': 'PRON', 'confidence': 0.9997475743293762}] Goal: 0
+Ep 2 Step 19 Act SUBWORD Reward [11.70601215] Dist 0.073 LabProb: 0 --(prior -> new)-- ['made', 'VERB']  -->  ['know', 'VERB'] Goal: 0
+Ep 2 Step 20 Act NO CHANGE Reward 0 Dist 0.073 LabProb: 0 --(prior -> new)-- ['ve', 'VERB']  -->  ['ve', 'VERB'] Goal: 0
+Ep 2 Step 21 Act NO CHANGE Reward 0 Dist 0.073 LabProb: 0 --(prior -> new)-- ['watched', 'VERB']  -->  ['watched', 'VERB'] Goal: 0
+Ep 2 Step 22 Act NO CHANGE Reward 0 Dist 0.073 LabProb: 0 --(prior -> new)-- ['many', 'ADJ']  -->  ['many', 'ADJ'] Goal: 0
+Ep 2 Step 23 Act NO CHANGE Reward 0 Dist 0.073 LabProb: 0 --(prior -> new)-- ['book', 'NOUN']  -->  ['book', 'NOUN'] Goal: 0
+Ep 2 Step 24 Act NO CHANGE Reward 0 Dist 0.073 LabProb: 0 --(prior -> new)-- ['way', 'ADV']  -->  ['way', 'ADV'] Goal: 0
+Ep 2 Step 25 Act NO CHANGE Reward 0 Dist 0.073 LabProb: 0 --(prior -> new)-- ['better', 'ADV']  -->  ['better', 'ADV'] Goal: 0
+DONE FOUND CF!! with dist [0.23942995]
+Ep 2 Step 26 Act SUBWORD Reward [97.60570054] Dist 0.2394 LabProb: 0 --(prior -> new)-- ['mediocre', 'ADJ']  -->  ['good', 'ADJ'] Goal: 1
+DONE AT Step 26 @ Episode 3/3 (177.71734109902465)
+Episode collection for ep2=(9.733731985092163)
+************************
+Now look at episode:
+##############
+Original Sentence: I think it's one of the most ridiculous movies ever made, and I've seen many... The book is way better and it's a very mediocre movie!
+Current Sentence: i think it's one of the most expensive films i know, and i've watched many... the book is way better and it's a very good movie !
+Current Word and Index movie 35
+Current Distance from Original: [0.23942995]
+Current Iteration through sentence:  1
+Total num edits: 6
+Unique words edited: 6
+##############
+in without baseline with STATE think I think it's one of the most ridiculous movies eve VERB ACTION: 1 G [156.0145681]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [156.0145681] gives loss [65.11414]
+in without baseline with STATE one I think it's one of the most ridiculous movies eve NUM ACTION: 1 G [156.0145681]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [156.0145681] gives loss [72.2221]
+in without baseline with STATE ridiculous I think it's one of the most ridiculous movies eve ADJ ACTION: 0 G [156.0145681]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [156.0145681] gives loss [170.01588]
+in without baseline with STATE movies i think it's one of the most expensive movies ever NOUN ACTION: 0 G [144.05172921]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [144.05172921] gives loss [186.27554]
+in without baseline with STATE ever i think it's one of the most expensive films ever  ADV ACTION: 1 G [132.43476409]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [132.43476409] gives loss [42.50531]
+in without baseline with STATE made i think it's one of the most expensive films ever  VERB ACTION: 1 G [132.43476409]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [132.43476409] gives loss [43.4711]
+in without baseline with STATE ve i think it's one of the most expensive films ever  VERB ACTION: 1 G [132.43476409]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [132.43476409] gives loss [45.063263]
+in without baseline with STATE seen i think it's one of the most expensive films ever  VERB ACTION: 0 G [132.43476409]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [132.43476409] gives loss [189.32857]
+in without baseline with STATE many i think it's one of the most expensive films ever  ADJ ACTION: 1 G [120.50101996]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [120.50101996] gives loss [49.901764]
+in without baseline with STATE book i think it's one of the most expensive films ever  NOUN ACTION: 1 G [120.50101996]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [120.50101996] gives loss [54.765835]
+in without baseline with STATE way i think it's one of the most expensive films ever  ADV ACTION: 1 G [120.50101996]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [120.50101996] gives loss [33.34768]
+in without baseline with STATE better i think it's one of the most expensive films ever  ADV ACTION: 1 G [120.50101996]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [120.50101996] gives loss [31.047075]
+in without baseline with STATE mediocre i think it's one of the most expensive films ever  ADJ ACTION: 1 G [120.50101996]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [120.50101996] gives loss [51.330147]
+in without baseline with STATE movie i think it's one of the most expensive films ever  NOUN ACTION: 1 G [120.50101996]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [120.50101996] gives loss [51.021366]
+in without baseline with STATE think i think it's one of the most expensive films ever  VERB ACTION: 1 G [120.50101996]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [120.50101996] gives loss [27.833939]
+in without baseline with STATE one i think it's one of the most expensive films ever  NUM ACTION: 1 G [120.50101996]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [120.50101996] gives loss [31.646605]
+in without baseline with STATE expensive i think it's one of the most expensive films ever  ADJ ACTION: 1 G [120.50101996]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [120.50101996] gives loss [43.032593]
+in without baseline with STATE films i think it's one of the most expensive films ever  NOUN ACTION: 1 G [120.50101996]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [120.50101996] gives loss [28.753082]
+in without baseline with STATE ever i think it's one of the most expensive films ever  ADV ACTION: 0 G [120.50101996]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [120.50101996] gives loss [208.62315]
+in without baseline with STATE made i think it's one of the most expensive films i mad VERB ACTION: 0 G [109.3117127]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [109.3117127] gives loss [201.53316]
+in without baseline with STATE ve i think it's one of the most expensive films i kno VERB ACTION: 1 G [97.60570054]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [97.60570054] gives loss [21.25859]
+in without baseline with STATE watched i think it's one of the most expensive films i kno VERB ACTION: 1 G [97.60570054]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [97.60570054] gives loss [15.1424055]
+in without baseline with STATE many i think it's one of the most expensive films i kno ADJ ACTION: 1 G [97.60570054]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [97.60570054] gives loss [21.413437]
+in without baseline with STATE book i think it's one of the most expensive films i kno NOUN ACTION: 1 G [97.60570054]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [97.60570054] gives loss [26.655193]
+in without baseline with STATE way i think it's one of the most expensive films i kno ADV ACTION: 1 G [97.60570054]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [97.60570054] gives loss [14.963355]
+in without baseline with STATE better i think it's one of the most expensive films i kno ADV ACTION: 1 G [97.60570054]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [97.60570054] gives loss [12.841999]
+in without baseline with STATE mediocre i think it's one of the most expensive films i kno ADJ ACTION: 0 G [97.60570054]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [97.60570054] gives loss [147.2409]
+--- Episode time for ep2=(9.76283073425293)
+DONE !!!
+{'episode_lengths': array([49., 23., 26.]), 'episode_rewards': array([330.25582813, 177.7173411 , 156.0145681 ]), 'episode_cf_found': array([0., 0., 0.]), 'episode_start_end_sent': [('Long, boring, blasphemous. Never have I been so glad to see ending credits roll.', 'dull, depressed, empty. never have i been so proud to watch the stones rolling.'), ("If you haven't seen this, it's terrible. It is pure trash. I saw this about 17 years ago, and I'm still screwed up from it.", "if you don't seen this, it's obscene. it is legal tender. i saw this about five years ago, and i'm still screwed up from it."), ("I think it's one of the most ridiculous movies ever made, and I've seen many... The book is way better and it's a very mediocre movie!", "i think it's one of the most expensive films i know, and i've watched many... the book is way better and it's a very mediocre movie !")], 'episode_trajs': []}
+Elapsed Time 75.08703804016113
+Without baseline [330.25582813 177.7173411  156.0145681 ]
+2019-12-08 13:45:01,966 loading file /home/diego/.flair/models/en-pos-ontonotes-fast-v0.4.pt
+I don't know why I hate this movie so much, but I am very tired of watching it.
+['know', 'hate', 'movie', 'much', 'tired', 'watching']
+ENV INFO
+<CounterFac<counterfac-v0>>
+<class 'gym_counterfac.envs.counterfac_env.CounterFac'>
+['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__enter__', '__eq__', '__exit__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'action_space', 'aug', 'cf_all_labels', 'cf_all_sentences', 'cf_neg_sentences', 'cf_pos_sentences', 'close', 'counter', 'cur_class_label', 'cur_emb', 'current_iteration', 'current_pos', 'current_sentence', 'current_word', 'current_word_index', 'distance_from_original', 'done', 'filter_candidates', 'human_cf', 'input_sentence', 'make_embedded_version', 'max_iterations', 'max_word_edit_percent', 'max_word_edits', 'metadata', 'minimum_word_edits_needed', 'next_word', 'num_edits', 'num_non_stopwords', 'num_words_edited', 'observation_space', 'original_label', 'percent_changed_needed', 'prior_words_used', 'render', 'reset', 'reward', 'reward_range', 'row_id', 'seed', 'sent_pos', 'sent_to_int', 'skipword', 'softmaxed', 'spec', 'state', 'step', 'subword', 'tagger', 'tokens', 'tokens_text', 'unwrapped', 'words_edited']
+action_space Discrete(2) <class 'gym.spaces.discrete.Discrete'> 2
+observation_space Discrete(1556) <class 'gym.spaces.discrete.Discrete'> 1556
+meta_data {'render.modes': ['human']} <class 'dict'>
+reward_range (-inf, inf) <class 'tuple'>
+state ['know', "I don't know why I hate this movie so much, but I am very tired of watching it.", 'VERB', array([-0.02218761, -0.15021476,  2.55078697, ...,  0.        ,
+        0.        ,  0.        ])]
+WARNING:tensorflow:From /home/diego/rl_proj_cf/reinforce.py:126: The name tf.squared_difference is deprecated. Please use tf.math.squared_difference instead.
+
+WARNING:tensorflow:From /home/diego/rl_proj_cf/reinforce.py:126: The name tf.squared_difference is deprecated. Please use tf.math.squared_difference instead.
+
+session initialize:  1.1920928955078125e-06
+With Baseline: 1  V type <class 'reinforce.VApproximationWithNN'>
+Long, boring, blasphemous. Never have I been so glad to see ending credits roll.
+['long', 'boring', 'blasphemous', 'never', 'glad', 'see', 'ending', 'credits', 'roll']
+After reset: ['long', 'Long, boring, blasphemous. Never have I been so glad to see ending credits roll.', 'ADJ', array([ 0.34884524, -0.73088783,  2.0266583 , ...,  0.        ,
+        0.        ,  0.        ])]
+Ep 0 Step 0 Act NO CHANGE Reward 0 Dist 0 LabProb: 0 --(prior -> new)-- ['long', 'ADJ']  -->  ['long', 'ADJ'] Goal: 0
+Ep 0 Step 1 Act NO CHANGE Reward 0 Dist 0 LabProb: 0 --(prior -> new)-- ['boring', 'ADJ']  -->  ['boring', 'ADJ'] Goal: 0
+Ep 0 Step 2 Act NO CHANGE Reward 0 Dist 0 LabProb: 0 --(prior -> new)-- ['blasphemous', 'ADJ']  -->  ['blasphemous', 'ADJ'] Goal: 0
+Ep 0 Step 3 Act SUBWORD Reward [5.39042966] Dist 0.1353 LabProb: 0 --(prior -> new)-- ['never', 'ADV']  -->  ['why', 'ADV'] Goal: 0
+Ep 0 Step 4 Act SUBWORD Reward [4.95704399] Dist 0.1437 LabProb: 0 --(prior -> new)-- ['glad', 'ADJ']  -->  ['afraid', 'ADJ'] Goal: 0
+Ep 0 Step 5 Act NO CHANGE Reward 0 Dist 0.1437 LabProb: 0 --(prior -> new)-- ['see', 'VERB']  -->  ['see', 'VERB'] Goal: 0
+Ep 0 Step 6 Act NO CHANGE Reward 0 Dist 0.1437 LabProb: 0 --(prior -> new)-- ['ending', 'VERB']  -->  ['ending', 'VERB'] Goal: 0
+Ep 0 Step 7 Act SUBWORD Reward [3.77505763] Dist 0.1732 LabProb: 0 --(prior -> new)-- ['credits', 'NOUN']  -->  ['home', 'NOUN'] Goal: 0
+Ep 0 Step 8 Act NO CHANGE Reward 0 Dist 0.1732 LabProb: 0 --(prior -> new)-- ['roll', 'NOUN']  -->  ['roll', 'NOUN'] Goal: 0
+Ep 0 Step 9 Act NO CHANGE Reward 0 Dist 0.1732 LabProb: 0 --(prior -> new)-- ['long', 'ADJ']  -->  ['long', 'ADJ'] Goal: 0
+Ep 0 Step 10 Act NO CHANGE Reward 0 Dist 0.1732 LabProb: 0 --(prior -> new)-- ['boring', 'ADJ']  -->  ['boring', 'ADJ'] Goal: 0
+Ep 0 Step 11 Act NO CHANGE Reward 0 Dist 0.1732 LabProb: 0 --(prior -> new)-- ['blasphemous', 'ADJ']  -->  ['blasphemous', 'ADJ'] Goal: 0
+Ep 0 Step 12 Act NO CHANGE Reward 0 Dist 0.1732 LabProb: 0 --(prior -> new)-- ['afraid', 'ADJ']  -->  ['afraid', 'ADJ'] Goal: 0
+Ep 0 Step 13 Act NO CHANGE Reward 0 Dist 0.1732 LabProb: 0 --(prior -> new)-- ['see', 'VERB']  -->  ['see', 'VERB'] Goal: 0
+Ep 0 Step 14 Act SUBWORD Reward [3.20095742] Dist 0.1923 LabProb: 0 --(prior -> new)-- ['ending', 'VERB']  -->  ['a', {'text': 'a', 'start_pos': 4, 'end_pos': 5, 'type': 'DET', 'confidence': 0.9946616291999817}] Goal: 0
+Ep 0 Step 15 Act NO CHANGE Reward 0 Dist 0.1923 LabProb: 0 --(prior -> new)-- ['home', 'NOUN']  -->  ['home', 'NOUN'] Goal: 0
+Ep 0 Step 16 Act NO CHANGE Reward 0 Dist 0.1923 LabProb: 0 --(prior -> new)-- ['roll', 'NOUN']  -->  ['roll', 'NOUN'] Goal: 0
+Ep 0 Step 17 Act SUBWORD Reward [2.18117513] Dist 0.2392 LabProb: 0 --(prior -> new)-- ['long', 'ADJ']  -->  ['dull', 'ADJ'] Goal: 0
+Ep 0 Step 18 Act SUBWORD Reward [1.8385932] Dist 0.2605 LabProb: 0 --(prior -> new)-- ['boring', 'ADJ']  -->  ['ugly', 'ADJ'] Goal: 0
+Ep 0 Step 19 Act SUBWORD Reward [1.94775794] Dist 0.2533 LabProb: 0 --(prior -> new)-- ['blasphemous', 'ADJ']  -->  ['beautiful', 'ADJ'] Goal: 0
+Ep 0 Step 20 Act NO CHANGE Reward 0 Dist 0.2533 LabProb: 0 --(prior -> new)-- ['afraid', 'ADJ']  -->  ['afraid', 'ADJ'] Goal: 0
+Ep 0 Step 21 Act NO CHANGE Reward 0 Dist 0.2533 LabProb: 0 --(prior -> new)-- ['see', 'VERB']  -->  ['see', 'VERB'] Goal: 0
+Ep 0 Step 22 Act SUBWORD Reward [2.08835814] Dist 0.2446 LabProb: 0 --(prior -> new)-- ['home', 'NOUN']  -->  ['penny', 'NOUN'] Goal: 0
+Ep 0 Step 23 Act SUBWORD Reward [2.62335014] Dist 0.2163 LabProb: 0 --(prior -> new)-- ['roll', 'NOUN']  -->  ['left', {'text': 'left', 'start_pos': 0, 'end_pos': 4, 'type': 'VERB', 'confidence': 0.4681084454059601}] Goal: 0
+Ep 0 Step 24 Act NO CHANGE Reward 0 Dist 0.2163 LabProb: 0 --(prior -> new)-- ['dull', 'ADJ']  -->  ['dull', 'ADJ'] Goal: 0
+Ep 0 Step 25 Act SUBWORD Reward [2.1220111] Dist 0.2426 LabProb: 0 --(prior -> new)-- ['ugly', 'ADJ']  -->  ['dark', 'ADJ'] Goal: 0
+Ep 0 Step 26 Act NO CHANGE Reward 0 Dist 0.2426 LabProb: 0 --(prior -> new)-- ['beautiful', 'ADJ']  -->  ['beautiful', 'ADJ'] Goal: 0
+Ep 0 Step 27 Act NO CHANGE Reward 0 Dist 0.2426 LabProb: 0 --(prior -> new)-- ['afraid', 'ADJ']  -->  ['afraid', 'ADJ'] Goal: 0
+Ep 0 Step 28 Act NO CHANGE Reward 0 Dist 0.2426 LabProb: 0 --(prior -> new)-- ['see', 'VERB']  -->  ['see', 'VERB'] Goal: 0
+Ep 0 Step 29 Act NO CHANGE Reward 0 Dist 0.2426 LabProb: 0 --(prior -> new)-- ['penny', 'NOUN']  -->  ['penny', 'NOUN'] Goal: 0
+Ep 0 Step 30 Act SUBWORD Reward [2.08768192] Dist 0.2446 LabProb: 0 --(prior -> new)-- ['left', 'NOUN']  -->  ['today', 'NOUN'] Goal: 0
+Ep 0 Step 31 Act NO CHANGE Reward 0 Dist 0.2446 LabProb: 0 --(prior -> new)-- ['dull', 'ADJ']  -->  ['dull', 'ADJ'] Goal: 0
+Ep 0 Step 32 Act SUBWORD Reward [2.20235357] Dist 0.238 LabProb: 0 --(prior -> new)-- ['dark', 'ADJ']  -->  ['pathetic', 'ADJ'] Goal: 0
+Ep 0 Step 33 Act SUBWORD Reward [2.1004558] Dist 0.2439 LabProb: 0 --(prior -> new)-- ['beautiful', 'ADJ']  -->  ['selfish', 'ADJ'] Goal: 0
+Ep 0 Step 34 Act NO CHANGE Reward 0 Dist 0.2439 LabProb: 0 --(prior -> new)-- ['afraid', 'ADJ']  -->  ['afraid', 'ADJ'] Goal: 0
+Ep 0 Step 35 Act NO CHANGE Reward 0 Dist 0.2439 LabProb: 0 --(prior -> new)-- ['see', 'VERB']  -->  ['see', 'VERB'] Goal: 0
+Ep 0 Step 36 Act NO CHANGE Reward 0 Dist 0.2439 LabProb: 0 --(prior -> new)-- ['penny', 'NOUN']  -->  ['penny', 'NOUN'] Goal: 0
+Ep 0 Step 37 Act NO CHANGE Reward 0 Dist 0.2439 LabProb: 0 --(prior -> new)-- ['today', 'NOUN']  -->  ['today', 'NOUN'] Goal: 0
+Ep 0 Step 38 Act SUBWORD Reward [1.85855559] Dist 0.2592 LabProb: 0 --(prior -> new)-- ['dull', 'ADJ']  -->  ['stupid', 'ADJ'] Goal: 0
+WARNING.  changed current_word: pathetic  to  stupid  which is on the priorly used list.. this should be late restort
+Ep 0 Step 39 Act SUBWORD Reward [1.7864022] Dist 0.2641 LabProb: 0 --(prior -> new)-- ['pathetic', 'ADJ']  -->  ['stupid', {'text': 'stupid', 'start_pos': 0, 'end_pos': 6, 'type': 'ADJ', 'confidence': 0.9978005290031433}] Goal: 0
+Ep 0 Step 40 Act NO CHANGE Reward 0 Dist 0.2641 LabProb: 0 --(prior -> new)-- ['selfish', 'ADJ']  -->  ['selfish', 'ADJ'] Goal: 0
+Ep 0 Step 41 Act NO CHANGE Reward 0 Dist 0.2641 LabProb: 0 --(prior -> new)-- ['afraid', 'ADJ']  -->  ['afraid', 'ADJ'] Goal: 0
+Ep 0 Step 42 Act SUBWORD Reward [1.54967381] Dist 0.2817 LabProb: 0 --(prior -> new)-- ['see', 'VERB']  -->  ['earn', 'VERB'] Goal: 0
+Ep 0 Step 43 Act SUBWORD Reward [1.3705851] Dist 0.2967 LabProb: 0 --(prior -> new)-- ['penny', 'NOUN']  -->  ['pound', 'NOUN'] Goal: 0
+Ep 0 Step 44 Act NO CHANGE Reward 0 Dist 0.2967 LabProb: 0 --(prior -> new)-- ['today', 'NOUN']  -->  ['today', 'NOUN'] Goal: 0
+DONE BECAUSE MAX_ITERATIONS REACHED OR MAX EDITS REACHED
+Current Iteration > max iterations 6 versus 5 OR num edits > max word edits 18 vs 45
+Ep 0 Step 45 Act SUBWORD Reward [-96.65147848] Dist 0.2986 LabProb: 0 --(prior -> new)-- ['stupid', 'ADJ']  -->  ['foolish', 'ADJ'] Goal: 0
+DONE AT Step 45 @ Episode 1/3 (0.0)
+Episode collection for ep0=(72.15727806091309)
+************************
+Now look at episode:
+##############
+Original Sentence: Long, boring, blasphemous. Never have I been so glad to see ending credits roll.
+Current Sentence: foolish, stupid, selfish. why have i been so afraid to earn a pound today.
+Current Word and Index stupid 2
+Current Distance from Original: [0.29863926]
+Current Iteration through sentence:  6
+Total num edits: 18
+Unique words edited: 9
+##############
+UPDATE State s With Action 1 and Gamma 1.0 and Target [-53.02206866] gives loss [-52.176342]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [-52.3486387] gives loss [-62.342407]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [-52.26973955] gives loss [-68.04811]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [-51.97716944] gives loss [-12.06058]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [-57.83842417] gives loss [-18.51381]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [-62.01050098] gives loss [-114.553406]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [-61.6091705] gives loss [-133.80154]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [-61.71077807] gives loss [-10.17613]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [-64.43104139] gives loss [-122.57055]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [-64.09642783] gives loss [-161.58824]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [-63.1559278] gives loss [-159.78697]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [-63.11627593] gives loss [-171.66801]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [-62.57072511] gives loss [-209.96465]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [-62.47990909] gives loss [-226.67009]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [-62.06001106] gives loss [-1.0975507]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [-65.36400774] gives loss [-243.88896]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [-64.14364746] gives loss [-254.80676]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [-63.70781878] gives loss [-0.49869964]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [-65.0332176] gives loss [-0.4089829]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [-67.04945505] gives loss [-0.54351735]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [-68.41182242] gives loss [-385.19348]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [-68.30369388] gives loss [-406.61008]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [-68.57431613] gives loss [-0.20948969]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [-69.40252241] gives loss [-0.18217978]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [-71.18892606] gives loss [-463.04172]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [-70.79219945] gives loss [-0.0691161]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [-73.68865036] gives loss [-474.23602]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [-71.75038552] gives loss [-573.199]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [-71.73761868] gives loss [-584.67065]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [-71.37097668] gives loss [-569.07794]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [-69.69324707] gives loss [-0.00613163]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [-71.27734795] gives loss [-660.22894]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [-70.8196701] gives loss [-0.00340235]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [-73.84930849] gives loss [-0.00629479]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [-73.4718037] gives loss [-813.57446]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [-73.47195056] gives loss [-823.79205]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [-73.06626895] gives loss [-810.5137]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [-73.35455707] gives loss [-861.1575]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [-70.48707393] gives loss [-0.00022687]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [-71.75656016] gives loss [-0.00017108]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [-72.92983942] gives loss [-965.943]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [-72.36480264] gives loss [-1030.3976]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [-72.40520792] gives loss [-3.45255e-05]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [-73.47921377] gives loss [-3.503763e-05]
+UPDATE State s With Action 1 and Gamma 1.0 and Target [-75.5255229] gives loss [-1121.4917]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [-71.82175703] gives loss [-8.561821e-06]
+--- Episode time for ep0=(72.34902715682983)
+If you haven't seen this, it's terrible. It is pure trash. I saw this about 17 years ago, and I'm still screwed up from it.
+['haven', 'seen', 'terrible', 'pure', 'trash', 'saw', '17', 'years', 'ago', 'm', 'still', 'screwed']
+After reset: ['haven', "If you haven't seen this, it's terrible. It is pure trash. I saw this about 17 years ago, and I'm still screwed up from it.", 'VERB', array([-0.12740439, -0.48730239,  1.62661827, ...,  0.        ,
+        0.        ,  0.        ])]
+Ep 1 Step 0 Act SUBWORD Reward [6592.65680867] Dist 0.0002 LabProb: 0 --(prior -> new)-- ['haven', 'VERB']  -->  ['have', 'VERB'] Goal: 0
+Ep 1 Step 1 Act SUBWORD Reward [227.91995505] Dist 0.0043 LabProb: 0 --(prior -> new)-- ['seen', 'VERB']  -->  ['found', 'VERB'] Goal: 0
+Ep 1 Step 2 Act SUBWORD Reward [21.586203] Dist 0.0424 LabProb: 0 --(prior -> new)-- ['terrible', 'ADJ']  -->  ['worthless', 'ADJ'] Goal: 0
+Ep 1 Step 3 Act SUBWORD Reward [24.42069228] Dist 0.0378 LabProb: 0 --(prior -> new)-- ['pure', 'ADJ']  -->  ['complete', 'ADJ'] Goal: 0
+Ep 1 Step 4 Act SUBWORD Reward [20.30627885] Dist 0.0448 LabProb: 0 --(prior -> new)-- ['trash', 'NOUN']  -->  ['crap', 'NOUN'] Goal: 0
+Ep 1 Step 5 Act SUBWORD Reward [13.8109738] Dist 0.0632 LabProb: 0 --(prior -> new)-- ['saw', 'VERB']  -->  ['discovered', 'VERB'] Goal: 0
+Ep 1 Step 6 Act SUBWORD Reward [6.46274703] Dist 0.1182 LabProb: 0 --(prior -> new)-- ['17', 'NUM']  -->  ['five', 'NUM'] Goal: 0
+Ep 1 Step 7 Act SUBWORD Reward [4.60529799] Dist 0.1514 LabProb: 0 --(prior -> new)-- ['years', 'NOUN']  -->  ['minutes', 'NOUN'] Goal: 0
+Ep 1 Step 8 Act SUBWORD Reward [4.11147455] Dist 0.1636 LabProb: 0 --(prior -> new)-- ['ago', 'ADV']  -->  ['later', 'ADV'] Goal: 0
+Ep 1 Step 9 Act SUBWORD Reward [4.13193071] Dist 0.1631 LabProb: 0 --(prior -> new)-- ['m', 'INTJ']  -->  ['ve', {'text': 've', 'start_pos': 0, 'end_pos': 2, 'type': 'X', 'confidence': 0.9681042432785034}] Goal: 0
+Ep 1 Step 10 Act SUBWORD Reward [4.33778446] Dist 0.1578 LabProb: 0 --(prior -> new)-- ['still', 'ADV']  -->  ['really', 'ADV'] Goal: 0
+Ep 1 Step 11 Act SUBWORD Reward [2.29443489] Dist 0.2329 LabProb: 0 --(prior -> new)-- ['screwed', 'VERB']  -->  ['given', 'VERB'] Goal: 0
+Ep 1 Step 12 Act SUBWORD Reward [2.30291923] Dist 0.2324 LabProb: 0 --(prior -> new)-- ['found', 'VERB']  -->  ['read', 'VERB'] Goal: 0
+Ep 1 Step 13 Act SUBWORD Reward [2.71120909] Dist 0.2123 LabProb: 0 --(prior -> new)-- ['worthless', 'ADJ']  -->  ['unacceptable', 'ADJ'] Goal: 0
+Ep 1 Step 14 Act SUBWORD Reward [2.96722047] Dist 0.2013 LabProb: 0 --(prior -> new)-- ['complete', 'ADJ']  -->  ['utter', 'ADJ'] Goal: 0
+Ep 1 Step 15 Act SUBWORD Reward [2.94925238] Dist 0.2021 LabProb: 0 --(prior -> new)-- ['crap', 'NOUN']  -->  ['nonsense', 'NOUN'] Goal: 0
+Ep 1 Step 16 Act SUBWORD Reward [2.56900166] Dist 0.2189 LabProb: 0 --(prior -> new)-- ['discovered', 'VERB']  -->  ['write', 'VERB'] Goal: 0
+Ep 1 Step 17 Act SUBWORD Reward [1.90836756] Dist 0.2559 LabProb: 0 --(prior -> new)-- ['five', 'NUM']  -->  ['thirty', 'NUM'] Goal: 0
+Ep 1 Step 18 Act SUBWORD Reward [2.20322909] Dist 0.2379 LabProb: 0 --(prior -> new)-- ['minutes', 'NOUN']  -->  ['days', 'NOUN'] Goal: 0
+Ep 1 Step 19 Act SUBWORD Reward [2.07375386] Dist 0.2455 LabProb: 0 --(prior -> new)-- ['later', 'ADV']  -->  ['now', 'ADV'] Goal: 0
+WARNING.  changed current_word: ve  to  m  which is on the priorly used list.. this should be late restort
+Ep 1 Step 20 Act SUBWORD Reward [2.20961128] Dist 0.2376 LabProb: 0 --(prior -> new)-- ['ve', 'INTJ']  -->  ['m', {'text': 'm', 'start_pos': 2, 'end_pos': 3, 'type': 'X', 'confidence': 0.9640428423881531}] Goal: 0
+Ep 1 Step 21 Act SUBWORD Reward [2.20928935] Dist 0.2376 LabProb: 0 --(prior -> new)-- ['really', 'ADV']  -->  ['completely', 'ADV'] Goal: 0
+Ep 1 Step 22 Act SUBWORD Reward [2.59952473] Dist 0.2174 LabProb: 0 --(prior -> new)-- ['given', 'VERB']  -->  ['shaken', 'VERB'] Goal: 0
+Ep 1 Step 23 Act SUBWORD Reward [2.78592184] Dist 0.2089 LabProb: 0 --(prior -> new)-- ['read', 'VERB']  -->  ['written', 'VERB'] Goal: 0
+Ep 1 Step 24 Act SUBWORD Reward [1.61341989] Dist 0.2767 LabProb: 0 --(prior -> new)-- ['unacceptable', 'ADJ']  -->  ['true', 'ADJ'] Goal: 0
+Ep 1 Step 25 Act SUBWORD Reward [0.84748412] Dist 0.3512 LabProb: 0 --(prior -> new)-- ['utter', 'ADJ']  -->  ['logical', 'ADJ'] Goal: 0
+DONE FOUND CF!! with dist [0.47431858]
+Ep 1 Step 26 Act SUBWORD Reward [95.25681424] Dist 0.4743 LabProb: 0 --(prior -> new)-- ['nonsense', 'NOUN']  -->  ['language', 'NOUN'] Goal: 1
+DONE AT Step 26 @ Episode 2/3 (-53.571036141654766)
+Episode collection for ep1=(129.73934030532837)
+************************
+Now look at episode:
+##############
+Original Sentence: If you haven't seen this, it's terrible. It is pure trash. I saw this about 17 years ago, and I'm still screwed up from it.
+Current Sentence: if you have't written this, it's true. it is logical language. i write this about thirty days now, and i'm completely shaken up from it.
+Current Word and Index write 19
+Current Distance from Original: [0.47431858]
+Current Iteration through sentence:  2
+Total num edits: 27
+Unique words edited: 12
+##############
+UPDATE State s With Action 0 and Gamma 1.0 and Target [7075.63232174] gives loss [0.01265223]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [482.05249175] gives loss [0.00034479]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [254.53417282] gives loss [0.00027309]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [231.23766366] gives loss [0.00027566]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [207.96475657] gives loss [0.00022312]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [186.59847826] gives loss [4.4488548e-05]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [171.3357394] gives loss [4.0849627e-05]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [163.69704518] gives loss [5.854264e-05]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [160.8107318] gives loss [1.9170135e-05]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [155.73395001] gives loss [1.8564935e-05]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [151.00439357] gives loss [1.8001128e-05]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [148.1382926] gives loss [-0.]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [144.12023444] gives loss [-0.]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [142.61769972] gives loss [1.7001357e-05]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [136.69928582] gives loss [6.518331e-05]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [136.39572921] gives loss [-0.]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [131.43058671] gives loss [1.5667749e-05]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [127.22453346] gives loss [7.5831755e-05]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [125.54693601] gives loss [2.9932726e-05]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [124.45180495] gives loss [1.4835813e-05]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [123.06139212] gives loss [1.4670063e-05]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [120.83654399] gives loss [-0.]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [118.50559059] gives loss [-0.]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [114.66787903] gives loss [1.3669478e-05]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [113.21564878] gives loss [-0.]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [109.8927982] gives loss [1.3100244e-05]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [108.94585157] gives loss [2.597472e-05]
+--- Episode time for ep1=(129.79120063781738)
+I think it's one of the most ridiculous movies ever made, and I've seen many... The book is way better and it's a very mediocre movie!
+['think', 'one', 'ridiculous', 'movies', 'ever', 'made', 've', 'seen', 'many', 'book', 'way', 'better', 'mediocre', 'movie']
+After reset: ['think', "I think it's one of the most ridiculous movies ever made, and I've seen many... The book is way better and it's a very mediocre movie!", 'VERB', array([-0.03118682, -0.2309836 ,  2.41849303, ...,  0.        ,
+        0.        ,  0.        ])]
+Ep 2 Step 0 Act SUBWORD Reward [293.40411007] Dist 0.0034 LabProb: 0 --(prior -> new)-- ['think', 'VERB']  -->  ['swear', 'VERB'] Goal: 0
+Ep 2 Step 1 Act SUBWORD Reward [137.73956248] Dist 0.0072 LabProb: 0 --(prior -> new)-- ['one', 'NUM']  -->  ['two', 'NUM'] Goal: 0
+Ep 2 Step 2 Act SUBWORD Reward [12.40466992] Dist 0.0694 LabProb: 0 --(prior -> new)-- ['ridiculous', 'ADJ']  -->  ['expensive', 'ADJ'] Goal: 0
+Ep 2 Step 3 Act SUBWORD Reward [12.04212453] Dist 0.0712 LabProb: 0 --(prior -> new)-- ['movies', 'NOUN']  -->  ['films', 'NOUN'] Goal: 0
+Ep 2 Step 4 Act SUBWORD Reward [11.83825882] Dist 0.0723 LabProb: 0 --(prior -> new)-- ['ever', 'ADV']  -->  ['they', {'text': 'they', 'start_pos': 11, 'end_pos': 15, 'type': 'PRON', 'confidence': 0.9999234676361084}] Goal: 0
+Ep 2 Step 5 Act SUBWORD Reward [12.09526006] Dist 0.0709 LabProb: 0 --(prior -> new)-- ['made', 'VERB']  -->  ['make', 'VERB'] Goal: 0
+Ep 2 Step 6 Act SUBWORD Reward [12.31680074] Dist 0.0698 LabProb: 0 --(prior -> new)-- ['ve', 'VERB']  -->  ['ave', 'VERB'] Goal: 0
+Ep 2 Step 7 Act SUBWORD Reward [12.11292674] Dist 0.0709 LabProb: 0 --(prior -> new)-- ['seen', 'VERB']  -->  ['watched', 'VERB'] Goal: 0
+Ep 2 Step 8 Act SUBWORD Reward [12.84056717] Dist 0.0674 LabProb: 0 --(prior -> new)-- ['many', 'ADJ']  -->  ['it', {'text': 'it', 'start_pos': 0, 'end_pos': 2, 'type': 'PRON', 'confidence': 0.999997615814209}] Goal: 0
+DONE FOUND CF!! with dist [0.08928433]
+Ep 2 Step 9 Act SUBWORD Reward [99.10715672] Dist 0.0893 LabProb: 0 --(prior -> new)-- ['book', 'NOUN']  -->  ['dvd', 'NOUN'] Goal: 1
+DONE AT Step 9 @ Episode 3/3 (7053.851600070776)
+Episode collection for ep2=(31.666154861450195)
+************************
+Now look at episode:
+##############
+Original Sentence: I think it's one of the most ridiculous movies ever made, and I've seen many... The book is way better and it's a very mediocre movie!
+Current Sentence: i swear it's two of the most expensive films they make, and i'ave watched it... the dvd is way better and it's a very mediocre movie !
+Current Word and Index way 26
+Current Distance from Original: [0.08928433]
+Current Iteration through sentence:  0
+Total num edits: 10
+Unique words edited: 10
+##############
+UPDATE State s With Action 0 and Gamma 1.0 and Target [629.55014846] gives loss [7.5048236e-05]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [335.2223638] gives loss [3.9961622e-05]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [198.36251534] gives loss [2.3646659e-05]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [181.4856126] gives loss [0.00268273]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [169.85051054] gives loss [0.00030372]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [158.93356215] gives loss [3.7892718e-05]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [146.35620637] gives loss [8.7235116e-05]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [133.4724205] gives loss [4.773347e-05]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [120.49287369] gives loss [0.00014364]
+UPDATE State s With Action 0 and Gamma 1.0 and Target [107.54172417] gives loss [0.00015384]
+--- Episode time for ep2=(31.682621479034424)
+DONE !!!
+{'episode_lengths': array([45., 26.,  9.]), 'episode_rewards': array([ -53.57103614, 7053.85160007,  615.90143725]), 'episode_cf_found': array([0., 0., 0.]), 'episode_start_end_sent': [('Long, boring, blasphemous. Never have I been so glad to see ending credits roll.', 'stupid, stupid, selfish. why have i been so afraid to earn a pound today.'), ("If you haven't seen this, it's terrible. It is pure trash. I saw this about 17 years ago, and I'm still screwed up from it.", "if you have't written this, it's true. it is logical nonsense. i write this about thirty days now, and i'm completely shaken up from it."), ("I think it's one of the most ridiculous movies ever made, and I've seen many... The book is way better and it's a very mediocre movie!", "i swear it's two of the most expensive films they make, and i'ave watched it... the book is way better and it's a very mediocre movie !")], 'episode_trajs': []}
+Elapsed Time 233.82329154014587
+With baseline [ -53.57103614 7053.85160007  615.90143725]
+Elapsed time:  319.45872950553894

@@ -1,0 +1,143 @@
+wget https://github.com/cnap/gec-ranking/raw/master/scripts/gleu.py
+wget https://github.com/cnap/gec-ranking/raw/master/scripts/compute_gleu
+
+
+# From https://github.com/cnap/gec-ranking/
+Calculate metric scores
+GLEU is included in gec-ranking/scripts. To obtain the GLEU scores for system output, run the following command:
+
+./compute_gleu -s source_sentences_file -r reference_file -o system_output [system_output ...] -n 4 -l 0.0
+
+where each file contains one sentence per line. GLEU can be run with multiple references. To get the GLEU scores of multiple outputs, include the path to each system output file. GLEU was developed using Python 2.7.
+:w
+
+
+#so we need to do this both for 0 and 1 cases:
+
+#0 case for GENERATING POSITIVE SENTIMENT SENTENCES from negative sources
+# ----
+# predictions made by B-GST model:  data/yelp/reference_0_predictions_with_beam_search.txt
+# predictions made by G-GST model:  data/yelp/processed_files_with_bert_with_best_head/delete_retrieve_edit_model/tfidf/reference_0_predictions_with_full_sentence_match_beam_search_bm5.txt
+# reference file:  pd.read_table('data/yelp/reference_0.txt', names=["source","human"], delimiter="\t")
+
+
+#1 case for GENERATING NEGATIVE SENTIMENT SENTENCES from positive sources
+# ----
+# predictions made by B-GST model:  data/yelp/reference_1_predictions_with_beam_search.txt
+# predictions made by G-GST model:  data/yelp/processed_files_with_bert_with_best_head/delete_retrieve_edit_model/tfidf/reference_1_predictions_with_full_sentence_match_beam_search_bm5.txt
+# reference file:  pd.read_table('data/yelp/reference_1.txt', names=["source","human"], delimiter="\t")
+
+
+# so looking at Table in paper.  all GLEU scores are made with reference to HUMAN generated stuff
+Step 0. Combine: human column of yelp/reference_0.txt and yelp/reference_1.txt into a single reference.txt
+    cut -f2 reference_0.txt  > human_reference_0.txt
+    cut -f2 reference_1.txt  > human_reference_1.txt
+    cat human_reference_0.txt human_reference_1.txt > human_reference.txt
+
+    cut -f1 reference_0.txt  > source_reference_0.txt
+    cut -f1 reference_1.txt  > source_reference_1.txt
+    cat source_reference_0.txt source_reference_1.txt > source_reference.txt
+
+# for B-GST model
+A.  Combine:  yelp/reference_0_predictions_with_beam_search.txt and data/yelp/reference_1_predictions_with_beam_search.txt  into a single: bgst_reference_predictions_with_beam_search.txt
+    cat reference_0_predictions_with_beam_search.txt reference_1_predictions_with_beam_search.txt > bgst_reference_predictions_with_beam_search.txt
+B.  run 
+    #chmod +x compute_gleu 
+    ./compute_gleu -s ../../data/yelp/bgst_reference_predictions_with_beam_search.txt -r ../../data/yelp/human_reference.txt -o ../../data/yelp/gleu_bgst.txt -n 4 -l 0.0
+
+    usage: compute_gleu [-h] -r [REFERENCE [REFERENCE ...]] -s SOURCE -o
+                        [HYPOTHESIS [HYPOTHESIS ...]] [-n N] [-d] [--iter ITER]
+    compute_gleu: error: unrecognized arguments: -l 0.0
+
+        parser.add_argument("-r", "--reference", help="Target language reference sentences. Multiple " "files for multiple references.", nargs="*", dest="reference", required=True)
+        parser.add_argument("-s", "--source", help="Source language source sentences", dest="source", required=True)
+        parser.add_argument("-o", "--hypothesis", help="Target language hypothesis sentences to evaluate (can be more than one file--the GLEU score of each " 
+                                                        "file will be output separately). Use '-o -' to read hypotheses from stdin.", nargs="*", dest="hypothesis", required=True)
+        parser.add_argument("-n", help="Maximum order of ngrams", type=int, default=4)
+        parser.add_argument("-d","--debug", help="Debug; print sentence-level scores", default=False, action="store_true")
+        parser.add_argument('--iter', type=int, default=500, help='the number of iterations to run')
+
+    # SO source should be source_reference and -o should be the preds generated! and l isn't a valid param anymore
+
+    python2.7 compute_gleu -s ../../data/yelp/source_reference.txt -r ../../data/yelp/human_reference.txt -o ../../data/yelp/bgst_reference_predictions_with_beam_search.txt  -n 4
+
+    (tdrg) diego@microdeep:~/spr20_cf_gen/TDRG/evaluation_scripts/gleu$ python2.7 compute_gleu -s ../../data/yelp/source_reference.txt -r ../../data/yelp/human_reference.txt -o ../../data/yelp/bgst_reference_predictions_with_beam_search.txt  -n 4
+    /usr/lib/python2.7/dist-packages/scipy/stats/_distn_infrastructure.py:1838: RuntimeWarning: invalid value encountered in multiply lower_bound = self.a * scale + loc
+    /usr/lib/python2.7/dist-packages/scipy/stats/_distn_infrastructure.py:1839: RuntimeWarning: invalid value encountered in multiply upper_bound = self.b * scale + loc
+    bgst_reference_predictions_with_beam_search.txt 0.125903
+
+    paper says: 11.6  so its close
+
+# for G-GST model
+A.  Combine: data/yelp/processed_files_with_bert_with_best_head/delete_retrieve_edit_model/tfidf/reference_0_predictions_with_full_sentence_match_beam_search_bm5.txt  AND
+             data/yelp/processed_files_with_bert_with_best_head/delete_retrieve_edit_model/tfidf/reference_1_predictions_with_full_sentence_match_beam_search_bm5.txt
+
+    cat reference_0_predictions_with_full_sentence_match_beam_search_bm5.txt reference_1_predictions_with_full_sentence_match_beam_search_bm5.txt > ggst_reference_predictions_with_full_sentence_match_beam_search_bm5.txt
+
+    python2.7 compute_gleu -s ../../data/yelp/source_reference.txt -r ../../data/yelp/human_reference.txt -o ../../data/yelp/processed_files_with_bert_with_best_head/delete_retrieve_edit_model/tfidf/ggst_reference_predictions_with_full_sentence_match_beam_search_bm5.txt  -n 4
+
+
+    (tdrg) diego@microdeep:~/spr20_cf_gen/TDRG/evaluation_scripts/gleu$ python2.7 compute_gleu -s ../../data/yelp/source_reference.txt -r ../../data/yelp/human_reference.txt -o ../../data/yelp/processed_files_with_bert_with_best_head/delete_retrieve_edit_model/tfidf/ggst_reference_predictions_with_full_sentence_match_beam_search_bm5.txt  -n 4
+    /usr/lib/python2.7/dist-packages/scipy/stats/_distn_infrastructure.py:1838: RuntimeWarning: invalid value encountered in multiply lower_bound = self.a * scale + loc
+    /usr/lib/python2.7/dist-packages/scipy/stats/_distn_infrastructure.py:1839: RuntimeWarning: invalid value encountered in multiply upper_bound = self.b * scale + loc
+    ggst_reference_predictions_with_full_sentence_match_beam_search_bm5.txt 0.101873
+
+    #paper says 3.8 so this is off!!
+    # DID I COMBINE THESE TWO IN THE CORRECT ORDER IN STEP A?
+    # seems like thats fine
+
+    # What happens if i try the -r and -s options switched?  It does way worse so thats not it: ggst_reference_predictions_with_full_sentence_match_beam_search_bm5.txt 0.505304
+    python2.7 compute_gleu -r ../../data/yelp/source_reference.txt -s ../../data/yelp/human_reference.txt -o ../../data/yelp/processed_files_with_bert_with_best_head/delete_retrieve_edit_model/tfidf/ggst_reference_predictions_with_full_sentence_match_beam_search_bm5.txt  -n 4
+
+    # Did I generate these ggst preds correctly?
+
+    # from diego_notes:SEE OpenAI_GPT_Pred-diego.ipynb  for more details 
+        #-- for G-GST, had to run Delete_Retrieve_Generate_Data_Preparation.ipynb   and then run tfidf_retrieve.ipynb
+
+        # there was an error with reference_1_predictions_with_full_sentence_match_beam_search_bm5.txt it seems!!!!
+        # THIS WAS THE ISSUE
+
+        # delete_retrieve_edit_model/tfidf$ wc -l reference_1_predictions_with_full_sentence_match_beam_search_bm5.txt 10 
+
+
+    # SO I HAD TO RUN OpenAI_GPT_Pred-diego.ipynb  to generate that ref_1_pred file correctly 
+    # NOW  rerun
+
+    cat reference_0_predictions_with_full_sentence_match_beam_search_bm5.txt reference_1_predictions_with_full_sentence_match_beam_search_bm5.txt > ggst_reference_predictions_with_full_sentence_match_beam_search_bm5.txt
+
+    #sanity check
+    wc -l ggst_reference_predictions_with_full_sentence_match_beam_search_bm5.txt 
+        1000 ggst_reference_predictions_with_full_sentence_match_beam_search_bm5.txt
+
+    #run 
+    python2.7 compute_gleu -s ../../data/yelp/source_reference.txt -r ../../data/yelp/human_reference.txt -o ../../data/yelp/processed_files_with_bert_with_best_head/delete_retrieve_edit_model/tfidf/ggst_reference_predictions_with_full_sentence_match_beam_search_bm5.txt  -n 4
+
+    #/usr/lib/python2.7/dist-packages/scipy/stats/_distn_infrastructure.py:1838: RuntimeWarning: invalid value encountered in multiply lower_bound = self.a * scale + loc
+    #/usr/lib/python2.7/dist-packages/scipy/stats/_distn_infrastructure.py:1839: RuntimeWarning: invalid value encountered in multiply upper_bound = self.b * scale + loc
+    ggst_reference_predictions_with_full_sentence_match_beam_search_bm5.txt 0.109608    #even worse!  what the fuck
+
+
+
+#  looking at gleu.py
+
+# This script calculates the GLEU score of a sentence, as described in # our ACL 2015 paper, Ground Truth for Grammatical Error Correction Metrics 
+# Updated 2 May 2016: This is an updated version of GLEU that has been # modified to handle multiple references more fairly.
+# Updated 6 9 2017: Fixed inverse brevity penalty
+# This script was adapted from bleu.py by Adam Lopez.  # <https://github.com/alopez/en600.468/blob/master/reranker/>
+# For instructions on how to get the GLEU score, call "compute_gleu -h"    ## script doesn't contain that
+
+
+        parser.add_argument("-r", "--reference", help="Target language reference sentences. Multiple " "files for multiple references.", nargs="*", dest="reference", required=True)
+        parser.add_argument("-s", "--source", help="Source language source sentences", dest="source", required=True)
+        parser.add_argument("-o", "--hypothesis", help="Target language hypothesis sentences to evaluate (can be more than one file--the GLEU score of each " 
+
+    python2.7 compute_gleu -s ../../data/yelp/source_reference.txt -r ../../data/yelp/human_reference.txt -o ../../data/yelp/bgst_reference_predictions_with_beam_search.txt  -n 4
+
+    python2.7 compute_gleu -s ../../data/yelp/source_reference.txt -r ../../data/yelp/human_reference.txt -o ../../data/yelp/processed_files_with_bert_with_best_head/delete_retrieve_edit_model/tfidf/ggst_reference_predictions_with_full_sentence_match_beam_search_bm5.txt  -n 4
+
+
+    #switching r and s doesn't do anything 
+    # running with -d shows errors
+
+
+    

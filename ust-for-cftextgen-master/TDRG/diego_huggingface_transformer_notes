@@ -1,0 +1,313 @@
+# NOTES ON https://github.com/huggingface/transformers
+
+# To learn how to finetune a pre-trained langauge GPT-2 model on yelp
+
+# IMPORTANT: https://github.com/huggingface/transformers#Migrating-from-pytorch-pretrained-bert-to-transformers
+#   quick summary of what you should take care of when migrating from pytorch-pretrained-bert to transformers.
+#   - Models always output tuples 
+#   
+    #    The exact content of the tuples for each model is detailed in the models' docstrings and the documentation.  DOCS: https://huggingface.co/transformers/  
+    #    In pretty much every case, you will be fine by taking the first element of the output as the output you previously used in pytorch-pretrained-bert.
+    # Let's load our model
+        model = BertForSequenceClassification.from_pretrained('bert-base-uncased')
+        loss = model(input_ids, labels=labels)     # If you used to have this line in pytorch-pretrained-bert:
+        outputs = model(input_ids, labels=labels)  # Now just use this line in transformers to extract the loss from the output tuple:
+        loss = outputs[0]
+
+        # Now In transformers you can also have access to the logits:
+        loss, logits = outputs[:2]
+
+        # And even the attention weights if you configure the model to output them (and other outputs too, see the docstrings and documentation)
+        model = BertForSequenceClassification.from_pretrained('bert-base-uncased', output_attentions=True)
+        outputs = model(input_ids, labels=labels)
+        loss, logits, attentions = outputs
+
+
+#   - Using hidden states
+    #   By enabling the configuration option output_hidden_states, it was possible to retrieve the last hidden states of the encoder. 
+    #   In pytorch-transformers as well as transformers the return value has changed slightly: 
+    #   all_hidden_states now also includes the hidden state of the embeddings in addition to those of the encoding layers. 
+    #   This allows users to easily access the embeddings final state.
+
+
+#   - Serialization: Breaking change in the from_pretrained() method:  ( see: https://github.com/huggingface/transformers#serialization for CODE)
+#   - Optimizers: BertAdam & OpenAIAdam are now AdamW, schedules are standard PyTorch schedules ( see section for code )
+        # The two optimizers previously included, BertAdam and OpenAIAdam, have been replaced by a single AdamW optimizer which has a few differences:
+        # The new optimizer AdamW matches PyTorch Adam optimizer API and let you use standard PyTorch or apex methods for the schedule and clipping.
+        # The schedules are now standard PyTorch learning rate schedulers and not part of the optimizer anymore.
+
+
+
+
+
+https://github.com/huggingface/transformers#model-architectures
+
+🤗 Transformers currently provides the following NLU/NLG architectures:
+
+    BERT (from Google) released with the paper BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding 
+    GPT (from OpenAI) released with the paper Improving Language Understanding by Generative Pre-Training 
+    GPT-2 (from OpenAI) released with the paper Language Models are Unsupervised Multitask Learners 
+    Transformer-XL (from Google/CMU) released with the paper Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context 
+    XLNet (from Google/CMU) released with the paper ​XLNet: Generalized Autoregressive Pretraining for Language Understanding 
+    XLM (from Facebook) released together with the paper Cross-lingual Language Model Pretraining 
+    RoBERTa (from Facebook), released together with the paper a Robustly Optimized BERT Pretraining Approach 
+    DistilBERT (from HuggingFace), released together with the paper DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter 
+    CTRL (from Salesforce) released with the paper CTRL: A Conditional Transformer Language Model for Controllable Generation  ( *** )
+    CamemBERT (from Inria/Facebook/Sorbonne) released with the paper CamemBERT: a Tasty French Language Model 
+    ALBERT (from Google Research and the Toyota Technological Institute at Chicago) released with the paper ALBERT: A Lite BERT for Self-supervised Learning of Language Representations, 
+    T5 (from Google AI) released with the paper Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer 
+    XLM-RoBERTa (from Facebook AI), released together with the paper Unsupervised Cross-lingual Representation Learning at Scale 
+    MMBT (from Facebook), released together with the paper a Supervised Multimodal Bitransformers for Classifying Images and Text 
+    FlauBERT (from CNRS) released with the paper FlauBERT: Unsupervised Language Model Pre-training for French 
+    BART (from Facebook) released with the paper BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension 
+    ELECTRA (from Google Research/Stanford University) released with the paper ELECTRA: Pre-training text encoders as discriminators rather than generators 
+    DialoGPT (from Microsoft Research) released with the paper DialoGPT: Large-Scale Generative Pre-training for Conversational Response Generation 
+
+Other community models, contributed by the community.
+Want to contribute a new model? We have added a detailed guide and templates to guide you in the process of adding a new model. You can find them in the templates folder of the repository. Be sure to check the contributing guidelines and contact the maintainers or open an issue to collect feedbacks before starting your PR.
+These implementations have been tested on several datasets (see the example scripts) and should match the performances of the original implementations (e.g. ~93 F1 on SQuAD for BERT Whole-Word-Masking, ~88 F1 on RocStories for OpenAI GPT, ~18.3 perplexity on WikiText 103 for Transformer-XL, ~0.916 Peason R coefficient on STS-B for XLNet). 
+
+You can find more details on the performances in the Examples section of the documentation:  https://github.com/huggingface/transformers/tree/master/examples
+
+
+https://github.com/huggingface/transformers#quick-tour
+
+
+
+
+
+
+####  DEBUGGING
+CUDA_VISIBLE_DEVICES=0 python run_language_modeling.py --output_dir=data/yelp/GPT2/output --model_type=gpt2 --model_name_or_path=gpt2 --do_train --train_data_file=data/yelp/GPT2/sentiment_train.txt --do_eval --eval_data_file=data/yelp/GPT2/sentiment_test.txt
+
+04/16/2020 14:27:38 - INFO - transformers.configuration_utils -   Model config GPT2Config {
+  "_num_labels": 2,
+  "activation_function": "gelu_new",
+  "architectures": [
+    "GPT2LMHeadModel"
+  ],
+  "attn_pdrop": 0.1,
+  "bad_words_ids": null,
+  "bos_token_id": 50256,
+  "decoder_start_token_id": null,
+  "do_sample": false,
+  "early_stopping": false,
+  "embd_pdrop": 0.1,
+  "eos_token_id": 50256,
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "is_encoder_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_epsilon": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "min_length": 0,
+  "model_type": "gpt2",
+  "n_ctx": 1024,
+  "n_embd": 768,
+  "n_head": 12,
+  "n_layer": 12,
+  "n_positions": 1024,
+  "no_repeat_ngram_size": 0,
+  "num_beams": 1,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": null,
+  "prefix": null,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "resid_pdrop": 0.1,
+  "summary_activation": null,
+  "summary_first_dropout": 0.1,
+  "summary_proj_to_labels": true,
+  "summary_type": "cls_index",
+  "summary_use_proj": true,
+  "task_specific_params": null,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "use_bfloat16": false,
+  "vocab_size": 50257
+}
+
+04/16/2020 14:22:21 - INFO - transformers.modeling_utils -   Weights of GPT2LMHeadModel not initialized from pretrained model: ['lm_head.weight']
+04/16/2020 14:22:23 - INFO - __main__ -   Training/evaluation parameters Namespace(adam_epsilon=1e-08, block_size=1024, cache_dir=None, config_name=None, device=device(type='cuda'), do_eval=True, do_train=True, eval_all_checkpoints=False, eval_data_file='data/yelp/GPT2/sentiment_test.txt', evaluate_during_training=False, fp16=False, fp16_opt_level='O1', gradient_accumulation_steps=1, learning_rate=5e-05, line_by_line=False, local_rank=-1, logging_steps=500, max_grad_norm=1.0, max_steps=-1, mlm=False, mlm_probability=0.15, model_name_or_path='gpt2', model_type='gpt2', n_gpu=1, no_cuda=False, num_train_epochs=1.0, output_dir='data/yelp/GPT2/output', overwrite_cache=False, overwrite_output_dir=False, per_gpu_eval_batch_size=4, per_gpu_train_batch_size=4, save_steps=500, save_total_limit=None, seed=42, server_ip='', server_port='', should_continue=False, tokenizer_name=None, train_data_file='data/yelp/GPT2/sentiment_train.txt', warmup_steps=0, weight_decay=0.0)
+04/16/2020 14:22:23 - INFO - __main__ -   Loading features from cached file data/yelp/GPT2/gpt2_cached_lm_1024_sentiment_train.txt
+04/16/2020 14:22:23 - INFO - __main__ -   ***** Running training *****
+04/16/2020 14:22:23 - INFO - __main__ -     Num examples = 4582
+04/16/2020 14:22:23 - INFO - __main__ -     Num Epochs = 1
+04/16/2020 14:22:23 - INFO - __main__ -     Instantaneous batch size per GPU = 4
+04/16/2020 14:22:23 - INFO - __main__ -     Total train batch size (w. parallel, distributed & accumulation) = 4
+04/16/2020 14:22:23 - INFO - __main__ -     Gradient Accumulation steps = 1
+04/16/2020 14:22:23 - INFO - __main__ -     Total optimization steps = 1146
+Iteration:   0%|                                                                                                                                                            | 0/1146 [00:00<?, ?it/s]
+Epoch:   0%|                                                                                                                                                                   | 0/1 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "run_language_modeling.py", line 787, in <module>
+    main()
+  File "run_language_modeling.py", line 737, in main
+    global_step, tr_loss = train(args, train_dataset, model, tokenizer)
+  File "run_language_modeling.py", line 337, in train
+    outputs = model(inputs, masked_lm_labels=labels) if args.mlm else model(inputs, labels=labels)
+  File "/home/diego/spr20_cf_gen/TDRG/tdrg/lib/python3.7/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/diego/spr20_cf_gen/TDRG/tdrg/lib/python3.7/site-packages/transformers/modeling_gpt2.py", line 599, in forward
+    inputs_embeds=inputs_embeds,
+  File "/home/diego/spr20_cf_gen/TDRG/tdrg/lib/python3.7/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/diego/spr20_cf_gen/TDRG/tdrg/lib/python3.7/site-packages/transformers/modeling_gpt2.py", line 484, in forward
+    hidden_states, layer_past=layer_past, attention_mask=attention_mask, head_mask=head_mask[i]
+  File "/home/diego/spr20_cf_gen/TDRG/tdrg/lib/python3.7/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/diego/spr20_cf_gen/TDRG/tdrg/lib/python3.7/site-packages/transformers/modeling_gpt2.py", line 226, in forward
+    self.ln_1(x), layer_past=layer_past, attention_mask=attention_mask, head_mask=head_mask
+  File "/home/diego/spr20_cf_gen/TDRG/tdrg/lib/python3.7/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/diego/spr20_cf_gen/TDRG/tdrg/lib/python3.7/site-packages/transformers/modeling_gpt2.py", line 189, in forward
+    attn_outputs = self._attn(query, key, value, attention_mask, head_mask)
+  File "/home/diego/spr20_cf_gen/TDRG/tdrg/lib/python3.7/site-packages/transformers/modeling_gpt2.py", line 153, in _attn
+    w = self.attn_dropout(w)
+  File "/home/diego/spr20_cf_gen/TDRG/tdrg/lib/python3.7/site-packages/torch/nn/modules/module.py", line 532, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/diego/spr20_cf_gen/TDRG/tdrg/lib/python3.7/site-packages/torch/nn/modules/dropout.py", line 54, in forward
+    return F.dropout(input, self.p, self.training, self.inplace)
+  File "/home/diego/spr20_cf_gen/TDRG/tdrg/lib/python3.7/site-packages/torch/nn/functional.py", line 807, in dropout
+    else _VF.dropout(input, p, training))
+RuntimeError: CUDA out of memory. Tried to allocate 48.00 MiB (GPU 0; 11.91 GiB total capacity; 11.22 GiB already allocated; 32.25 MiB free; 11.26 GiB reserved in total by PyTorch)
+
+
+(tdrg) diego@microdeep:~/spr20_cf_gen/TDRG$ nvidia-smi
+    Thu Apr 16 14:28:52 2020       
+    +-----------------------------------------------------------------------------+
+    | NVIDIA-SMI 440.64.00    Driver Version: 440.64.00    CUDA Version: 10.2     |
+    |-------------------------------+----------------------+----------------------+
+    | GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+    | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+    |===============================+======================+======================|
+    |   0  TITAN X (Pascal)    On   | 00000000:05:00.0 Off |                  N/A |
+    | 23%   35C    P8    10W / 250W |     52MiB / 12195MiB |      0%      Default |
+    +-------------------------------+----------------------+----------------------+
+    |   1  TITAN X (Pascal)    On   | 00000000:06:00.0 Off |                  N/A |
+    | 23%   38C    P8    10W / 250W |      2MiB / 12196MiB |      0%      Default |
+    +-------------------------------+----------------------+----------------------+
+    |   2  TITAN X (Pascal)    On   | 00000000:09:00.0 Off |                  N/A |
+    | 23%   34C    P8     8W / 250W |      2MiB / 12196MiB |      0%      Default |
+    +-------------------------------+----------------------+----------------------+
+    |   3  TITAN X (Pascal)    On   | 00000000:0A:00.0 Off |                  N/A |
+    | 23%   28C    P8     9W / 250W |      2MiB / 12196MiB |      0%      Default |
+    +-------------------------------+----------------------+----------------------+
+                                                                                   
+    +-----------------------------------------------------------------------------+
+    | Processes:                                                       GPU Memory |
+    |  GPU       PID   Type   Process name                             Usage      |
+    |=============================================================================|
+    |    0      1404      G   /usr/lib/xorg/Xorg                            49MiB |
+    +-----------------------------------------------------------------------------+
+
+https://github.com/huggingface/transformers/issues/1819
+    QUESTION: I encounter the above error with my 1060 GTX 6GB Nvidia, on the GPT-2 small model. The training configs are:
+    batch size = 1
+    gradient accumulation steps = 1024 (I've started without gradient accumulation, then tried accumulation based on an old issue from this repo, then from small values I went up to this value, but the error always occurs).
+
+    If i run with no gradient accumulation, I get this instead:
+
+    ANSWER:
+    Which block_size are you using? 
+    The default (512) or something else? Using a smaller block size (e.g. 256) will also use up less memory. 
+    On a smaller card like yours, you basically need to use batch size of 1 with small block size and memory efficient optimizer for it to fit into GPU memory. 
+    An alternative is to try running your test on Google Colab or another cloud service where you can get 12+ GB of GPU memory
+
+
+
+args.train_batch_size = args.per_gpu_train_batch_size * max(1, args.n_gpu)
+
+block_size=1024
+per_gpu_eval_batch_size=4
+per_gpu_train_batch_size=4
+
+
+SO TRY TO LOWER BLOCK SIZE ( AND THEN BATCH SIZES if necessary )
+
+CUDA_VISIBLE_DEVICES=0 python run_language_modeling.py --output_dir=data/yelp/GPT2/output --model_type=gpt2 --model_name_or_path=gpt2 --do_train --train_data_file=data/yelp/GPT2/sentiment_train.txt --do_eval --eval_data_file=data/yelp/GPT2/sentiment_test.txt --block_size=256
+
+THIS IS WORKING... started at 2:39
+ENDED AT 04/16/2020 14:54:31 - INFO - __main__ -     perplexity = tensor(19.1437)    <--- gives similar results to what they report of 20 pplx
+
+
+
+
+
+##############
+NOW FOR FASTTEXT CLASSIFIER: which is used for ACC column
+
+https://fasttext.cc/docs/en/supervised-tutorial.html
+
+install:
+*************************
+#option 1
+    wget https://github.com/facebookresearch/fastText/archive/v0.9.1.zip
+    unzip v0.9.1.zip
+    cd fastText-0.9.1
+    make
+    pip install .
+
+#option 2  <-- DIEGO
+    pip install fasttext   #this gives 0.9.1  but makes you import fasttext and not fastText
+
+Getting and preparing the data
+*************************
+we are interested in building a classifier to automatically recognize the topic of a stackexchange question about cooking.
+download examples of questions from the cooking section of Stackexchange, and their associated tags:
+
+    wget https://dl.fbaipublicfiles.com/fasttext/data/cooking.stackexchange.tar.gz && tar xvzf cooking.stackexchange.tar.gz
+    head cooking.stackexchange.txt
+    # __label__sauce __label__cheese How much does potato starch affect a cheese sauce recipe?
+    # __label__food-safety __label__acidity Dangerous pathogens capable of growing in acidic environments
+    # __label__cast-iron __label__stove How do I cover up the white spots on my cast iron stove?
+
+    #this data is in data/cooking/  
+    # really i just need a script to take train / test from data/bert_classifier_training/  and make fasttext compatible versions of them
+
+Each line of the text file contains a list of labels, followed by the corresponding document. 
+All the labels start by the __label__ prefix, which is how fastText recognize what is a label or what is a word. 
+The model is then trained to predict the labels given the word in the document.
+Before training our first classifier, we need to split the data into train and validation. 
+We will use the validation set to evaluate how good the learned classifier is on new data.
+Our full dataset contains 15404 examples. Let's split it into a training set of 12404 examples and a validation set of 3000 examples:
+
+    wc cooking.stackexchange.txt    #15404  169582 1401900 cooking.stackexchange.txt
+    head -n 12404 cooking.stackexchange.txt > cooking.train
+    tail -n 3000 cooking.stackexchange.txt > cooking.valid
+
+Our first classifier
+*************************
+We are now ready to train our first classifier (in python)
+
+    import fasttext
+    model = fasttext.train_supervised(input="cooking.train")
+    model.save_model("model_cooking.bin")
+
+    model.predict("Which baking dish is best to bake a banana bread ?")
+    model.test("cooking.valid")  # (3000L, 0.124, 0.0541)
+    
+The output are the number of samples (here 3000), the precision at one (0.124) and the recall at one (0.0541).
+We can also compute the precision at five and recall at five with:
+
+    model.test("cooking.valid", k=5)  #(3000L, 0.0668, 0.146)
+
+Making the model better ( future consideration )
+*************************
+The model obtained by running fastText with the default arguments is pretty bad at classifying new questions. Let's try to improve the performance, by changing the default parameters.
+
+

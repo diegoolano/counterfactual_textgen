@@ -1,0 +1,892 @@
+#ABSTRACT
+In this work we introduce the Generative Style Transformer (GST) 
+- a new approach to rewriting sentences to a target style in the absence of parallel style corpora. 
+
+1. GST leverages the power of both, large unsupervised pre-trained language models as well as the Transformer. 
+    Variants of GST
+    1. B-GST:  Blind GST ( delete and generate )
+       Model generates the output sentence, given the content and the target style as INPUTS:
+       and is blind to specific desired target attributes. 
+
+       ** useful in cases when the target corpus does not have sentences that are similar to the source corpus, 
+       which causes the Retrieve model to retrieve incompatible target attributes.
+
+    2. G-GST:  Guided GST ( delete, retrieve and generate )
+       Model is given the content and target attributes 
+       and guided towards generating a target sentence with desired attributes. 
+       
+       ** useful for two reasons. 
+          -1. in cases when the target corpus has similar sentences to the source corpus, 
+              it reduces sparsity by giving the model information of target attributes. 
+
+          -2. more importantly, it allows fine-grained control of output generation 
+              by manually specifying target attributes that we desire during inference time, without even using the Retrieve component. 
+              
+              This controllability is an important feature of G-GST that most other latent-representation based style transfer approaches do not offer.**
+
+2. GST is a part of a larger ‘Delete Retrieve Generate’ framework, 
+    in which we also propose a novel method of deleting style attributes from the source sentence 
+    by exploiting the inner workings of the Transformer. ( ie, not using the TFIDF stuff of LIANGs work ) 
+
+3. Our models outperform state-of-art systems across 5 datasets on sentiment, gender and political slant transfer. 
+
+4. We also propose the use of the GLEU metric as an automatic metric of evaluation of style transfer, 
+   which we found to compare better with human ratings than the pre- dominantly used BLEU score.
+
+
+# CODE
+
+https://github.com/agaralabs/transformer-drg-style-transfer
+
+This repository has scripts and Jupyter-notebooks to perform all the different steps involved in 
+  Transforming Delete, Retrieve, Generate Approach for Controlled Text Style Transfer  ( https://www.aclweb.org/anthology/D19-1322/ )
+
+This mechanism is used for text style transfer when a parallel corpus for both the styles is not available. 
+This mechanism works on the assumption that the text of any style is made of two parts: 
+  1. Content and 
+  2. Attributes . 
+  
+Below is a simpe example of a resturent review.
+  "The food was great and the service was excellent."
+  1. Content: The food was and the service was
+  2. Attributes: great, excellent
+
+We transfer the style of a given content in in two different ways. 
+1. B-GST - The first is referred to as the Delete and Generate approach (referred to as Blind Generative Style Transformer - B-GST in the paper) 
+   in which the model transfers the style of the text by choosing attributes automatically learnt during training. 
+
+2. G-GST -  The second is referred to as the Delete, Retrieve and Generate (referred to as Guided Generative Style Transformer - G-GST in the paper) approach 
+   in which the model uses attributes retrieved from the target corpus to generate target sentences from the content.
+
+
+The names Delete and Generate and Delete, Retrieve and Generate are based on the steps involved in preparing training and test(reference) data. 
+1. In Delete and Generate, 
+    we prepare the training data by removing the attribute words from the text and 
+    during training teach the model to generate the sentence given content and target style. 
+    This is trained the same way a language model is trained. 
+    
+    Below is an example.
+
+      The food was great and the service was excellent.
+        Content: The food was and the service was
+        Training input: <POS> <CON_START> The food was and the service was <START> The food was great and the service was excellent . <END>
+
+        The food was awful and the service was slow.
+        Content: The food was and the service was
+        Training input: <NEG> <CON_START> The food was and the service was <START> The food was awful and the service was slow . <END>
+
+  Cross entropy loss is calculated for all the tokens predicted after <START> token. 
+  For inference, we represent target style using the same tags as used in training, and provide the content as inputs to the model. 
+  For the case of sentiment style transfer, 
+    all the positive sentiment test data sentences will have <NEG> and 
+    all negative sentiment sentences will have <POS> token before the content. 
+  
+  Below is an example.
+
+      Negative test data: <POS> <CON_START> the food was and the service was <START>
+      Positive test data: <NEG> <CON_START> the food was and the service was <START>
+
+2. In Delete, Retrieve and Generate, 
+   we prepare the training data similar to the Delete and Generate 
+   but insted of target text style 
+   we specify the exact attributes to be used for generating the sentence from the content. 
+   
+   Below is an example.
+
+      The food was great and the service was excellent.
+      Content: The food was and the service was
+      Training input: <ATTR_WORDS> great excellent <CON_START> The food was and the service was <START> The food was great and the service was excellent . <END>
+
+      The food was awful and the service was slow.
+      Content: The food was and the service was
+      Training input: <ATTR_WORDS> awful slow <CON_START> The food was and the service was <START> The food was awful and the service was slow . <END>
+
+  Otherwise the training is same as the Delete and Generate. 
+  During inference, to perform style transfer we need to get the attributes of opposite text style, 
+  we get it by retrieving similar content from opposite train corpus and use the attribute associated with that. 
+  
+  Below can be a good example.
+
+    Negative test data: <ATTR_WORDS> great tasty  <CON_START> the food was and the service was <START> 
+    Positive test data: <ATTR_WORDS> blend disappointing <CON_START> the food was and the service was <START> 
+
+
+IMPORTANT:
+  The process of style transfer consists of multiple steps.
+
+  1. Prepare Training data
+    Train a classifier which uses attention mechanism. Here we have used BERT classifier ( https://arxiv.org/abs/1810.04805 ) 
+    Use attention scores to prepare data for Delete and Generate trainig and test.
+    Use the training and testing data of Delete and Generate to prepare training and test data for Delete, Retrieve and Generate .
+
+  2. Generator Training 
+    We have use modified version of OpenAI GPT ( ** https://github.com/huggingface/pytorch-pretrained-BERT/blob/master/examples/run_openai_gpt.py ) 
+    Run training of Delete and Generate AND Delete, Retrieve and Generate .
+
+  3. Generate sentences
+    Generate sentences from the test(reference) files.
+
+  The following section describes steps required from preparing the data to running inference.
+
+
+Important Note: 
+We have used the BERT tokenizer which isn't the default. 
+The default tokenizer is using spacy library ( So No SpaCY*** )
+To replicate the exact results please run in the environment where spacy isn't installed. 
+Having spacy installed will tokenize even the special tokens, and lead to different tokens than we have used, leading to unpredictable results.
+
+
+Packages:
+torch >= 1.0.1.post2
+pandas >= 0.23.4
+numpy >= 1.15.4
+python >= 3.7.1
+tqdm >= 4.28.1
+boto3 >= 1.9.107
+requests >= 2.21.0
+regex >= 2019.2.21
+kenlm ??? <-- https://github.com/kpu/kenlm   ( random.. from 2013.. why?  https://kheafield.com/code/kenlm/  seen in EVAL iypnbs)
+
+*** Steps  ****
+
+1. Classifier Training:
+We have used BERT for classification. 
+This classification trainings helps to find the attributes from the sentence. 
+We choose one particular head of BERT model, for which the tokens which have high attention weights are those that are stylistic attributes of the sentence.
+
+  * 1a) Classifier Training Data Preparation: 
+    BERT_Classification_Training_data_preparation.ipynb NOTEBOOK creates training, testing and dev data. Modify the the paths of the input and output files.
+
+      THEN 
+
+  * 1b) BERT Classifier Training: Run the below command to train BERT classifier.
+    export BERT_DATA_DIR=Path of the directory containing output previous step (train.csv, dev.csv)
+    export BERT_MODEL_DIR=Path to save the classifier trained model
+
+    python run_classifier.py \
+      --data_dir=$BERT_DATA_DIR \
+      --bert_model=bert-base-uncased \
+      --task_name=yelp \
+      --output_dir=$BERT_MODEL_DIR \
+      --max_seq_length=70 \
+      --do_train \
+      --do_lower_case \
+      --train_batch_size=32 \
+      --num_train_epochs=1
+
+  We ran this with a single K80 Tesla GPU with 12 GB GPU Memory (AWS p2.xlarge instance). 
+  The batch size can be modified based on the max_seq_length. 
+  The code can be used with multiple GPUs and batch size can be increased proportanally. 
+  For p2.8xlarge, suggested train_batch_size = 256 and for p2.16xlarge, train_batch_size=512.
+
+
+2. Selecting Attention Head:  
+  Run Head_selection.ipynb NOTEBOOK 
+  for finding out which attention heads capture attribute words properly. 
+
+  The final result will be a list of tuples (Block/layer, Head, Score) sorted from best to worst. 
+  Use the first (best)  Block/layer and Head combination in the further steps.
+
+
+3. Prepare training and inference data:
+    3a) Run BERT_DATA_PREPARATION.ipynb NOTEBOOK 
+      for preparing training and inference data for Delete and Generate . 
+      Use the best layer, Head combination from the previous step in run_attn_examples() function.
+
+    3b) Run Delete_Retrieve_Generate_Data_Preparation.ipynb NOTEBOOK to generate training data for Delete, Retrieve and Generate . 
+      It generates train, dev and test files. Use the files generated by process_file_v1() function 
+      as it shuffles the attributes and 
+      randomly samples only 70% of the attributes 
+      to train the generator model 
+      to generate smooth sentences instead of teaching it to just fill the blanks.
+
+    3c) Run tfidf_retrieve.ipynb NOTEBOOK to generate inference data by retrieving attributes of closest match from target style training corpus.
+
+
+4. Generator Model training:
+  Run openai_gpt_delete_and_generate.py for training Delete and Generate model.
+
+    export DG_TRAIN_DATA=Path to the training file generated in the previous step
+    export DG_EVAL_DATA=Path to the eval file generated in the previous step
+    export DG_MODEL_OUT=Path to save the Delete and Generate model weights
+
+    python openai_gpt_delete_and_generate.py \
+      --model_name openai-gpt \
+      --do_train \
+      --do_eval \
+      --train_dataset $DG_TRAIN_DATA \
+      --eval_dataset $DG_EVAL_DATA \
+      --train_batch_size 32 \
+      --eval_batch_size 32 \
+      --max_seq_length 85 \
+      --output_dir $DG_MODEL_OUT
+
+  Run _openai_gpt_delete_retrive_and_generate.py for training Delete, Retrieve and Generate model. 
+
+    export DRG_TRAIN_DATA=Path to the training file generated in the previous step
+    export DRG_EVAL_DATA=Path to the eval file generated in the previous step
+    export DRG_MODEL_OUT=Path to save the Delete, Retrieve and Generate model weights
+
+    python openai_gpt_delete_retrive_and_generate.py \
+      --model_name openai-gpt \
+      --do_train \
+      --do_eval \
+      --train_dataset $DRG_TRAIN_DATA \
+      --eval_dataset $DRG_EVAL_DATA \
+      --train_batch_size 32 \
+      --eval_batch_size 32 \
+      --max_seq_length 85 \
+      --output_dir $DRG_MODEL_OUT
+
+  This configuration is with 1 K80 Tesla GPU with 12 GB GPU Memory (AWS p2.xlarge instance). 
+  The batch size can be modified based on the max_seq_length.  *****
+  The code can be used with multiple GPUs and batch size can be increased proportionally. 
+  For p2.8xlarge, suggested train_batch_size = 256 and for p2.16xlarge, train_batch_size=512. 
+  All the sentences with number of tokens > max_seq_length will be removed from the training.  *****
+
+5. Style transfer on test data:
+  Run OpenAI_GPT_Pred.ipynb NOTEBOOK for generating style transfer on the test data.
+
+
+Results (outputs):
+  All the outputs on the test (reference) sets for each of the 5 datasets are present here. 
+    Each directory is named after a dataset and contains 2 csv files -  one for each direction of style transfer. 
+    
+    In each of the csv files, 
+      the column named BERT_DEL has outputs of our B-GST model and 
+      the column named BERT_RET_TFIDF has outputs of our G-GST model. 
+      
+    These results can be used for replicability.
+
+    **** DATASET RESULTS
+    https://github.com/agaralabs/transformer-drg-style-transfer/tree/master/results
+      amazon	
+      gender	
+      imagecaption	
+      political	
+      yelp
+
+    *** transformer-drg-style-transfer/evaluation_scripts/
+      bleu.py	
+      eval0.ipynb	         || #eval script against other systems
+              models_list = ['Source', 'CROSSALIGNED', 'STYLEEMBEDDING', 'MULTIDECODER', 'RETRIEVEONLY', 'TEMPLATEBASED', 'DELETEONLY', 'DELETEANDRETRIEVE', 'BERT_DEL', 'BERT_RET', 'HUMAN']
+              # GREAT.. check this out
+      eval_amazon.ipynb	
+      eval_imagecaption.ipynb	
+      eval_yelp.ipynb
+
+Models
+  As an example, we have shared the trained model weights for Yelp dataset for easy testing on test dataset. 
+  It can be downloaded from here and directly use in step 5.
+  https://drive.google.com/drive/folders/1tTvwm_MafHxTMhwo93VvzK_EeGoUpFx8
+
+Datasets
+  1-3. Yelp, Amazon & ImageCaption:
+    The dataset we have used can be downloaded from https://github.com/lijuncen/Sentiment-and-Style-Transfer/tree/master/data
+
+  4. Political:
+    The dataset we have used can be downloaded from http://tts.speech.cs.cmu.edu/style_models/political_data.tar
+
+  5. Gender:
+    The dataset we have used can be downloaded from http://tts.speech.cs.cmu.edu/style_models/gender_data.tar
+
+
+DIEGO NOTES ON IPYNB
+
+1a) BERT_Classification_Training_data_preparation.ipynb
+        TINY:  creates training, testing and dev csv datafiles from (amazon/yelp/imagecaption) data paths/outputs. 
+
+1b) BIG *** : 
+
+    export BERT_DATA_DIR=Path of the directory containing output previous step (train.csv, dev.csv)
+    export BERT_MODEL_DIR=Path to save the classifier trained model
+
+    python run_classifier.py \
+      --data_dir=$BERT_DATA_DIR \
+      --bert_model=bert-base-uncased \
+      --task_name=yelp \
+      --output_dir=$BERT_MODEL_DIR \
+      --max_seq_length=70 \
+      --do_train \
+      --do_lower_case \
+      --train_batch_size=32 \
+      --num_train_epochs=1
+
+    Run command to train a BERT based classifier.
+
+    USES:
+      ./pytorch_pretrained_bert/    
+      # this whole folder is from https://pypi.org/project/pytorch-pretrained-bert/   ** USEFUL ( not their code )   TODO: are there any differences?
+
+        modeling.py
+        --> 8 huggingface models : bert-base-uncased': "https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased.tar.gz
+         { 'bert-based-uncased', 'bert-large-uncased' 'bert-base-cased' 'bert-large-cased' 'bert-base-multilingual-uncased' 'bert-base-multilingual-cased' 'bert-base-chinese' }
+
+        --> Gaussian Error Linear Units (GELUs) instead of RELUs 
+            https://arxiv.org/abs/1606.08415 : The GELU nonlinearity weights inputs by their magnitude, rather than gates inputs by their sign as in ReLUs. 
+        --> from apex.normalization.fused_layer_norm import FusedLayerNorm as BertLayerNorm
+
+      # Looks like it only processes Yelp data ( but the processor is very general and looks like it should work for yelp/amazon/imagecaption as is )
+        processors = { "yelp": YelpProcessor, }
+         ...
+        if task_name not in processors:
+            raise ValueError("Task not found: %s" % (task_name))
+
+      # command line args not in example
+        parser.add_argument("--warmup_proportion", default=0.1, type=float, help="Proportion of training to perform linear learning rate warmup for. " "E.g., 0.1 = 10%% of training.")
+        parser.add_argument("--no_cuda", action='store_true', help="Whether not to use CUDA when available")
+        parser.add_argument("--local_rank", type=int, default=-1, help="local_rank for distributed training on gpus")
+        parser.add_argument('--gradient_accumulation_steps', type=int, default=1, help="Number of updates steps to accumulate before performing a backward/update pass.")
+        parser.add_argument('--fp16', action='store_true', help="Whether to use 16-bit float precision instead of 32-bit")
+        parser.add_argument('--loss_scale', type=float, default=0, 
+                                 help="Loss scaling to improve fp16 numeric stability. Only used when fp16 set to True.\n" 
+                                 "0 (default value): dynamic loss scaling.\n" "Positive power of 2: static loss scaling value.\n")
+        parser.add_argument('--server_ip', type=str, default='', help="Can be used for distant debugging.")
+        parser.add_argument('--server_port', type=str, default='', help="Can be used for distant debugging.")
+
+      # distance debugging for Visual Studio?   https://github.com/microsoft/ptvsd 
+        if args.server_ip and args.server_port:
+        # Distant debugging - see https://code.visualstudio.com/docs/python/debugging#_attach-to-a-local-script
+          import ptvsd
+
+      # WHAT run_classifier.py DOES:
+        tokenizer = BertTokenizer.from_pretrained(args.bert_model, do_lower_case=args.do_lower_case)
+        model = BertForSequenceClassification.from_pretrained(args.bert_model, cache_dir=cache_dir, num_labels = num_labels)
+
+        param_optimizer = list(model.named_parameters())
+        no_decay = ['bias', 'LayerNorm.bias', 'LayerNorm.weight']
+        optimizer_grouped_parameters = [ {'params': [p for n, p in param_optimizer if not any(nd in n for nd in no_decay)], 'weight_decay': 0.01},
+                                         {'params': [p for n, p in param_optimizer if any(nd in n for nd in no_decay)], 'weight_decay': 0.0} ]
+        optimizer = BertAdam(optimizer_grouped_parameters, lr=args.learning_rate, warmup=args.warmup_proportion, t_total=num_train_optimization_steps)
+
+        # lines 448 - 523: train / save model to output_model_file
+        # lines 523 - end: do eval and save results in output_eval_file 
+    
+
+2.)  Head_selection.ipynb
+       for finding out which attention heads capture attribute words properly. 
+
+        #  BERT is a Multi-layer Multi-Head Transformer architecture.  Different Attention heads captures different lingustic patterns. 
+        #  For a better deletion of words using Attention mechanism we need to choose a head which captures pattern useful for classification. ***
+        
+        **** IMPORTANT  
+        #  We use Brute force mechanism to search through all the possible heads. 
+        #  We delete TopK words attended by different heads from the sentence and measure the new classification score. 
+        #  In case of sentiments, removing sentiment related words makes the sentence neutral. 
+        #  The heads are sorted by the amount to which they are able to make the sentences from dev set Neutral.
+        #
+        ** DIEGO:  WOULD FEATURE IMPORTANCE SCORES DO BETTER THAN THIS APPROACH WHICH SEEM LIKE IT OVERFITS ON DEV SET?
+
+      1) load pre-trained model from step 1 above and load dev data
+      
+         pos_examples_file = "/home/ubuntu/bhargav/data/yelp/sentiment_dev_1.txt"
+         neg_examples_file = "/home/ubuntu/bhargav/data/yelp/sentiment_dev_0.txt" 
+         ..
+         data = pos_data + neg_data
+
+      2) att, decoding_ids = get_attention_for_batch(data)
+         ...
+            steps = len(ids) // bs
+              for i in trange(steps+1):
+                with torch.no_grad():
+                      _, _, attn = model(temp_ids, temp_segment_ids, temp_input_masks)
+
+                  # Add all the Attention Weights to CPU memory.   Attention weights for each layer is stored in a dict 'attn_prob'
+                  for k in range(12):
+                      attn[k]['attn_probs'] = attn[k]['attn_probs'].to('cpu')
+
+                  # Attention weights are stored in this way:   att_lt[layer]['attn_probs']['input_sentence']['head']['length_of_sentence']
+                  
+                  # Concate Attention weights for all the examples in the list att_lt[layer_no]['attn_probs']
+                  if i == 0:
+                      att_lt = attn
+                      heads = len(att_lt)
+                  else:
+                      for j in range(heads):
+                          att_lt[j]['attn_probs'] = torch.cat((att_lt[j]['attn_probs'],attn[j]['attn_probs']),0)
+
+              return att_lt, ids_for_decoding
+
+      3) sen_list = process_sentences(data, att, decoding_ids)
+          # This function processes each input sentence by removing the top tokens defined by the threshold value and returns processed sentences
+          # Each sentence is processed for each head.
+          # 
+          # threshold set to .25 by default:  threshold: Percentage of the top indexes to be removed
+        
+
+      4) scores = get_block_head(sen_list)
+         # This function calculate classification scores for sentences generated by each head and sort them from best to worst.
+          
+         # score = min(pred) + lmbd / max(pred) + lmbd, lmbd is smoothing param
+         # pred is list of probability score for each class, for best case pred = [0.5, 0.5] ==> score = 1
+         #
+         # smooth param lambda set to .1 by default
+          
+         # it returns sorted list of (Layer, Head, Score)
+         
+    # Use the first (best)  Block/layer and Head combination in the further steps.
+
+
+3a) BERT_DATA_PREPARATION.ipynb
+      for preparing training and inference data for Delete and Generate .  ( B-GST )
+      Use the best layer, Head combination from the previous step in run_attn_examples() function.
+
+    # not sure what the reference file is , nor how they are doing the block/layer/head stuff here
+    #
+    
+     dataset = "yelp" # amazon / yelp / imagecaption
+     train_0 = os.path.join(data_dir ,"./{}/sentiment_train_0.txt".format(dataset))
+     train_0_out = os.path.join(data_dir ,"./{}/processed_files_with_bert_with_best_head/sentiment_train_0.txt".format(dataset))
+     ..
+     reference_1 = os.path.join(data_dir,"./{}/reference_1.txt".format(dataset))
+     reference_1_out = os.path.join(data_dir,"./{}/processed_files_with_bert_with_best_head/reference_1.txt".format(dataset))
+     ..
+     train_0_data = read_file(train_0)
+     ref_1_data = read_file(reference_1)
+     ...
+     # SO THEY FOUND LAYER 9 and HEAD 7 to be the BEST COMBO SO THEY USE THAT EVERYWHERE ( pretty lame, but it can be done for any dev set ) 
+     aw, ids_to_decode, tokens_to_decode = run_attn_examples(train_0_data, layer=9, head=7, bs=128)
+     train_0_out_sen = prepare_data(aw, ids_to_decode, tokens_to_decode)
+     create_output_file(train_0_data, train_0_out_sen, train_0_out, sentiment="<NEG>")
+
+     #PRETTY SMALL
+
+
+3b) Delete_Retrieve_Generate_Data_Preparation.ipynb 
+      to generate training data for Delete, Retrieve and Generate ( train / dev /test file s)  ( G-GST)
+
+      Use the files generated by process_file_v1() function  ***
+      as it shuffles the attributes and randomly samples only 70% of the attributes to train the generator model to generate smooth sentences instead of teaching it to just fill the blanks.
+
+    #ALSO SMALL
+    #"""
+    # The function process the data files for Delete & Generate and converts it for the Delete, Retrieve and Generate training by separating the content and attributes. 
+    # It randomly picks 70% of the attributes only to make the generation more realistic instead of just filling the blanks, which helps while generating sentences for test cases.
+
+    # Input_file: string : Path of the input file
+    # Output_file: string : Path of the output file
+    #
+    with open(input_file) as fp:
+        data = fp.read().splitlines()
+
+    with open (output_file,"w") as out_fp:
+        for x in tqdm(data):
+            temp = x.split("<START>")
+            con = temp[0].replace("<POS>","").replace("<NEG>","").replace("<CON_START>","")    # HARDCODED REPLACE OF <POS>, <NEG>, and <CON_START>    #content is to left of <START>
+            sen = temp[1].replace("<END>","")   #attribute words
+            lt1 = con.split()
+            lt2 = sen.split()
+            att_words = [z for z in lt2 if z not in lt1]  #considered attribute word only if its not in content
+
+            if len(att_words) > 2:
+                indx = np.array(list(range(len(att_words))))
+                np.random.shuffle(indx)
+                att_words = " ".join([att_words[indx[k]] for k in range(int(0.7 * len(att_words)))])
+            else: 
+                # If attributes less than 2 then keep all the attributes
+                att_words = " ".join(att_words)
+
+            out_str = "<ATTR_WORDS> " + att_words + " <CON_START> " + con.strip() + " <START> " + sen.strip() + " <END>" + "\n"
+            out_fp.write(out_str)
+    process_file_v1("./processed_files_with_bert_with_best_head/sentiment_train.txt","./processed_files_with_bert_with_best_head/delete_retrieve_edit_model/sentiment_train.txt")
+
+
+3c) tfidf_retrieve.ipynb  ( THIS IS THE WORK HORSE OF G-GST )
+      to generate inference data by retrieving attributes of closest match from target style training corpus.
+
+      # takes input of original reference and training data, gets content and attributes for both classes found during processing and creates sentences like the following:
+      #['<ATTR_WORDS> attacks constant <CON_START> especially on moderate where the are . <START> especially on moderate where the attacks are constant . <END>'
+      #
+      # Reference data for delete_generate model
+      ref0_processed = read_file("./processed_files_with_bert_with_best_head/reference_0.txt") 
+      ref1_processed = read_file("./processed_files_with_bert_with_best_head/reference_1.txt")
+      ref0_con = [clean_text(x) for x in ref0_processed]
+      ref1_con = [clean_text(x) for x in ref1_processed]
+
+      # training data with content and attributes seperation
+      train0_processed = read_file("./processed_files_with_bert_with_best_head/delete_retrieve_edit_model/sentiment_train_0_all_attrs.txt") 
+      train1_processed = read_file("./processed_files_with_bert_with_best_head/delete_retrieve_edit_model/sentiment_train_1_all_attrs.txt") 
+
+      # Fatch attributes from the training data
+      attrs_neg = [get_train_attrs(x) for x in train0_processed]
+      attrs_pos = [get_train_attrs(x) for x in train1_processed]
+
+      # Get TFIDF vectors for Training and Reference
+        tfidf = TfidfVectorizer()
+        conts_vecs = tfidf.fit_transform(train0_con + train1_con)
+        conts_pos_vecs = conts_vecs[:len(train1_con)]
+        conts_neg_vecs = conts_vecs[len(train1_con):len(train1_con)+len(train0_con)]
+
+        conts_from_pos_ref_vecs = tfidf.transform(ref1_con)
+        conts_from_neg_ref_vecs = tfidf.transform(ref0_con)
+
+      #AnnoyIndex is used to store the TFIDF vectors of training set and retrieve nearest neighbours of the reference content
+      from annoy import AnnoyIndex
+      train0_tree = AnnoyIndex(conts_neg_vecs.shape[-1])
+      train1_tree = AnnoyIndex(conts_pos_vecs.shape[-1])
+
+      # We have RANDOMLY SELECTED TRAINING SAMPLES to control the memory usage   ( 50,000 out of what? ) 
+      # How big are these datasets? yelp is 443k, so they are taking 1/8 of that  <--- THAT IS SMALL.. so why TFIDF and not BERT EMBEDDING COMPARISON?? 
+      #
+      # ACCORDING TO DRG paper yelp data set on mircodeep
+      # diego@microdeep:~/rl_proj_cf/baselines/delete_retrieve_generate-master/data/yelp$ 
+      # wc -l sentiment.train.0    177218      |  wc -l sentiment.train.1    266041    |    wc -l sentiment.train.both 443259 
+      # wc -l reference.test.0 500             |  wc -l reference.test.1 500    <--- unclear if these are the same references?  seeems like it
+      #
+      neg_idxs = np.random.choice(conts_neg_vecs.shape[0], size=50000, replace=False)
+      pos_idxs = np.random.choice(conts_pos_vecs.shape[0], size=50000, replace=False)
+
+      # CREATE NEGATIVE NEAREST NEIGHBOR TREE
+      for i in trange(len(neg_idxs)):
+          np_array = conts_neg_vecs[neg_idxs[i]].toarray()[0]
+          train0_tree.add_item(i,np_array)
+
+      train0_tree.build(50)
+      train0_tree.save('tfidf_train0.ann')
+
+      with open("./processed_files_with_bert_with_best_head/delete_retrieve_edit_model/tfidf/reference_1.txt", "w") as out_fp:   # OUTPUT 500 POS REFS with retrieved NEG ne
+          for i in range(conts_from_pos_ref_vecs.shape[0]):
+              x = conts_from_pos_ref_vecs[i].toarray()[0]
+              inx,dis = train0_tree.get_nns_by_vector(x, 1, include_distances=True)
+              ref_sen = ref1_con[i]
+              out_str = "<ATTR_WORDS> " + " ".join(attrs_neg[neg_idxs[inx[0]]]) + " <CON_START> " + ref_sen.strip() + " <START>" + "\n"
+              out_fp.write(out_str)
+
+
+      #.... SEE "diego_tfidf_notes" for output of 500 examples
+
+      # CREATE POSITIVE NEAREST NEIGHBOR TREE
+      for i in trange(len(pos_idxs)):
+        np_array = conts_pos_vecs[pos_idxs[i]].toarray()[0]
+        train1_tree.add_item(i,np_array)
+
+      train1_tree.build(50)
+      train1_tree.save('tfidf_train1.ann')
+
+      with open("./processed_files_with_bert_with_best_head/delete_retrieve_edit_model/tfidf/reference_0.txt", "w") as out_fp:     #OUTPUT NEG REFS with retrieved POS attrs
+      for i in range(conts_from_neg_ref_vecs.shape[0]):
+          x = conts_from_neg_ref_vecs[i].toarray()[0]
+          inx,dis = train1_tree.get_nns_by_vector(x, 1, include_distances=True)
+          ref_sen = ref0_con[i]
+          out_str = "<ATTR_WORDS> " + " ".join(attrs_pos[pos_idxs[inx[0]]]) + " <CON_START> " + ref_sen.strip() + " <START>" + "\n"
+          out_fp.write(out_str)
+
+
+
+4a) openai_gpt_delete_and_generate.py for training Delete and Generate model. ( Blind GST )
+
+    export DG_TRAIN_DATA=Path to the training file generated in the previous step
+    export DG_EVAL_DATA=Path to the eval file generated in the previous step
+    export DG_MODEL_OUT=Path to save the Delete and Generate model weights
+
+    python openai_gpt_delete_and_generate.py
+      --model_name openai-gpt --do_train --do_eval 
+      --train_dataset $DG_TRAIN_DATA --eval_dataset $DG_EVAL_DATA --train_batch_size 32 --eval_batch_size 32 --max_seq_length 85 --output_dir $DG_MODEL_OUT
+
+    #other arg params
+    # --max_grad_norm', type=int, default=1)
+    # --learning_rate', type=float, default=6.25e-5)
+    # --warmup_proportion', type=float, default=0.002)
+    # --lr_schedule', type=str, default='warmup_linear')
+    # --weight_decay', type=float, default=0.01)
+    # --lm_coef', type=float, default=0.9)
+    # --n_valid', type=int, default=374)
+
+    # OpenAI GPT model fine-tuning script.
+    # Adapted from https://github.com/huggingface/pytorch-openai-transformer-lm/blob/master/train.py
+    # which itself is adapted from https://github.com/openai/finetune-transformer-lm/blob/master/train.py
+
+    # they use the OpenAI Transformer   ( TODO: do a diff of pytorch_pretrained_bert folder to see what they changed! )
+    from pytorch_pretrained_bert import OpenAIGPTLMHeadModel, OpenAIGPTTokenizer, OpenAIAdam, cached_path
+
+    # This loading functions also add new tokens and embeddings called `special tokens`
+    # These new embeddings will be fine-tuned 
+    # 
+    special_tokens = ['<POS>', '<NEG>','<CON_START>','<START>','<END>']
+    tokenizer = OpenAIGPTTokenizer.from_pretrained(args.model_name, special_tokens=special_tokens)
+    start_token_id = tokenizer.convert_tokens_to_ids(['<START>'])[0]
+    model = OpenAIGPTLMHeadModel.from_pretrained(args.model_name, num_special_tokens=len(special_tokens))
+    model.to(device)
+    
+    ...
+    train_dataset = tokenize_and_encode(args.train_dataset)      #eval_dataset = tokenize_and_encode(args.eval_dataset)
+
+    # Compute the mex input length for the Transformer after removing all sentence longer than max_seq_length
+    train_dataset = [x for x in train_dataset if len(x) <= args.max_seq_length and start_token_id in x]    # eval_dataset = [x for x in eval_dataset ....
+    input_length = max(max(len(t) for t in train_dataset), max(len(q) for q in eval_dataset))
+
+    def pre_process_dataset(encoded_dataset, input_length, start_token_id):
+       #This method is to create torch tensor of input ids and lm labels
+       # Input dataset list, max length of sentence int
+       # :param start_token_id: id of the '<START>' token, dtype: int
+       # :return: torch.tensor of size [len(encoded_dataset), 2]   <-- tensor_dataset = (input_ids, lm_labels)
+    
+    # Prepare input tensors and dataloders
+    train_tensor_dataset = pre_process_dataset(train_dataset, input_length, start_token_id=start_token_id)   #eval_tensor_dataset = pre_process_dataset(eval_dataset, input_length,... 
+
+    train_data = TensorDataset(*train_tensor_dataset)
+    train_sampler = RandomSampler(train_data)
+    train_dataloader = DataLoader(train_data, sampler=train_sampler, batch_size=args.train_batch_size)   #same with eval
+
+    #optimizer stuff ...
+    param_optimizer = list(model.named_parameters())
+    no_decay = ['bias', 'LayerNorm.bias', 'LayerNorm.weight']
+    optimizer_grouped_parameters = [ {'params': [p for n, p in param_optimizer if not any(nd in n for nd in no_decay)], 'weight_decay': 0.01},
+        {'params': [p for n, p in param_optimizer if any(nd in n for nd in no_decay)], 'weight_decay': 0.0} ]
+    num_train_optimization_steps = len(train_data) * args.num_train_epochs // args.train_batch_size
+    optimizer = OpenAIAdam(optimizer_grouped_parameters, lr=args.learning_rate, warmup=args.warmup_proportion, max_grad_norm=args.max_grad_norm, 
+                                                         weight_decay=args.weight_decay, t_total=num_train_optimization_steps)
+    
+    # BOTH OF THESE ARE SUBSEQUENT AREAS ARE STANDARD AND GOOD
+    # LINES 197 - 233 : Train 
+    for epoch in trange(int(args.num_train_epochs), desc="Epoch"):
+      for step, batch in enumerate(tqdm_bar):
+        ....
+      model_to_save = model.module if hasattr(model, 'module') else model  # Only save the model it-self
+      output_model_file = os.path.join(args.output_dir, "pytorch_model_zero_grad_{}.bin".format(epoch+1))
+      config = model.module.config if hasattr(model, 'module') else model.config
+      torch.save(model_to_save.state_dict(), output_model_file)  # SAVE MODEL OUTPUT FOR CURRENT EPOCH
+
+      model_state_dict = torch.load(output_model_file)
+      model = OpenAIGPTLMHeadModel(config)    ## WHATS THIS ABOUT?? 
+      model.load_state_dict(model_state_dict)
+      model.to(device)
+
+    # LINES 234 - END : Eval 
+    for batch in tqdm(eval_dataloader, desc="Evaluating"):
+      ...
+    result = {'eval_loss': eval_loss, 'train_loss': train_loss}
+    with open(output_eval_file, "w") as writer:
+        logger.info("***** Eval results *****")
+        for key in sorted(result.keys()):
+            logger.info("  %s = %s", key, str(result[key]))
+            writer.write("%s = %s\n" % (key, str(result[key])))   #WRITE OUT EVAL
+
+
+4b) openai_gpt_delete_retrive_and_generate.py for training Delete, Retrieve and Generate model.  ( Guided GST )
+
+    #same exports as above except:
+    export DRG_MODEL_OUT=Path to save the Delete, Retrieve and Generate model weights
+
+    #same call params
+    python openai_gpt_delete_retrive_and_generate.py 
+      --model_name openai-gpt --do_train --do_eval 
+      --train_dataset $DRG_TRAIN_DATA --eval_dataset $DRG_EVAL_DATA --train_batch_size 32 --eval_batch_size 32 --max_seq_length 85 --output_dir $DRG_MODEL_OUT
+
+    # Same code as above except:
+    # This loading functions also add new tokens and embeddings called `special tokens`
+    # These new embeddings will be fine-tuned on the RocStories dataset
+    special_tokens = ['<ATTR_WORDS>','<CON_START>','<START>','<END>']  <---  instead of  special_tokens = ['<POS>', '<NEG>','<CON_START>','<START>','<END>']
+
+
+5.  OpenAI_GPT_Pred.ipynb 
+      for generating style transfer on the TEST DATA.
+      
+      # IMPORTANT
+      # we have shared the trained model weights for Yelp dataset for easy testing on test dataset. It can be downloaded from here and directly use in step 5.
+      # https://drive.google.com/open?id=1tTvwm_MafHxTMhwo93VvzK_EeGoUpFx8
+           
+# NEXT STEPS TAKE THEIR MODELS AND TRY 5
+# 1a. downloaded weights to  emnlp_weights/
+  #  B-GST
+  #  G-GST
+
+# 1b  download datasets from https://github.com/lijuncen/Sentiment-and-Style-Transfer/tree/master/data  ( amazon / imagecaption / yelp )   ... notes ISSUES tab in github
+#     easiest to just download zip of hole repo in folder at same level as TDRG and copy over data
+#
+#     wget --no-check-certificate https://github.com/lijuncen/Sentiment-and-Style-Transfer/archive/master.zip
+#     unzip master.zip
+#     mv Sentiment-and-Style-Transfer-master DRG
+#     cd TDRG/data/
+#     cp -R ../../DRG/data/ .
+#
+# 1c.  (make virtual env/ get reqs prior ) Still need to make BERT classifier for evaluation purposes to check results made by OpenAIGPT model with weights from google drive
+#
+#   a. BERT_Classification_Training_data_preparation.ipynb
+#
+#    b. python run_classifier.py --data_dir="./data/yelp/bert_classifier_training/" --bert_model=bert-base-uncased --task_name=yelp --output_dir="./data/yelp/bert_classifier/" --max_seq_length=70 --do_train --do_lower_case --train_batch_size=32 --num_train_epochs=1
+#
+#    # python is being dumb so have to specify
+#    /usr/local/bin/python3 run_classifier.py --data_dir=./data/yelp/bert_classifier_training/ --bert_model=bert-base-uncased --task_name=yelp --output_dir=./data/yelp/bert_classifier/ --max_seq_length=70 --do_train --do_lower_case --train_batch_size=32 --num_train_epochs=1
+
+#    GPU call
+#    CUDA_VISIBLE_DEVICES=1 python run_classifier.py --data_dir=./data/yelp/bert_classifier_training/ --bert_model=bert-base-uncased --task_name=yelp --output_dir=./data/yelp/bert_classifier/ --max_seq_length=70 --do_train --do_lower_case --train_batch_size=32 --num_train_epochs=1
+
+     # see diego_train_bert  notes!
+#
+# 1d.  for G-GST need to run TFIDF stuff for retrieve step ( so how / why do they use attention again?  <-- use it to choose best block/layer/head for what exactly? )
+    
+    # SEE OpenAI_GPT_Pred-diego.ipynb  for more details 
+        #-- for B-GST, first had to run BERT_DATA_PREPARATION.ipynb 
+        #-- for G-GST, had to run Delete_Retrieve_Generate_Data_Preparation.ipynb   and then run tfidf_retrieve.ipynb
+
+# 2. make virtual env 
+# ON LAPTOP
+#   brew switch python 3.7.6_1
+#   virtualenv --python=/usr/local/Cellar/python/3.7.6_1/bin/python3 tdrg
+#   source tdrg/bin/activate
+#   vi requirements.txt         (<-- copy / paste list of requirements from README.md )
+#   pip3 install -r requirements.txt
+#
+#     pip is configured with locations that require TLS/SSL, however the ssl module in Python is not available.
+#     Could not find a version that satisfies the requirement torch>=1.0.1.post2 (from -r requirements.txt (line 1)) (from versions: )
+#     No matching distribution found for torch>=1.0.1.post2 (from -r requirements.txt (line 1))^
+#
+#   echo 'export PATH="/usr/local/opt/openssl/bin:$PATH"' >> ~/.profile
+#   . ~/.profile
+#
+#   #same error
+#   brew uninstall --ignore-dependencies openssl; brew install https://github.com/tebelorg/Tump/releases/download/v1.0.0/openssl.rb
+#
+#   #still didn't work with pip3.  it does with pip but this installs to incorrect location 
+#
+#   brew uninstall --ignore-dependencies openssl
+#   brew install openssl
+#   pip3 install -r requirements.txt    #WORKS
+#   pip3 install notebook
+#   jupyter notebook
+#   duplicate OpenAI_GPT_Pred  to OpenAI_GPT_Pred-diego.ipynb
+#
+#   See notes in OpenAI_GPT_Pred-diego.ipynb
+#
+# ON REMOTE
+#   virtualenv --python=/home/diego/anaconda3/envs/py37/bin/python tdrg
+#   source tdrg/bin/activate
+#   pip3 install -r requirements.txt
+#
+#   Remove all screens via: screen -ls | grep '(Detached)' | awk '{print $1}' | xargs -I % -t screen -X -S % quit
+
+
+# Ok was able to get good results with 2 epochs for BERT Classifier.   (apr14)
+
+# Now do step 5 (open gpt) via ssh tunneling (apr15) using epoch2 model
+# 1. run jupyter notebook on microdeep on a given port
+# jupyter notebook --no-browser --port 6000
+# 
+# 2. make ssh tunnel from your laptop to microdeep
+# ssh -p 52617 -NfL localhost:8898:localhost:6000 diego@microdeep.ece.utexas.edu .
+# 
+# 3. open browser local laptop to see notebook that resides on microdeep
+# http://localhost:8898
+
+
+6.  All the Eval Notebooks
+
+eval_yelp.ipynb
+    
+    # FROM PAPER:
+    # To measure fluency, we finetune a large pre-trained language model, 
+    #   OpenAI GPT-2 (note that this is different from GPT-1 on which our Generate model is based) 
+    #                 on the target sentences using the same training-dev-test split of Table 1. 
+
+    # We use this language model to measure perplexity of generated sentences. 
+    # The language models achieve perplexities of 24, 33, 34, 63 and 81 on the test sets of Yelp, Amazon, Captions, Political and Gender respectively. 
+    # As we analyze in the next section, automatic metrics are inadequate at measuring the success of a good style transfer system.
+
+    from pytorch_pretrained_bert import GPT2Tokenizer, GPT2Model, GPT2LMHeadModel
+    ...
+    path = os.path.join(os.getcwd(), "GPT2/yelp_language_model_1.bin"     
+    
+    #1. so first need to finetune a pre-trained langauge GPT-2 model on yelp
+        # HERE NOW: https://github.com/huggingface/transformers   <--- it seems https://pypi.org/project/pytorch-pretrained-bert/   got ported to this !
+        # SEE diego_huggingface_transformer_notes
+
+        # https://github.com/huggingface/transformers/tree/master/examples#language-model-training
+
+        #   Fine-tuning (or training from scratch) the library models for language modeling on a text dataset for GPT, GPT-2, BERT and RoBERTa (DistilBERT soon). 
+        #     GPT and GPT-2 are fine-tuned using a causal language modeling (CLM) loss 
+        #     while BERT and RoBERTa are fine-tuned using a masked language modeling (MLM) loss.
+
+        #  Before running the following example, you should get a file that contains text on which the language model will be trained or fine-tuned 
+        #    ( example WikiText-2 dataset: https://blog.einstein.ai/the-wikitext-long-term-dependency-language-modeling-dataset/ )
+        #  We will refer to two different files: $TRAIN_FILE, which contains text for training, and $TEST_FILE, which contains text that will be used for evaluation.
+
+        # GPT-2/GPT and causal language modeling
+        #  The following example fine-tunes GPT-2 on WikiText-2. 
+        #  We're using the raw WikiText-2 (no tokens were replaced before the tokenization). https://s3.amazonaws.com/research.metamind.io/wikitext/wikitext-2-raw-v1.zip
+        #  The loss here is that of causal language modeling.
+
+            export TRAIN_FILE=/path/to/dataset/wiki.train.raw
+            export TEST_FILE=/path/to/dataset/wiki.test.raw
+
+            python run_language_modeling.py
+                --output_dir=output
+                --model_type=gpt2
+                --model_name_or_path=gpt2
+                --do_train
+                --train_data_file=$TRAIN_FILE
+                --do_eval
+                --eval_data_file=$TEST_FILE
+
+            This takes about half an hour to train on a single K80 GPU and about one minute for the evaluation to run. It reaches a score of ~20 perplexity once fine-tuned on the dataset.
+
+        # which train test to use?  
+        # 1  data/yelp/bert_classifier_training -->   dev.csv  test.csv  train.csv   ( these are sentences  and then a 0 or 1 label )
+        # 2  data/yelp/   -->  sentiment_train_0.txt ,  sentiment_train_1.txt  ( these each are just sentences of class 0 or class 1 )
+        #   NOW combine the two in 2  ( for train  and test sets and use that )  .. save into GPT2 folder
+        #    data/yelp/GPT2/  --> sentiment_train.txt and sentiment_test.txt
+        
+        # A. pip install transformers
+        # B. get run_language_modeling.py..   wget https://github.com/huggingface/transformers/raw/master/examples/run_language_modeling.py
+        # C. run the following
+                pip install tensorboardX
+                CUDA_VISIBLE_DEVICES=3 python run_language_modeling.py --output_dir=data/yelp/GPT2/ --model_type=gpt2 --model_name_or_path=gpt2 --do_train --train_data_file=data/yelp/GPT2/sentiment_train.txt --do_eval --eval_data_file=data/yelp/GPT2/sentiment_test.txt  #see diego_hugging notes <-- i had to run it with block_size=256 ( down from 1024 )   #check in after an hour !
+
+
+    #2. why did they use GPT-1 for generation and GPT-2 for the language model
+        # GPT-2 ( the too dangerous to initially release one ) is the successor to GPT-1 
+        # http://jalammar.github.io/illustrated-gpt2/
+
+
+    ALSO, they have fasttext and kenlm models that are pretrained that we need to us: ( or at least the fastText one .. it doesn't seem like they use the kenlm ones)
+    FROM PAPER: 
+        "we attempt to use automatic methods of evaluation to assess the performance of different models. 
+        To estimate target style strength, we use style classifiers that we train on the same training-dev-test split of Table 1, using FastText (Joulin et al., 2017).  https://fasttext.cc/
+        # see section of diego_hugging_face where i do this based on the following:   https://fasttext.cc/docs/en/supervised-tutorial.html
+        
+        These classifiers achieve 98%, 86%, 80%, 92% and 82% accuracies on the test sets of Yelp, Amazon, Cap- tions, Political and Gender respectively. 
+
+        #see eval_yelp-diego.ipynb ...  I'm able to get 96.3% on test
+        classifier_model = fastText.load_model('fasttextmodel/model_yelp.bin')  
+
+        #kenlm lm ( no need )
+        #kenlm_lm = kenlm.Model('kenlmmodel/yelp.arpa')
+
+    # Where do they have code for GLEU score ?     they point to this :   https://github.com/cnap/gec-ranking
+
+
+eval0.ipynb  # SCRIPT FOR HOW TO GENERATE TABLE 4
+    #not specified how these are made
+    modellm = kenlm.Model('kenlmmodel/yelp.arpa')
+    classifier_model = fastText.load_model('fasttextmodel/model_yelp.bin')
+
+    #IMPORTANT: THEY DON'T REALLY GO INTO HOW THEY DO THE PRIOR EVALS  <---   THIS IS A BIG DEAL for how to recreate TABLE 4
+    # df0 = pd.read_csv('matrics_yelp_all_model_prediction_0.csv', header = None)
+    # df1 = pd.read_csv('matrics_yelp_all_model_prediction_1.csv', header = None)
+
+    models_list = ['Source', 'CROSSALIGNED', 'STYLEEMBEDDING', 'MULTIDECODER', 'RETRIEVEONLY', 'TEMPLATEBASED', 'DELETEONLY', 'DELETEANDRETRIEVE', 'BERT_DEL', 'BERT_RET', 'HUMAN']
+    # A brief description of the first 3 (CA, SE, MD), and a detailed description of the last 2 models ( DELONL, DEL&RET) can be found in Li et al. (2018), so we omit elaborating on them here. 
+        # ?? its possible they just use the pytorch code of LI's paper
+
+    # Source refers to the original input sentence.  TEMPLETE, BERT_DEL, BERT_RET are not shown in paper
+    # At the time of writing this paper, these models are the top performing models on Yelp, Amazon and Captions, with the D&R model of Li et al. (2018) showing stateof-art performance. 
+    
+    df_res = pd.DataFrame(list_newval, columns=['GLEU', 'BLEU_source','BLEU_human','fasttext_classifier','klm_ppl','fastai_classifier','fastailm_ppl'])
+    df_res.insert(loc=0, column='model', value=models_list)
+
+bleu.py  # HELPER BLUE SCORE SCRIPTS
+
+eval_amazon.ipynb  
+
+eval_imagecaption.ipynb  
+
+
+OUR EVALS ON THEIR DATA/OUR DATA/ WEAKNESSES OF THEIR APPROACH / AREAS OF IMPROVEMENT ON THEIR DATA AND ON OUR DATA / SHOW RESULTS
+
+
+# HOW DO PEOPLE HANDLE LONGER TEXTS IN GENERAL FOR CLASSIFICATION?  SENTENCE LEVEL CONCATED STUFF?  ETC.. ASK JUAN D... 
+
+
+## MAY 16 .. GETTING EVAL STUFF FOR SRIRAM for yelp, amazon, caption
+
+
